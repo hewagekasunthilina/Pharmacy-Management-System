@@ -19,92 +19,97 @@
 <body>
 
 <!--Background video start-->
+<!--Carousel Wrapper-->
+<div id="video-carousel-example2" class="carousel slide carousel-fade" data-ride="carousel">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#video-carousel-example2" data-slide-to="0" class="active"></li>
+      <li data-target="#video-carousel-example2" data-slide-to="1"></li>
+      <li data-target="#video-carousel-example2" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      <!-- First slide -->
+      <div class="carousel-item active">
+        <!--Mask color-->
+        <div class="view">
+          <!--Video source-->
+          <video class="video-fluid" autoplay loop muted>
+            <source src="https://mdbootstrap.com/img/video/Lines.mp4" type="video/mp4" />
+          </video>
+          <div class="mask rgba-indigo-light"></div>
+        </div>
 
+        <!--Caption-->
+        <div class="carousel-caption">
+          <div class="animated fadeInDown">
+            <h3 class="h3-responsive">Welcome to the Nimedco Pharmacy</h3>
+          </div>
+        </div>
+        <!--Caption-->
+      </div>
+      <!-- /.First slide -->
+  
+      <!-- Second slide -->
+      <div class="carousel-item">
+        <!--Mask color-->
+        <div class="view">
+          <!--Video source-->
+          <video class="video-fluid" autoplay loop muted>
+            <source src="https://mdbootstrap.com/img/video/animation-intro.mp4" type="video/mp4" />
+          </video>
+          <div class="mask rgba-purple-slight"></div>
+        </div>
+  
+        <!--Caption-->
+        <div class="carousel-caption">
+          <div class="animated fadeInDown">
+            <h3 class="h3-responsive">Welcome to the Nimedco Pharmacy</h3>
+          </div>
+        </div>
+        <!--Caption-->
+      </div>
+      <!-- /.Second slide -->
+  
+      <!-- Third slide -->
+      <div class="carousel-item">
+        <!--Mask color-->
+        <div class="view">
+          <!--Video source-->
+          <video class="video-fluid" autoplay loop muted>
+            <source src="https://mdbootstrap.com/img/video/cube.mp4" type="video/mp4" />
+          </video>
+          <div class="mask rgba-black-strong"></div>
+        </div>
+  
+        <!--Caption-->
+        <div class="carousel-caption">
+          <div class="animated fadeInDown">
+            <h3 class="h3-responsive">Welcome to the Nimedco Pharmacy</h3>
+          </div>
+        </div>
+        <!--Caption-->
+      </div>
+      <!-- /.Third slide -->
+    </div>
+    <!--/.Slides-->
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#video-carousel-example2" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#video-carousel-example2" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+  </div>
+  <!--Carousel Wrapper-->
 
 <!--End Background video-->  
 
-<!--Employee sign up form-->
-    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body mx-3">
-          <div class="md-form mb-5">
-            <i class="fas fa-user prefix grey-text"></i>
-            <input type="text" id="orangeForm-name" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
-          </div>
-          <div class="md-form mb-5">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <input type="email" id="orangeForm-email" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
-          </div>
-  
-          <div class="md-form mb-4">
-            <i class="fas fa-lock prefix grey-text"></i>
-            <input type="password" id="orangeForm-pass" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
-          </div>
-  
-        </div>
-        <div class="modal-footer d-flex justify-content-center">
-          <button class="btn btn-deep-orange">Sign up</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="text-center">
-    <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Employee Register</a>
-  </div>
-<!--End of the Employee sign up form-->
 
-<!--Customer sign up form-->
-<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header text-center">
-      <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body mx-3">
-      <div class="md-form mb-5">
-        <i class="fas fa-user prefix grey-text"></i>
-        <input type="text" id="orangeForm-name" class="form-control validate">
-        <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
-      </div>
-      <div class="md-form mb-5">
-        <i class="fas fa-envelope prefix grey-text"></i>
-        <input type="email" id="orangeForm-email" class="form-control validate">
-        <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
-      </div>
-
-      <div class="md-form mb-4">
-        <i class="fas fa-lock prefix grey-text"></i>
-        <input type="password" id="orangeForm-pass" class="form-control validate">
-        <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
-      </div>
-
-    </div>
-    <div class="modal-footer d-flex justify-content-center">
-      <button class="btn btn-deep-orange">Sign up</button>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="text-center">
-<a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Customer Register</a>
-</div>
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
