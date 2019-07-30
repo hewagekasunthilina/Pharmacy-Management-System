@@ -71,73 +71,169 @@
   <br><br>
 
 
-  <table class="panel-table-1">
 
-    <tr>
-      <th>
-        <div class="card1">
-          <h5 class="card-header h5">Register Suppliers (New)</h5>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="registerSupplier.html" class="btn btn-primary">ADD</a>
 
-          </div>
-        </div>      
-      </th>
-  
-      <th>
-        <div class="card1">
-          <h5 class="card-header h5">Suppliers Details</h5>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 
-            <a href="supplierDetails.html" class="btn btn-primary">UPDATE</a>
-            <a href="supplierDetails.html" class="btn btn-primary">REMOVE</a>
-          </div>
-        </div>    
-      </th>
-  
-      <th>
-        <div class="card1">
-          <h5 class="card-header h5">Supplier reports</h5>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#!" class="btn btn-primary">VIEW</a>
-          </div>
-        </div>    
-      </th>
-  
-    </tr>
-    <tr>
-      <th>
-        <div class="card1">
-          <h5 class="card-header h5">Supplier Reports Summary</h5>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#!" class="btn btn-primary">VIEW</a>
 
-          </div>
-        </div>      
-      </th>
-      <th>
-        <div class="card1">
-          <h5 class="card-header h5">Orders</h5>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#!" class="btn btn-primary">VIEW</a>
-            <a href="#!" class="btn btn-primary">SEND ORDERS</a>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5"><h2>SUPPLIER DETAILS</h2>  
+        <br>    
+        <!-- Extended default form grid -->
+        <form>
+            <!-- Grid row -->
+            <div class="form-row">
+              <!-- Default input -->
+              <div class="form-group col-md-6">
+                  <label for="inputEmail4">SupplireID</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="SupplireID">
+                </div>
+                <!-- Default input -->
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Name</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Name">
+                </div>
+              </div>
+              <!-- Grid row -->
+            
+              <!-- Default input -->
+              <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              </div>
+              <!-- Default input -->
+              <div class="form-group">
+                <label for="inputAddress2">Medicine Brand</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="SPC,MPC,ACC">
+              </div>
+              <!-- Grid row -->
+              <div class="form-row">
+                <!-- Default input -->
+                <div class="form-group col-md-6">
+                  <label for="inputCity">Email</label>
+                  <input type="text" class="form-control" id="inputCity" placeholder="Email">
+                </div>
+                <!-- Default input -->
+                <div class="form-group col-md-6">
+                  <label for="inputZip">Contact Number</label>
+                  <input type="text" class="form-control" id="inputZip" placeholder="xxxxxxxxxx">
+                </div>
+              </div>
+            
+              <!-- Grid row -->
+            <button type="submit" class="btn btn-primary btn-md">UPDATE</button>
+            <button type="submit" class="btn btn-primary btn-md">DELETE</button>
+            <button type="submit" class="btn btn-primary btn-md">SEARCH</button>
+          </form>
+        <!-- Extended default form grid --></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-6"><h2>SUPPLIERS</h2>  
+        <br>    
+        <!-- Extended default form grid -->
+        <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                <th class="th-sm">SupplireID
+                </th>
+                <th class="th-sm">Name
+                </th>
+                <th class="th-sm">Address
+                </th>
+                <th class="th-sm">Medicine Brand
+                </th>
+                <th class="th-sm">Email
+                </th>
+                <th class="th-sm">Contact
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>S1</td>
+                <td>MAdhawa Amarasinghe</td>
+                <td>Kuliyapitiya</td>
+                <td>Panadol</td>
+                <td>madhawa@gmail.com</td>
+                <td>0715864875</td>
+              </tr>
+              <tr>
+                <td>S2</td>
+                <td>Kasun Thilina</td>
+                <td>Horana</td>
+                <td>coraxD</td>
+                <td>kasun@gmail.com</td>
+                <td>07758469257</td>
+              </tr>
+              <tr>
+                <td>Ashton Cox</td>
+                <td>Junior Technical Author</td>
+                <td>San Francisco</td>
+                <td>66</td>
+                <td>2009/01/12</td>
+                <td>$86,000</td>
+              </tr>
+              <tr>
+                <td>Cedric Kelly</td>
+                <td>Senior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>2012/03/29</td>
+                <td>$433,060</td>
+              </tr>
+              <tr>
+                <td>Airi Satou</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>33</td>
+                <td>2008/11/28</td>
+                <td>$162,700</td>
+              </tr>
+              <tr>
+                <td>Brielle Williamson</td>
+                <td>Integration Specialist</td>
+                <td>New York</td>
+                <td>61</td>
+                <td>2012/12/02</td>
+                <td>$372,000</td>
+              </tr>
+              <tr>
+                <td>Herrod Chandler</td>
+                <td>Sales Assistant</td>
+                <td>San Francisco</td>
+                <td>59</td>
+                <td>2012/08/06</td>
+                <td>$137,500</td>
+              </tr>
+              <tr>
+                <td>Rhona Davidson</td>
+                <td>Integration Specialist</td>
+                <td>Tokyo</td>
+                <td>55</td>
+                <td>2010/10/14</td>
+                <td>$327,900</td>
+              </tr>
 
-          </div>
-        </div>      
-      </th>      
-    </tr>
-  </table>
-
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Name
+                </th>
+                <th>Position
+                </th>
+                <th>Office
+                </th>
+                <th>Age
+                </th>
+                <th>Start date
+                </th>
+                <th>Salary
+                </th>
+              </tr>
+            </tfoot>
+          </table>
+        <!-- Extended default form grid --></div>
+    </div>
+  </div>
 
 <br>
 <br>
