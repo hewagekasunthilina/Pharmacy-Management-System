@@ -54,9 +54,16 @@
   
   }
 
-  mb-4{
+  .mb-4{
     width: 1200px;
     padding-left: 350px;
   }
 
+.panel-table-1{
+  margin-top: 50px;
+}
+
+.card1{
+  padding-left: 25px;
+}
  
