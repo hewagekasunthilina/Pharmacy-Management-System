@@ -1,6 +1,9 @@
 .carousel-caption{
     text-transform: uppercase;
     margin-bottom: 450px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 900; 
+    font-size: 30px;
 }
 
 @media (max-width: 992px) {
