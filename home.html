@@ -20,61 +20,58 @@
 
 <body>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-sm-start fixed-top">
-                <div class="container-fluid">
-                  <a class="navbar-brand order-0 order-lg-0 ml-lg-0 mr-2 ml-auto" href="#">Admin Panel</a>
-                  <button class="navbar-toggler align-self-start" type="button">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse bg-dark p-3 p-lg-0 mt-5 mt-lg-0 justify-content-lg-end  d-flex flex-column flex-lg-row flex-xl-row mobileMenu onRight" id="navbarSupportedContent">
-                    <ul class="navbar-nav align-self-stretch">
-                      <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Customers
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="addCustomer.html">Add Customer</a>
-                          <a class="dropdown-item" href="removeCustomer.html">Remove Customer</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="index.html">Update Customer</a>
-                        </div>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Employee
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">Add Employee</a>
-                          <a class="dropdown-item" href="#">Remove Employee</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Update Employee</a>
-                        </div>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                      </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0 align-self-stretch">
-                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                  </div>
-                </div>
-                </nav>
-                <div class="overlay"></div>
-                <div class="container mt-5 pt-2">
-                        <div class="row">
-                          <div class="col-md-12">
-                            
-                          </div>
-                          <div class="col-md-12">
-                            
-                          </div>
-                        </div>
-                      </div>
+          <!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="index.html">Admin Panel</a>
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Reports</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Summary</a>
+          <a class="dropdown-item" href="#">Reports Store</a>
+          
+        </div>
+      </li>
+
+    </ul>
+    <!-- Links -->
+
+    <form class="form-inline my-2 my-lg-0 align-self-stretch">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
 
 
 
