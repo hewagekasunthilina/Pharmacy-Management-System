@@ -43,22 +43,12 @@
     }
   }
 
-  .Employee-add-register{
-    margin-top: 60px;
-    margin-right: 900px;
-  }
+ .card{
+   padding-left: 20%;
+   padding-right: 20%;  
+ }
 
-  .Employee-update-register{
-    margin-bottom: 60px;
-    margin-right: 500px;
-  
-  }
-
-  mb-4{
-    width: 1200px;
-    padding-left: 350px;
-  }
-
+<<<<<<< HEAD
   .number-input input[type="number"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
@@ -142,3 +132,5 @@
       }
     }
   }
+=======
+>>>>>>> cb9c9a02e3a7a04dab0bbfdf89cd7f2f9f38ff0b
