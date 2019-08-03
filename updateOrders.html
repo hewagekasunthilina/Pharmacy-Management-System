@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Supplier Management | Nimedco Pharmacy</title>
+  <title>Supplier Register | Nimedco Pharmacy</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -71,78 +71,162 @@
   <br><br>
 
 
-  <table class="panel-table-1">
 
-    <tr>
-      <th>
-        <div class="card1">
-          <h5 class="card-header h5">Register Suppliers (New)</h5>
-          <div class="card-body">
-            <h5 class="card-title">New Suppliers are Welcome</h5>
-            <p class="card-text">Add new Suppliers to the NimedcoPharmacy System.</p>
-            <a href="registerSupplier.html" class="btn btn-primary">ADD</a>
 
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5"><h2>ADD ORDERS</h2>  
+        <br>    
+        <!-- Extended default form grid -->
+        <form>
+          <!-- Grid row -->
+          <div class="form-row">
+            <!-- Default input -->
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">OrderID</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="OrderID">
+            </div>
+            <!-- Default input -->
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">SupplireID</label>
+              <input type="password" class="form-control" id="inputPassword4" placeholder="SupplireID">
+            </div>
           </div>
-        </div>      
-      </th>
-  
-      <th>
-        <div class="card1">
-          <h5 class="card-header h5">Suppliers Details</h5>
-          <div class="card-body">
-            <h5 class="card-title">Registerd Suppliers are Welcome.</h5>
-            <p class="card-text">Update / Remove Registerd Supplier details.</p>
-
-            <a href="supplierDetails.html" class="btn btn-primary">UPDATE</a>
-            <a href="supplierDetails.html" class="btn btn-primary">REMOVE</a>
+          <!-- Grid row -->
+        
+          <!-- Default input -->
+          <div class="form-group">
+            <label for="inputAddress">MedName</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Name of the Medicine">
           </div>
-        </div>    
-      </th>
-  
-      <th>
-        <div class="card1">
-          <h5 class="card-header h5">Supplies reports</h5>
-          <div class="card-body">
-            <h5 class="card-title">Onboard Supplies reports.</h5>
-            <p class="card-text">Add / Update / Delete Spplies reports.</p>
-            
-            <a href="Reports.html" class="btn btn-primary">ADD</a>
-            <a href="updateReports.html" class="btn btn-primary">UPDATE</a>
-            <a href="updateReports.html" class="btn btn-primary">REMOVE</a>
-            
-          </div>
-        </div>    
-      </th>
-  
-    </tr>
-    <tr>
-      <th>
-        <div class="card1">
-          <h5 class="card-header h5">Supplies Reports Summary</h5>
-          <div class="card-body">
-            <h5 class="card-title">Summary of the Supplies. </h5>
-            <p class="card-text">View Supplies summary.</p>
-            <a href="#!" class="btn btn-primary">VIEW</a>
 
+          <!-- Grid row -->
+          <div class="form-row">
+            <!-- Default input -->
+            <div class="form-group col-md-6">
+              <label for="inputCity">QTY</label>
+              <input type="text" class="form-control" id="inputCity" placeholder="Quantity">
+            </div>
+            <!-- Default input -->
+            <div class="form-group col-md-6">
+              <label for="inputZip">Date</label>
+              <input type="text" class="form-control" id="inputZip" placeholder="DD/MM/YYYY">
+            </div>
           </div>
-        </div>      
-      </th>
-      <th>
-        <div class="card1">
-          <h5 class="card-header h5">Orders</h5>
-          <div class="card-body">
-            <h5 class="card-title">Orders Stock need.</h5>
-            <p class="card-text">Add orders and Send Orders to Suppliers.</p>
-            <a href="Orders.html" class="btn btn-primary">ADD</a>
-            <a href="updateOrders.html" class="btn btn-primary">UPDATE</a>
-            <a href="updateOrders.html" class="btn btn-primary">REMOVE</a>
+          <!-- Grid row -->
+          <button type="submit" class="btn btn-primary btn-md">UPDATE</button>
+          <button type="submit" class="btn btn-primary btn-md">REMOVE</button>
 
-          </div>
-        </div>      
-      </th>      
-    </tr>
-  </table>
+        </form>
+        <!-- Extended default form grid --></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-6"><h2>ORDERS</h2>  
+        <br>    
+        <!-- Extended default form grid -->
+        <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                <th class="th-sm">OrderID
+                </th>
+                <th class="th-sm">SupplireID
+                </th>
+                <th class="th-sm">MedName
+                </th>
+                <th class="th-sm">QTY
+                </th>
+                <th class="th-sm">Date
+                </th>
 
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>S1</td>
+                <td>MAdhawa Amarasinghe</td>
+                <td>Kuliyapitiya</td>
+                <td>Panadol</td>
+                <td>madhawa@gmail.com</td>
+                
+              </tr>
+              <tr>
+                <td>S2</td>
+                <td>Kasun Thilina</td>
+                <td>Horana</td>
+                <td>coraxD</td>
+                <td>kasun@gmail.com</td>
+                
+              </tr>
+              <tr>
+                <td>Ashton Cox</td>
+                <td>Junior Technical Author</td>
+                <td>San Francisco</td>
+                <td>66</td>
+                <td>2009/01/12</td>
+                
+              </tr>
+              <tr>
+                <td>Cedric Kelly</td>
+                <td>Senior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>2012/03/29</td>
+                
+              </tr>
+              <tr>
+                <td>Airi Satou</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>33</td>
+                <td>2008/11/28</td>
+                
+              </tr>
+              <tr>
+                <td>Brielle Williamson</td>
+                <td>Integration Specialist</td>
+                <td>New York</td>
+                <td>61</td>
+                <td>2012/12/02</td>
+                
+              </tr>
+              <tr>
+                <td>Herrod Chandler</td>
+                <td>Sales Assistant</td>
+                <td>San Francisco</td>
+                <td>59</td>
+                <td>2012/08/06</td>
+                
+              </tr>
+              <tr>
+                <td>Rhona Davidson</td>
+                <td>Integration Specialist</td>
+                <td>Tokyo</td>
+                <td>55</td>
+                <td>2010/10/14</td>
+                
+              </tr>
+
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>OrderID
+                </th>
+                <th>SupplireID
+                </th>
+                <th>MedName
+                </th>
+                <th>QTY
+                </th>
+                <th>Date
+                </th>
+
+              </tr>
+            </tfoot>
+          </table>
+        <!-- Extended default form grid --></div>
+    </div>
+  </div>
 
 <br>
 <br>
