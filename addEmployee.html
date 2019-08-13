@@ -21,14 +21,14 @@
 <div class="card">
 
         <h5 class="card-header info-color white-text text-center py-4">
-            <strong>Sign up</strong>
+            <strong>ADD NEW EMPLOYEE | NIMEDCO PHARMACY</strong>
         </h5>
     
         <!--Card content-->
         <div class="card-body px-lg-5 pt-0">
     
             <!-- Form -->
-            <form class="text-center" style="color: #757575;" action="#!">
+            <form class="text-center" style="color: #757575;" action="addEmployee.php" name="addEmployee">
     
                 <div class="form-row">
                     <div class="col">
@@ -41,7 +41,7 @@
                     <div class="col">
                         <!-- Last name -->
                         <div class="md-form">
-                            <input type="email" id="materialRegisterFormLastName" class="form-control">
+                            <input type="text" id="materialRegisterFormLastName" class="form-control">
                             <label for="materialRegisterFormLastName">Last name</label>
                         </div>
                     </div>
@@ -58,6 +58,23 @@
                     <input type="email" id="materialRegisterFormEmail" class="form-control">
                     <label for="materialRegisterFormEmail">E-mail</label>
                 </div>
+
+                 <!-- NIC Number -->
+                 <div class="md-form mt-0">
+                    <input type="text" id="materialRegisterFormEmail" class="form-control">
+                    <label for="materialRegisterFormEmail">NIC Number</label>
+                </div>
+
+                 <!-- Address -->
+                 <div class="md-form mt-0">
+                    <input type="email" id="materialRegisterFormEmail" class="form-control">
+                    <label for="materialRegisterFormEmail">Address</label>
+                </div>
+
+                <div class="md-form mt-0">
+                    <input placeholder="Selected date" type="text" id="date-picker-example" class="form-control datepicker">
+                    <label for="date-picker-example"></label>
+                  </div>
     
                 <!-- Password -->
                 <div class="md-form">
@@ -70,7 +87,7 @@
     
                 <!-- Phone number -->
                 <div class="md-form">
-                    <input type="password" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                    <input type="text" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
                     <label for="materialRegisterFormPhone">Phone number</label>
                     <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
                         Optional - for two step authentication
@@ -78,11 +95,11 @@
                 </div>
     
                 <!-- Sign up button -->
-                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">ADD EMPLOYEE</button>
     
                 <!-- Terms of service -->
                 <p>By clicking
-                    <em>Sign up</em> you agree to our
+                    <em>Add Employee</em> The Employee agree to our
                     <a href="" target="_blank">terms of service</a>
     
             </form>
