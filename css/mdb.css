@@ -6665,7 +6665,7 @@ table.table a.btn.btn-black {
     border: 1px solid #9e9e9e;
     -webkit-box-shadow: none;
     box-shadow: none; }
-  .card .card-body h1, .card .card-body h2, .card .card-body h3, .card .card-body h4, .card .card-body h5, .card .card-body h6 {
+  .card . h1, .card . h2, .card .card-body h3, .card .card-body h4, .card .card-body h5, .card .card-body h6 {
     font-weight: 400; }
   .card .card-body .card-title a {
     -webkit-transition: 0.2s ease-in-out;
