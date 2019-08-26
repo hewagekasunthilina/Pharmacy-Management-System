@@ -1,7 +1,7 @@
 <?php 
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = '';
+$dbpass = 'root';
 $db = 'admin_panel';
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $db);
