@@ -48,7 +48,4 @@ function validateaddEmployee(){
         alert('Phone Number is Invalid!');
         return false;
     }
-
-    
-
 }
