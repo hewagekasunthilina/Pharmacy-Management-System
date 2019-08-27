@@ -26,7 +26,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="index.html">Admin Panel</a>
+  <a class="navbar-brand" href="index.php">Admin Panel</a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -40,7 +40,7 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home
+        <a class="nav-link" href="index.php">Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
@@ -56,8 +56,10 @@
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">Reports</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Summary</a>
-          <a class="dropdown-item" href="#">Reports Store</a>
+          <a class="dropdown-item" href="#">Employee Report</a>
+          <a class="dropdown-item" href="#">Customer Details Reports</a>
+          <a class="dropdown-item" href="#">Expenditure Report</a>
+          <a class="dropdown-item" href="#">Salary Report</a>
           
         </div>
       </li>
@@ -101,9 +103,9 @@
         <div class="card-body">
           <h5 class="card-title">Special title treatment</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="addEmployee.html" class="btn btn-primary">ADD</a>
-          <a href="updateEmployee.html" class="btn btn-primary">UPDATE</a>
-          <a href="viewEmployees.html" class="btn btn-primary">VIEW EMPLOYEES</a>
+          <a href="addEmployee.php" class="btn btn-primary">ADD</a>
+          <a href="updateEmployee.php" class="btn btn-primary">UPDATE</a>
+          <a href="viewEmployees.php" class="btn btn-primary">VIEW EMPLOYEES</a>
         </div>
       </div>    
     </th>
