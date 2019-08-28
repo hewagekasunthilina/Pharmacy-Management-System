@@ -46,9 +46,6 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-       
-        
-       
 
     <!-- Collapsible content -->
   
@@ -56,7 +53,6 @@
   <!--/.Navbar-->
   <br><br>
  <!--TIME TRACKER-->
-
 
 <div class="row" style="padding-left: 450px">
     <div class="col-md-5"><h2>Request for a leave</h2>  

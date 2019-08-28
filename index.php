@@ -45,7 +45,7 @@
         <div class="carousel-caption">
           <div class="animated fadeInDown">
             <h3 class="h3-responsive">Welcome to the Nimedco Pharmacy</h3>
-            <a href="adminPanel.php" class="btn btn-primary">SignIn</a>
+            <a href="signin.php" class="btn btn-primary">SignIn</a>
           </div>
         </div>
         <!--Caption-->
