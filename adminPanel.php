@@ -98,7 +98,7 @@
       <div class="card1">
         <h5 class="card-header h5">Employee Details</h5>
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
+          <h5 class="card-title">All the Details of the Employees !</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <a href="addEmployee.php" class="btn btn-primary">ADD</a>
           <a href="updateEmployee.php" class="btn btn-primary">UPDATE</a>
