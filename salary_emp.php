@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php include('connectiontest.php'); ?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,45 +35,87 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="salary_emp.html">Time Tracker
+          <a class="nav-link" href="salary_emp.php">Time Tracker
             <span class="sr-only">(current)</span>
           </a>
         </li>
 
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="salary_emp_leave.html">Request Leave
+            <a class="nav-link" href="salary_emp_leave.php">Request Leave
               <span class="sr-only">(current)</span>
             </a>
           </li>
        
-        
-       
-  
     
   
   </nav>
   <!--/.Navbar-->
   <br><br>
  <!--TIME TRACKER-->
-
- <div style="max-width: 700px; padding-left:500px;"></div>
+         <div>
+           <form id="form-id"  method="POST" onsubmit = "return(validateEmpid()) >
            <div class="md-form" style="max-width: 400px">
-                <input type="date" id="inputMDEx" class="form-control">
+                <input type="text" name="empID" id="empid" class="form-control" required>
+                <label for="inputMDEx">Choose your Employee ID</label>               
+           </div>
+           <br>
+           <div class="md-form" style="max-width: 400px">
+                <input type="date" name="adate" id="inputMDEx" class="form-control" >
                 <label for="inputMDEx">Choose your date</label>
-                <button type="button" class="btn btn-primary">Primary</button>
+               <!-- <button type="button" class="btn btn-primary">Update Date</button> -->               
            </div>
 
           <div class="md-form mx-5 my-5" style="max-width: 400px">
-                <input type="time" id="inputMDEx1" class="form-control">
+                <input type="time" name="itime" id="inputMDEx1" class="form-control">
                 <label for="inputMDEx1">Choose your In time</label>
-                <button type="button" class="btn btn-primary">Primary</button>
+                <button method="POST" type="submit" name="intime" class="btn btn-primary">Update In time</button>
           </div>
+
           <div class="md-form mx-5 my-5" style="max-width: 400px">
-               <input type="time" id="inputMDEx1" class="form-control">
+               <input type="time" name="otime" id="inputMDEx2" name="outtime" class="form-control">
                <label for="inputMDEx1">Choose your Out time</label>
-               <button type="button" class="btn btn-primary">Primary</button>
+               <button method="POST" type="submit" name="outtime" class="btn btn-primary">Update Out time</button>
           </div>
+ 
+          </form>
+          </div>
+ <?php
+
+
+if(isset($_POST['intime'])){
+
+  $intime = $_POST['itime'];
+  $eID = $_POST['empID'];
+  $date = $_POST['adate'];
+
+  $sql = "INSERT INTO attendance (empID, inTime, date)
+  VALUES ('$eID','$intime','$date')";
+
+  if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+  } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+  
+  $conn->close();
+}
+
+if(isset($_POST['outtime'])){
+
+  $sql = "UPDATE attendance SET empID='EI111' WHERE test=10";
+  
+  if ($conn->query($sql) === TRUE) {
+    echo "New record updated successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+}
+?> 
+
+
 </div>
     <!--Footer start-->
 
@@ -228,7 +270,7 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script type="text/javascript" src="js/mdb.js"></script>
-
+  <script type="text/javascript" src="js/salary.js"></script>
 </body>
 
 </html>

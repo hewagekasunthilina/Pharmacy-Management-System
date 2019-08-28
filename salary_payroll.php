@@ -68,24 +68,31 @@
  <!-- PAYROLL-->
  
 <!-- Large input -->
+
 <div style="max-width: 700px; padding-left:500px;">
+
+  <form name="payslip" id="form" action="/Pharmacy-Management-System/salary_payroll_payslip.php" method="GET">
+
 <div class="md-form form-lg"  >
-  <input type="text" id="inputLGEx" class="form-control form-control-lg">
+  <input name="empID" type="text" id="name" class="form-control form-control-lg">
   <label for="inputLGEx">Employee ID</label>
 </div>
 <div class="md-form form-lg"  >
-  <input type="text" id="inputLGEx" class="form-control form-control-lg">
+  <input type="text" name="amount" id="bonus" class="form-control form-control-lg">
   <label for="inputLGEx">Bonus</label>
 </div>
 <div class="md-form form-lg"  >
-  <input type="text" id="inputLGEx" class="form-control form-control-lg">
+  <input type="text" name="amount2" id="panelties" class="form-control form-control-lg">
   <label for="inputLGEx">Panelties</label>
 </div>
 <div class="md-form form-lg"  >
-  <input type="text" id="inputLGEx" class="form-control form-control-lg">
+  <input type="text" name="amount3" id="tax" class="form-control form-control-lg">
   <label for="inputLGEx">Tax</label>
 </div>
-<button type="button" class="btn btn-primary">Genarate Pay Slip</button>
+
+<input type="submit" id="form" value="Genarate Pay Slip" class="btn btn-primary">
+</form>
+
 </div> 
 
 
@@ -246,7 +253,7 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script type="text/javascript" src="js/mdb.js"></script>
-
+  <script type="text/javascript" src="js/salary.js"></script>
 </body>
 
 </html>
