@@ -939,6 +939,9 @@
           <p>
             <i class="fas fa-phone mr-3"></i> 071 977 4774</p>
           <p>
+          <i class="fas fa-map-marker-alt"></i><a href ="location.php"> Find Us</p></a>
+          <p>
+          
           
         </div>
         <!-- Grid column -->

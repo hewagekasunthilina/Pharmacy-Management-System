@@ -28,74 +28,78 @@
         <div class="card-body px-lg-5 pt-0">
     
             <!-- Form -->
-            <form class="text-center" style="color: #757575;" action="addEmployee.php" name="addEmployee">
+            <form class="text-center" style="color: #757575;" action="server.php" name="addEmployee">
     
                 <div class="form-row">
                     <div class="col">
                         <!-- First name -->
                         <div class="md-form">
-                            <input type="text" id="materialRegisterFormFirstName" class="form-control">
-                            <label for="materialRegisterFormFirstName">First name</label>
+                            <input type="text" id="FirstName" class="form-control">
+                            <label for="FirstName">First name</label>
                         </div>
                     </div>
                     <div class="col">
                         <!-- Last name -->
                         <div class="md-form">
-                            <input type="text" id="materialRegisterFormLastName" class="form-control">
-                            <label for="materialRegisterFormLastName">Last name</label>
+                            <input type="text" id="LastName" class="form-control">
+                            <label for="LastName">Last name</label>
                         </div>
                     </div>
                 </div>
 
                  <!-- Username -->
                  <div class="md-form">
-                    <input type="text" id="materialRegisterFormFirstName" class="form-control">
-                    <label for="materialRegisterFormFirstName">Username</label>
+                    <input type="text" id="UserName" class="form-control">
+                    <label for="UserName">Username</label>
                 </div>
     
                 <!-- E-mail -->
                 <div class="md-form mt-0">
-                    <input type="email" id="materialRegisterFormEmail" class="form-control">
-                    <label for="materialRegisterFormEmail">E-mail</label>
+                    <input type="email" id="Email" class="form-control">
+                    <label for="Email">E-mail</label>
                 </div>
 
                  <!-- NIC Number -->
                  <div class="md-form mt-0">
-                    <input type="text" id="materialRegisterFormEmail" class="form-control">
-                    <label for="materialRegisterFormEmail">NIC Number</label>
+                    <input type="text" id="NICNumber" class="form-control">
+                    <label for="NICNumber">NIC Number</label>
                 </div>
 
                  <!-- Address -->
                  <div class="md-form mt-0">
-                    <input type="email" id="materialRegisterFormEmail" class="form-control">
-                    <label for="materialRegisterFormEmail">Address</label>
+                    <input type="text" id="Address" class="form-control">
+                    <label for="Address">Address</label>
+                </div>
+    
+                <!-- Phone number -->
+                <div class="md-form">
+                    <input type="text" id="PhoneNumber" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                    <label for="PhoneNumber">Phone number</label>
+                    <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+                        Optional - for two step authentication
+                    </small>
                 </div>
 
-                <div class="md-form mt-0">
-                    <input placeholder="Selected date" type="text" id="date-picker-example" class="form-control datepicker">
-                    <label for="date-picker-example"></label>
-                  </div>
-    
-                <!-- Password -->
-                <div class="md-form">
-                    <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                    <label for="materialRegisterFormPassword">Password</label>
+                 <!-- Password -->
+                 <div class="md-form">
+                    <input type="password" id="Password" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
+                    <label for="Password">Password</label>
+                    <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                        At least 8 characters and 1 digit
+                    </small>
+                </div>
+
+                 <!-- Password -->
+                 <div class="md-form">
+                    <input type="password" id="ConfirmPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
+                    <label for="ConfirmPassword">Password</label>
                     <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                         At least 8 characters and 1 digit
                     </small>
                 </div>
     
-                <!-- Phone number -->
-                <div class="md-form">
-                    <input type="text" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
-                    <label for="materialRegisterFormPhone">Phone number</label>
-                    <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-                        Optional - for two step authentication
-                    </small>
-                </div>
-    
                 <!-- Sign up button -->
-                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">ADD EMPLOYEE</button>
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" onclick = "javascript:return validateaddEmployee();" type="submit">ADD EMPLOYEE</button>
     
                 <!-- Terms of service -->
                 <p>By clicking
@@ -119,6 +123,8 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
+
+  <script type="text/javascript" src="js/addEmployee.js"></script>
 
 </body>
 

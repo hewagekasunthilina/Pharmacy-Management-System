@@ -31,7 +31,7 @@
     
             <!--Grid column-->
             <div class="col-md-9 mb-md-0 mb-5">
-                <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                <form id="contact-form" name="contactForm" action="mail.php" method="POST">
     
                     <!--Grid row-->
                     <div class="row">
@@ -48,7 +48,7 @@
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="email" name="email" class="form-control">
+                                <input type="email" id="email" name="email" class="form-control">
                                 <label for="email" class="">Your email</label>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                 </form>
     
                 <div class="text-center text-md-left">
-                    <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                    <Button class="btn btn-primary" onclick = "javascript:return validateContactForm();">Send</Button>
                 </div>
                 <div class="status"></div>
             </div>
@@ -128,6 +128,8 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
+
+  <script type="text/javascript" src="js/contactUs.js"></script>
 
 </body>
 
