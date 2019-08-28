@@ -120,7 +120,6 @@
 
   </tr>
 
-
   <tr>
       <th>
         <div class="card1">
@@ -128,7 +127,7 @@
           <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#!" class="btn btn-primary">VIEW</a>
+            <a href="Expenditure.php" class="btn btn-primary">VIEW</a>
             <a href="#!" class="btn btn-primary">BILLS</a>
             <a href="#!" class="btn btn-primary">REPORTS</a>
           </div>
@@ -188,11 +187,12 @@
 
       
     </tr>
+    
 
   
 </table>
 
-  <!--Footer start-->
+<!--Footer start-->
 
 <!-- Footer -->
 <footer class="page-footer font-small mdb-color pt-4">

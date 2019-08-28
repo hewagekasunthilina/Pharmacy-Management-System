@@ -93,13 +93,13 @@
                   <tbody>
                     <tr>
                       <th scope="row">1</th>
-                      <td>Cell</td>
-                      <td>Cell</td>
-                      <td>Cell</td>
-                      <td>Cell</td>
-                      <td>Cell</td>
-                      <td>Cell</td>
-                      <td>Cell</td>
+                      <td>E001</td>
+                      <td>Kasun</td>
+                      <td>Thilina</td>
+                      <td>kasunthilina</td>
+                      <td>kasunthilina1000@gmail.com</td>
+                      <td>960580800V</td>
+                      <td>Maragahahena, Kuda UDuwa</td>
                       <td><button type="button" class="btn btn-danger btn-rounded">DELETE</button></td>
                       
                     </tr>
