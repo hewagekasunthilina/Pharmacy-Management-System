@@ -105,7 +105,7 @@
   
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold"><a href = "signIn.php">Nimedco Pharmacy</h6></a>
+          <h6 class="text-uppercase mb-4 font-weight-bold">Nimedco Pharmacy</h6>
           <p>Get the treatment you need without leaving your home. With a wide range of medicines at great prices we're sure to ease your ailment with signed for delivery.Choose a safe, quick, cost-effect and convenient way of having your medicines delivered to your door.</p>
         </div>
         <!-- Grid column -->
@@ -162,6 +162,9 @@
           <p>
             <i class="fas fa-phone mr-3"></i> 071 977 4774</p>
           <p>
+          <i class="fas fa-map-marker-alt"></i><a href ="location.php"> Find Us</p></a>
+          <p>
+          
           
         </div>
         <!-- Grid column -->
@@ -228,7 +231,7 @@
   </footer>
   <!-- Footer -->
   
-  <!--End of the footer-->
+  <!--Ens of the footer-->      
 
 
 
