@@ -1,62 +1,51 @@
-const FirstName = document.getElementById('FirstName');
-const LastName = document.getElementById('LastName');
-const UserName = document.getElementById('UserName');
-const Email = document.getElementById('Email');
-const NICNumber = document.getElementById('NICNumber');
-const Address = document.getElementById('Address');
-const Phone = document.getElementById('Phone');
-const Password = document.getElementById('Password');
-const ConfirmPassword = document.getElementById('ConfirmPassword');
+function validateaddEmployee(){
+    var FirstName = document.forms["addEmployee"]["FirstName"].value;
+    var LastName = document.forms["addEmployee"]["LastName"].value;
+    var UserName = document.forms["addEmployee"]["UserName"].value;
+    var Email = document.forms["addEmployee"]["Email"].value;
+    var NICNumber = document.forms["addEmployee"]["NICNumber"].value;
+    var Address = document.forms["addEmployee"]["Address"].value;
+    var PhoneNumber = document.forms["addEmployee"]["PhoneNumber"].value;
+    var Password = document.forms["addEmployee"]["Password"].value;
+    var ConfirmPassword = document.forms["addEmployee"]["ConfirmPassword"].value;
 
-//Form
-const Form = document.getElementById('addEmployee');
-//validate colours
-const green = '#4CAF0'
-const red = '#F44336'
+    var numbers = /^\d+(\.\d+)?$/;
 
-function validateFirstName(){
-    //check if is empty
-    if(checkIfEmpty(FirstName))return;
-    //is id it has only letters
-    if(!checkIfOnlyLetters(FirstName))return;
-    return true;
-}
-
-function checkIfEmpty(field){
-    if(isEmpty(field.value.trim())){
-        //set field invalid
-        setInterval(field, `${field.name} Must not be empty`);
-        return true;
-    } else{
-        //set field valid
-        setValid(field);
+    if(FirstName == null || FirstName == ""){
+        alert("First Name must be filled out!");
         return false;
     }
-}
 
-function isEmpty(value){
-    if(value === '') return true;
-    return false;
-}
+    if(LastName == null || LastName == ""){
+        alert("Last Name must be filled out!");
+        return false;
+    }
 
-function setInvalid(field, message){
-    field.className = 'invalid';
-    field.nextElementSibling.innerHTML = message;
-    field.nextElementSibling.style.color = red;
-}
+    if(UserName == null || UserName == ""){
+        alert("First Name must be filled out!");
+        return false;
+    }
 
-function setvalid(field, message){
-    field.className = 'valid';
-    field.nextElementSibling.innerHTML = '';
-    //field.nextElementSibling.style.color = green;
-}
+    if(Email == null || Email == ""){
+        alert("E-mail must be filled out!");
+        return false;
+    }
 
-function checkIfOnlyLetters(field){
-    if(/^[a-zA-Z]+$/.test(field.value)){
-        setValid(field);
-        return true;
-    } else{
-        setInvalid(field, `${field.name}Must contain only letters`);
+    if(NICNumber == null || NICNumber == ""){
+        alert("NIC Number must be filled out!");
+        return false;
+    }
+
+    if(Address == null || Address == ""){
+        alert("Address must be filled out!");
+        return false;
+    }
+
+    if(PhoneNumber == null || PhoneNumber == ""){
+        alert("Phone Number must be filled out!")
+        return false;
+    }  else if(!(PhoneNumber.match(numbers))){
+        alert('Phone Number is Invalid!');
         return false;
     }
 }
