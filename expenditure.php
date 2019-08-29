@@ -282,6 +282,8 @@
                   
 
 
+<!--Footer start-->
+
 <!-- Footer -->
 <footer class="page-footer font-small mdb-color pt-4">
 
@@ -294,9 +296,7 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase mb-4 font-weight-bold">Nimedco Pharmacy</h6>
-          <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-            consectetur
-            adipisicing elit.</p>
+          <p>Get the treatment you need without leaving your home. With a wide range of medicines at great prices we're sure to ease your ailment with signed for delivery.Choose a safe, quick, cost-effect and convenient way of having your medicines delivered to your door.</p>
         </div>
         <!-- Grid column -->
   
@@ -346,13 +346,16 @@
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
           <p>
-            <i class="fas fa-home mr-3"></i> NimedcoPharmacy, Meerigama</p>
+            <i class="fas fa-home mr-3"></i> Pohonnaruwa Mirigama (Nearby, Jayathissa Stores, Mirigama</p>
           <p>
-            <i class="fas fa-envelope mr-3"></i> nimedcopharmacy@.com</p>
+            <i class="fas fa-envelope mr-3"></i> nimedcopharmacy@info.com</p>
           <p>
-            <i class="fas fa-phone mr-3"></i> + 94 770 828 319</p>
+            <i class="fas fa-phone mr-3"></i> 071 977 4774</p>
           <p>
-            <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          <i class="fas fa-map-marker-alt"></i><a href ="location.php"> Find Us</p></a>
+          <p>
+          
+          
         </div>
         <!-- Grid column -->
   
@@ -418,7 +421,7 @@
   </footer>
   <!-- Footer -->
   
-  <!--Ens of the footer-->        
+  <!--Ens of the footer-->            
 
     
   <!-- SCRIPTS -->

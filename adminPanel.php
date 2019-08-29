@@ -98,7 +98,7 @@
       <div class="card1">
         <h5 class="card-header h5">Employee Details</h5>
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
+          <h5 class="card-title">All the Details of the Employees !</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <a href="addEmployee.php" class="btn btn-primary">ADD</a>
           <a href="updateEmployee.php" class="btn btn-primary">UPDATE</a>
@@ -119,8 +119,7 @@
     </th>
 
   </tr>
-
-
+  
   <tr>
       <th>
         <div class="card1">
@@ -128,7 +127,7 @@
           <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#!" class="btn btn-primary">VIEW</a>
+            <a href="Expenditure.php" class="btn btn-primary">VIEW</a>
             <a href="#!" class="btn btn-primary">BILLS</a>
             <a href="#!" class="btn btn-primary">REPORTS</a>
           </div>
@@ -188,11 +187,12 @@
 
       
     </tr>
+    
 
   
 </table>
 
-  <!--Footer start-->
+<!--Footer start-->
 
 <!-- Footer -->
 <footer class="page-footer font-small mdb-color pt-4">
@@ -205,7 +205,7 @@
   
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold"><a href = "signIn.php">Nimedco Pharmacy</h6></a>
+          <h6 class="text-uppercase mb-4 font-weight-bold">Nimedco Pharmacy</h6>
           <p>Get the treatment you need without leaving your home. With a wide range of medicines at great prices we're sure to ease your ailment with signed for delivery.Choose a safe, quick, cost-effect and convenient way of having your medicines delivered to your door.</p>
         </div>
         <!-- Grid column -->
@@ -262,6 +262,9 @@
           <p>
             <i class="fas fa-phone mr-3"></i> 071 977 4774</p>
           <p>
+          <i class="fas fa-map-marker-alt"></i><a href ="location.php"> Find Us</p></a>
+          <p>
+          
           
         </div>
         <!-- Grid column -->
@@ -328,7 +331,7 @@
   </footer>
   <!-- Footer -->
   
-  <!--Ens of the footer-->      
+  <!--Ens of the footer-->            
 
 
 
