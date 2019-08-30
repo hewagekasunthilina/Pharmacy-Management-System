@@ -54,7 +54,7 @@ if(isset($_POST['submit'])){
 
 
 
-  if( ($titleValidationError == $priceValidationError)    &&($priceValidationError == $qtyValidationError)  &&($qtyValidationError==="")){
+  if( ($titleValidationError == $priceValidationError)    &&($priceValidationError ==="")){
 
      $title= $_POST['title'];
      $price=$_POST['price'];
@@ -65,15 +65,11 @@ if(isset($_POST['submit'])){
 
 
 
-
-
   }
 
 
 
-
 }
-
 
 
 ?>
@@ -191,13 +187,7 @@ if(isset($_POST['submit'])){
                             <!--<input class="form-control" placeholder="Enter price">-->
                         </div>
 
-                        <div class="form-group">
-                        <label>Quantity</label>
-                        <input type = "text" name ="qty" class="form-control" placeholder="Enter qty here">
-                        <span class = "error_all"><?php echo "$qtyValidationError"; ?></span>
-                    </div>
-
-
+                    
 
                         <div class="form-group">
                             <label>Images</label>
@@ -225,19 +215,19 @@ if(isset($_POST['submit'])){
     <?php
 
 
-    $sql = "select eventid,title,price,qty,venue,description,image from addevent";
+    $sql = "select ID,title,price,image from webHomemed";
     $result = $con->query($sql);
 
-    echo '<br/>'.'<h1>Event Delete</h1>'.'<hr>';
+    echo '<br/>'.'<h1>Item Delete</h1>'.'<hr>';
 
 
     while( $row = mysqli_fetch_array($result)){
 
-     $id= $row['eventid'];
+     $id= $row['ID'];
 
 
     echo '<div style="text-align: center;margin-top:5px;margin-left:15px;display: inline-block;word-wrap: break-word;  border-radius: 25px;
-  border: 2px solid #DCDCDC;width: 200px;height: 150px; border-colorrgb(220,220,220);">'.'<br/>'.'<div style= "padding: 10px; ">'.$row['title'].'</br>'.$row['price'].'</br>'.$row['qty'].'</br>'.'</br>'.'<button  style = "background-color: #555555;border: none;width:90px;height:30px">'.'<a href = "deleteeventphp.php?id10='.$row['eventid'].'" style="color:white">delete </a>'.'</button>'.'</br>'.'</br>'.'</div>'.'</div>';
+  border: 2px solid #DCDCDC;width: 200px;height: 150px; border-colorrgb(220,220,220);">'.'<br/>'.'<div style= "padding: 10px; ">'.$row['title'].'</br>'.$row['price'].'</br>'.'</br>'.'<button  style = "background-color: #555555;border: none;width:90px;height:30px">'.'<a href = "deleteeventphp.php?id10='.$row['ID'].'" style="color:white">delete </a>'.'</button>'.'</br>'.'</br>'.'</div>'.'</div>';
 
     }
 
@@ -245,10 +235,6 @@ if(isset($_POST['submit'])){
 
      ?>
 
-
-<br/><h1>Event Calender</h1><hr>
-
-<a href="../../calander/admincalender.php" class="btn draw-border" style="border: 2px solid white;background-color: none;font-size:30px;">View Calender</a>
 
 
 </div>
