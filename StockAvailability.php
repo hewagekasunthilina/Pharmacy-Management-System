@@ -70,22 +70,6 @@
   <!--/.Navbar-->
   <br><br>
 
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Footer -->
 <footer class="page-footer font-small mdb-color pt-4">
 

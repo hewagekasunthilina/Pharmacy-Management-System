@@ -175,12 +175,12 @@
       </th>
       <th>
           <div class="card1">
-              <h5 class="card-header h5">Drug Details</h5>
+              <h5 class="card-header h5">Supplier Management</h5>
               <div class="card-body">
                 <h5 class="card-title">Special title treatment</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#!" class="btn btn-primary">VIEW</a>
-                <a href="#!" class="btn btn-primary">REPORTS</a>
+                <a href="Supplier.php" class="btn btn-primary">VIEW</a>
+                
               </div>
             </div>    
       </th>

@@ -63,7 +63,7 @@
       </div>
 
       <!-- Sign in button -->
-      <a href="adminPanel.php" class="btn btn-primary">SignIn</a>      
+      <a href="Dashboard.php" class="btn btn-primary">SignIn</a>      
 
     </form>
     <!-- Form -->
