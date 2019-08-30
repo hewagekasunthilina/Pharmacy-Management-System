@@ -5,7 +5,7 @@
 $servername  = "localhost";
 $username = "root";
 $password = "";
-$dbname = "karateka";
+$dbname = "nimedco";
 
   $con = new mysqli($servername,$username,$password,$dbname);
 
@@ -45,20 +45,6 @@ else
 }
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -143,7 +129,7 @@ else
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Karate News</h1>
+                            <h1 class="page-header">Prescription details</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
@@ -152,65 +138,9 @@ else
                         <div class="col-lg-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    Information of the post
+                                    Details about prescriptions
                                 </div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <form role="form" method="post" enctype="multipart/form-data">
-                                                <div class="form-group">
-                                                    <label>Topic</label>
-                                                    <textarea class="form-control" rows="3" name= "topici"></textarea>
-                                                    <!--<p class="help-block">Example block-level help text here.</p>-->
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Date</label>
-                                                    <input class="form-control" placeholder="Enter Date" name ="datei">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Description</label>
-                                                    <textarea class="form-control" rows="8" name = "textareai"></textarea>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Images</label>
-                                                    <input type="file" name = "imagei">
-                                                </div>
-                                                <button type="submit" class="btn btn-primary btn-md" name = "submiti">Post</button>
-                                                <button type="reset" class="btn btn-default">Clear All</button>
-                                            </form>
-                                        </div>
-                                        <!-- /.col-lg-6 (nested) -->
-                                        </div>
-                                        <!-- /.col-lg-6 (nested) -->
-                                    </div>
-                                    <!-- /.row (nested) -->
-                                </div>
-                                <!-- /.panel-body -->
-                            </div>
-                            <!-- /.panel -->
-                           
-        <?php
-
-$sql = "select id,topic,date,description,image from news";
-$result = $con->query($sql);
-
-
-echo '<br/>'.'<h1>News Delete</h1>'.'<hr>';
-
-
-while( $row = mysqli_fetch_array($result)){
-
- $id= $row['id'];
-
-
-echo '<div style="text-align: center;margin-top:5px;margin-left:15px;display: inline-block;word-wrap: break-word;  border-radius: 25px;
-border: 2px solid #DCDCDC;width: 200px;height: 150px; border-colorrgb(220,220,220);">'.'<br/>'.'<div style= "padding: 10px; ">'.$row['topic'].'</br>'.$row['date'].'</br>'.'<button  style = "background-color: #555555;border: none;width:90px;height:30px">'.'<a href = "deletenewsphp.php?id10='.$row['id'].'" style="color:white">delete </a>'.'</button>'.'</br>'.'</br>'.'</div>'.'</div>';
-
-}
-
-$con->close();
-
-?>
+                               
  </div>
  <!-- /.col-lg-12 -->
  </div>
