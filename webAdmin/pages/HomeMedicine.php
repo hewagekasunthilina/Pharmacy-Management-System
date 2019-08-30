@@ -2,10 +2,7 @@
 <?php
 
 $titleValidationError = "";
-$dateValidationError = "";
-$timeValidationError ="";
-$placeValidationError = "";
-$descriptionValidationError = "";
+$priceValidationError = "";
 $photoValidationError = "";
 $message ="*Use jpg type and  upload image below 500kb";
 
@@ -14,7 +11,7 @@ $message ="*Use jpg type and  upload image below 500kb";
   $servername  = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "karateka";
+  $dbname = "nimedco";
 
   $con = new mysqli($servername,$username,$password,$dbname);
 
@@ -32,45 +29,15 @@ if(isset($_POST['submit'])){
   }
 
 
-  if(!empty($_POST['date'])){
-    $dateValidationError = "";
+  if(!empty($_POST['price'])){
+    $priceValidationError = "";
   }
 
   else{
-    $dateValidationError = "Date is required";
+    $priceValidationError = "price is required";
 
   }
 
-
-  if(!empty($_POST['time'])){
-    $timeValidationError = "";
-  }
-
-  else{
-    $timeValidationError = "Time is required";
-
-  }
-
-
-  if(!empty($_POST['place'])){
-    $placeValidationError = "";
-  }
-
-  else{
-    $placeValidationError = "Place is required";
-
-  }
-
-
-
-  if(!empty($_POST['description'])){
-    $descriptionValidationError = "";
-  }
-
-  else{
-    $descriptionValidationError = "description is required";
-
-  }
 
 
 
@@ -87,16 +54,13 @@ if(isset($_POST['submit'])){
 
 
 
-  if( ($titleValidationError == $dateValidationError)    &&($dateValidationError == $timeValidationError)  &&($timeValidationError==$placeValidationError) && ($placeValidationError== $descriptionValidationError)&&($descriptionValidationError==="")){
+  if( ($titleValidationError == $priceValidationError)    &&($priceValidationError == $qtyValidationError)  &&($qtyValidationError==="")){
 
      $title= $_POST['title'];
-     $date=$_POST['date'];
-     $time=$_POST['time'];
-     $place=$_POST['place'];
-     $description=$_POST['description'];
+     $price=$_POST['price'];
+     
 
-
-    $sql = "INSERT INTO addevent(title,date,time,venue,description,image) values('$title','$date','$time','$place','$description','$imagecontent')";
+    $sql = "INSERT INTO webHomemed(title,price,image) values('$title','$price','$imagecontent')";
     $con->query($sql);
 
 
@@ -104,7 +68,6 @@ if(isset($_POST['submit'])){
 
 
   }
-
 
 
 
@@ -171,7 +134,7 @@ if(isset($_POST['submit'])){
                                 <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Prescription</a>
                             </li>
                             <li>
-                                <a href="events.php"><i class="fa fa-table fa-fw"></i> Home Medicine</a>
+                                <a href="HomeMedicine.php"><i class="fa fa-table fa-fw"></i> Home Medicine</a>
                             </li>
                           
                             <li>
@@ -195,7 +158,7 @@ if(isset($_POST['submit'])){
 <div class="container-fluid">
 <div class="row">
 <div class="col-lg-12">
-    <h1 class="page-header">Events</h1>
+    <h1 class="page-header">Home medicine</h1>
 </div>
 <!-- /.col-lg-12 -->
 </div>
@@ -204,7 +167,7 @@ if(isset($_POST['submit'])){
 <div class="col-lg-12">
     <div class="panel panel-default">
         <div class="panel-heading">
-            Information of the post
+            Add items to Home medicine section
         </div>
         <div class="panel-body">
             <div class="row">
@@ -222,34 +185,17 @@ if(isset($_POST['submit'])){
                         </div>
 
                         <div class="form-group">
-                            <label>Date</label>
-                            <input type = "text" name ="date" placeholder="Enter Date" class="form-control">
-                            <span class = "error_all"> <?php echo "$dateValidationError"; ?></span>
-                            <!--<input class="form-control" placeholder="Enter Date">-->
+                            <label>Price</label>
+                            <input type = "text" name ="price" placeholder="Enter price" class="form-control">
+                            <span class = "error_all"> <?php echo "$priceValidationError"; ?></span>
+                            <!--<input class="form-control" placeholder="Enter price">-->
                         </div>
 
                         <div class="form-group">
-                        <label>time: </label>
-                        <input type = "text" name ="time" class="form-control" placeholder="Enter Time here">
-                        <span class = "error_all"><?php echo "$timeValidationError"; ?></span>
+                        <label>Quantity</label>
+                        <input type = "text" name ="qty" class="form-control" placeholder="Enter qty here">
+                        <span class = "error_all"><?php echo "$qtyValidationError"; ?></span>
                     </div>
-
-
-                        <div class="form-group">
-                    <label>Venue: </label>
-                    <input type = "text" name ="place" class="form-control" placeholder="Enter venue here">
-                    <span class = "error_all"> <?php echo "$placeValidationError"; ?></span>
-                    </div>
-
-
-                       <div class="form-group">
-                            <label>Description</label>
-                            <textarea  name ="description" placeholder="Enter description here" class="form-control" rows="8"></textarea>
-                            <span class = "error_all"> <?php echo "$descriptionValidationError"; ?></span>
-                        </div>
-
-  
-
 
 
 
@@ -279,7 +225,7 @@ if(isset($_POST['submit'])){
     <?php
 
 
-    $sql = "select eventid,title,date,time,venue,description,image from addevent";
+    $sql = "select eventid,title,price,qty,venue,description,image from addevent";
     $result = $con->query($sql);
 
     echo '<br/>'.'<h1>Event Delete</h1>'.'<hr>';
@@ -291,7 +237,7 @@ if(isset($_POST['submit'])){
 
 
     echo '<div style="text-align: center;margin-top:5px;margin-left:15px;display: inline-block;word-wrap: break-word;  border-radius: 25px;
-  border: 2px solid #DCDCDC;width: 200px;height: 150px; border-colorrgb(220,220,220);">'.'<br/>'.'<div style= "padding: 10px; ">'.$row['title'].'</br>'.$row['date'].'</br>'.$row['time'].'</br>'.'</br>'.'<button  style = "background-color: #555555;border: none;width:90px;height:30px">'.'<a href = "deleteeventphp.php?id10='.$row['eventid'].'" style="color:white">delete </a>'.'</button>'.'</br>'.'</br>'.'</div>'.'</div>';
+  border: 2px solid #DCDCDC;width: 200px;height: 150px; border-colorrgb(220,220,220);">'.'<br/>'.'<div style= "padding: 10px; ">'.$row['title'].'</br>'.$row['price'].'</br>'.$row['qty'].'</br>'.'</br>'.'<button  style = "background-color: #555555;border: none;width:90px;height:30px">'.'<a href = "deleteeventphp.php?id10='.$row['eventid'].'" style="color:white">delete </a>'.'</button>'.'</br>'.'</br>'.'</div>'.'</div>';
 
     }
 

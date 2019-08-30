@@ -119,7 +119,7 @@ else
                                 <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Prescription</a>
                             </li>
                             <li>
-                                <a href="events.php"><i class="fa fa-table fa-fw"></i> Home Medicine</a>
+                                <a href="HomeMedicine.php"><i class="fa fa-table fa-fw"></i> Home Medicine</a>
                             </li>
                           
                             <li>
