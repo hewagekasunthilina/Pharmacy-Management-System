@@ -371,6 +371,7 @@
           <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
         </div>
       </div>
+      <button type="button" class="btn btn-primary">UPLOAD</button>
     </div>
     <!-- Grid column -->
 
