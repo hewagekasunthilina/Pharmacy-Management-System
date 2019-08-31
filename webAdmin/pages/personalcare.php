@@ -60,7 +60,7 @@ if(isset($_POST['submit'])){
      $price=$_POST['price'];
      
 
-    $sql = "INSERT INTO webbabyproducts(title,price,image) values('$title','$price','$imagecontent')";
+    $sql = "INSERT INTO webpersonalcare(title,price,image) values('$title','$price','$imagecontent')";
     $con->query($sql);
 
 
@@ -154,7 +154,7 @@ if(isset($_POST['submit'])){
 <div class="container-fluid">
 <div class="row">
 <div class="col-lg-12">
-    <h1 class="page-header">Mother and Baby products</h1>
+    <h1 class="page-header">Personal Care Products</h1>
 </div>
 <!-- /.col-lg-12 -->
 </div>
@@ -163,7 +163,7 @@ if(isset($_POST['submit'])){
 <div class="col-lg-12">
     <div class="panel panel-default">
         <div class="panel-heading">
-            Add items to Mother and Baby products section
+            Add items to Personal Care products section
         </div>
         <div class="panel-body">
             <div class="row">
@@ -215,7 +215,7 @@ if(isset($_POST['submit'])){
     <?php
 
 
-    $sql = "select ID,title,price,image from webbabyproducts";
+    $sql = "select ID,title,price,image from webpersonalcare";
     $result = $con->query($sql);
 
     echo '<br/>'.'<h1>Item Delete</h1>'.'<hr>';
@@ -227,7 +227,7 @@ if(isset($_POST['submit'])){
 
 
     echo '<div style="text-align: center;margin-top:5px;margin-left:15px;display: inline-block;word-wrap: break-word;  border-radius: 25px;
-  border: 2px solid #DCDCDC;width: 200px;height: 150px; border-colorrgb(220,220,220);">'.'<br/>'.'<div style= "padding: 10px; ">'.$row['title'].'</br>'.$row['price'].'</br>'.'</br>'.'<button  style = "background-color: #555555;border: none;width:90px;height:30px">'.'<a href = "delbabyproducts.php?id10='.$row['ID'].'" style="color:white">delete </a>'.'</button>'.'</br>'.'</br>'.'</div>'.'</div>';
+  border: 2px solid #DCDCDC;width: 200px;height: 150px; border-colorrgb(220,220,220);">'.'<br/>'.'<div style= "padding: 10px; ">'.$row['title'].'</br>'.$row['price'].'</br>'.'</br>'.'<button  style = "background-color: #555555;border: none;width:90px;height:30px">'.'<a href = "delpersonalcare.php?id10='.$row['ID'].'" style="color:white">delete </a>'.'</button>'.'</br>'.'</br>'.'</div>'.'</div>';
 
     }
 
