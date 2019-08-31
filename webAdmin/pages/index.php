@@ -115,7 +115,7 @@ else
                                 <a href="personalcare.php"><i class="fa fa-edit fa-fw"></i> Personal Care</a>
                             </li>
                             <li>
-                                <a href="reg.php"><i class="fa fa-table fa-fw"></i> Pet Care</a>
+                                <a href="petcare.php"><i class="fa fa-table fa-fw"></i> Pet Care</a>
                             </li>
 
                         </ul>

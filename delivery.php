@@ -262,7 +262,7 @@ $con = new mysqli($servername,$username,$password,$dbname);
 </div>
 <!-- Modal: modalCart -->
     
-  
+
   </nav>
   <!--/.Navbar-->
 
@@ -270,7 +270,7 @@ $con = new mysqli($servername,$username,$password,$dbname);
 <div class="card card-image" style="background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/57/88/275867aaa43520a.jpg);">
 
   <!-- Content -->
-  <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+  <div class="text-white text-center d-flex align-items-center rgba-black-strong py-4 px-4">
     <div>
       <h1 class="card-title pt-2" style="font-size: 50px"><strong>Nimedco Pharmacy</strong></h1>
       <p>Get the treatment you need without leaving your home. With a wide range of medicines at great prices we're sure to ease your ailment with signed for delivery.Choose a safe, quick, cost-effect and convenient way of having your medicines delivered to your door.  </p>
@@ -426,8 +426,7 @@ while( $row = mysqli_fetch_array($result)){
             '</h5>'.
           '<h4 class="font-weight-bold blue-text">'.
             '<strong>'.$row['price'].'</strong>'.
-          '</h4>'.
-          '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.'<br>'.
+          '</h4>'.'<br>'.
           '<strong>Quantity</strong>'.
           '<div style="padding-left: 50px;">'.
           '<div class="def-number-input number-input safari_only">'.
@@ -439,6 +438,8 @@ while( $row = mysqli_fetch_array($result)){
       '</div>'.
     
         '</div>'.
+          '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.
+          
         
         '</div>'.
       '</div>'.
@@ -451,11 +452,12 @@ while( $row = mysqli_fetch_array($result)){
  
   ?>
 
+
 </section>
 <!-- Section: Products v.3 -->
 
 
-
+<hr>
 
 <!-- Section: Products v.3 -->
 <section class="text-center my-5" id="Baby" style="padding: 80px">
@@ -492,8 +494,7 @@ while( $row = mysqli_fetch_array($result)){
             '</h5>'.
           '<h4 class="font-weight-bold blue-text">'.
             '<strong>'.$row['price'].'</strong>'.
-          '</h4>'.
-          '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.'<br>'.
+          '</h4>'.'<br>'.
           '<strong>Quantity</strong>'.
           '<div style="padding-left: 50px;">'.
           '<div class="def-number-input number-input safari_only">'.
@@ -506,6 +507,8 @@ while( $row = mysqli_fetch_array($result)){
     
         '</div>'.
         
+          '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.
+          
         '</div>'.
       '</div>'.
     '</div>';
@@ -518,6 +521,8 @@ while( $row = mysqli_fetch_array($result)){
   ?>
 
 </section>
+
+<hr>
 
   <!-- Section: Products v.3 -->
 <section class="text-center my-5" id="personal" style="padding: 80px">
@@ -554,8 +559,7 @@ echo '<div class="col-lg-3 col-md-6 mb-lg-0 mb-4">'.
         '</h5>'.
       '<h4 class="font-weight-bold blue-text">'.
         '<strong>'.$row['price'].'</strong>'.
-      '</h4>'.
-      '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.'<br>'.
+      '</h4>'.'<br>'.
       '<strong>Quantity</strong>'.
       '<div style="padding-left: 50px;">'.
       '<div class="def-number-input number-input safari_only">'.
@@ -567,6 +571,73 @@ echo '<div class="col-lg-3 col-md-6 mb-lg-0 mb-4">'.
   '</div>'.
 
     '</div>'.
+      '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.
+     
+    
+    '</div>'.
+  '</div>'.
+'</div>';
+
+}
+
+echo '</div>';
+
+
+?>
+    
+  
+  </section>
+  <hr>
+
+<!-- Section: Products v.3 -->
+<section class="text-center my-5" id="personal" style="padding: 80px">
+
+<!-- Section heading -->
+<h2 class="h1-responsive font-weight-bold text-center my-5">Pet Care</h2>
+
+<!-- Grid row -->
+<div class="row">
+<?php
+
+$sql = "select ID,title,price,image from webpetcare ORDER BY ID desc";
+$result = $con->query($sql);
+
+
+
+while( $row = mysqli_fetch_array($result)){
+
+echo '<div class="col-lg-3 col-md-6 mb-lg-0 mb-4">'.
+  '<div class="card align-items-center">'.
+    '<div class="view overlay">'.   
+     '<img src ="data:image/jpeg;base64,'.base64_encode($row['image']).'" class="card-img-top">'.
+      '<a>'.
+        '<div class="mask rgba-white-slight">'.'</div>'.
+      '</a>'.
+    '</div>'.
+    '<div class="card-body text-center">'.
+      '<h5>'.
+          '<strong>'.
+            '<a href="" class="dark-grey-text">'.$row['title'].
+              /*'<span class="badge badge-pill danger-color">NEW</span>'.*/
+            '</a>'.
+          '</strong>'.
+        '</h5>'.
+      '<h4 class="font-weight-bold blue-text">'.
+        '<strong>'.$row['price'].'</strong>'.
+      '</h4>'.'<br>'.
+      '<strong>Quantity</strong>'.
+      '<div style="padding-left: 50px;">'.
+      '<div class="def-number-input number-input safari_only">'.
+          
+        '<button  class="minus">'.'</button>'.
+        '<input class="quantity" min="0" name="quantity" value="1" type="number">'.
+        '<button  class="plus">'.'</button>'.
+        
+  '</div>'.
+
+    '</div>'.
+      '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.
+     
     
     '</div>'.
   '</div>'.
@@ -582,9 +653,7 @@ $con->close();
   
   </section>
 
-
-
-
+  <hr>
 <!--Section: Contact v.2-->
 <section class="contactus" id="contactus">
 <div style="padding: 100px">
