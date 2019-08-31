@@ -382,7 +382,7 @@
 <!--products-->
 
 <!-- Section: Products v.3 -->
-<section class="text-center my-5" id="homemed">
+<section class="text-center my-5" id="homemed" style="padding: 80px" >
 
   <!-- Section heading -->
   <h2 class="h1-responsive font-weight-bold text-center my-5">Home Medicine</h2>
@@ -435,7 +435,9 @@ while( $row = mysqli_fetch_array($result)){
             '<button  class="minus">'.'</button>'.
             '<input class="quantity" min="0" name="quantity" value="1" type="number">'.
             '<button  class="plus">'.'</button>'.
+            
       '</div>'.
+    
         '</div>'.
         
         '</div>'.

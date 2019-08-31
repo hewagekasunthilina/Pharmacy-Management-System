@@ -109,7 +109,7 @@ else
                             </li>
                           
                             <li>
-                                <a href="articles.php"><i class="fa fa-edit fa-fw"></i> Mother & Baby</a>
+                                <a href="babyproducts.php"><i class="fa fa-edit fa-fw"></i> Mother & Baby</a>
                             </li>
                             <li>
                                 <a href="clubs.php"><i class="fa fa-edit fa-fw"></i> Personal Care</a>
