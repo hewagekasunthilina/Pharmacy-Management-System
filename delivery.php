@@ -141,22 +141,46 @@ $con = new mysqli($servername,$username,$password,$dbname);
             <div class="tab-pane fade" id="panel8" role="tabpanel">
   
               <!--Body-->
+              
+
+              
               <div class="modal-body">
+
+              <div class="md-form form-sm mb-5">
+                  <i class="fas fa-lock prefix"></i>
+                  <input type="text" id="name" class="form-control form-control-sm validate">
+                  <label data-error="wrong" data-success="right" for="modalLRInput13">Your Name</label>
+                </div>
+
                 <div class="md-form form-sm mb-5">
                   <i class="fas fa-envelope prefix"></i>
-                  <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
-                  <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+                  <input type="email" id="email" class="form-control form-control-sm validate">
+                  <label data-error="wrong" data-success="right" for="modalLRInput12">Email</label>
                 </div>
   
+               
+                <div class="md-form form-sm mb-5">
+                <i class="fas fa-address-book prefix"></i>
+                  <input type="text" id="address" class="form-control form-control-sm validate">
+                  <label data-error="wrong" data-success="right" for="modalLRInput13">Address</label>
+                </div>
+
+                <div class="md-form form-sm mb-5">
+                <i class="fas fa-mobile-alt prefix"></i>
+                  <input type="text" id="number" class="form-control form-control-sm validate">
+                  <label data-error="wrong" data-success="right" for="modalLRInput13">Mobile number</label>
+                </div>
+
+
                 <div class="md-form form-sm mb-5">
                   <i class="fas fa-lock prefix"></i>
-                  <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
-                  <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+                  <input type="password" id="password" class="form-control form-control-sm validate">
+                  <label data-error="wrong" data-success="right" for="modalLRInput13">Password</label>
                 </div>
   
                 <div class="md-form form-sm mb-4">
                   <i class="fas fa-lock prefix"></i>
-                  <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                  <input type="password" id="repeat" class="form-control form-control-sm validate">
                   <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
                 </div>
   
@@ -267,7 +291,7 @@ $con = new mysqli($servername,$username,$password,$dbname);
   <!--/.Navbar-->
 
 <!-- Card -->
-<div class="card card-image" style="background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/57/88/275867aaa43520a.jpg);">
+<div class="card-image" style="background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/57/88/275867aaa43520a.jpg);">
 
   <!-- Content -->
   <div class="text-white text-center d-flex align-items-center rgba-black-strong py-4 px-4">
