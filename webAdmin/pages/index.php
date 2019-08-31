@@ -112,7 +112,7 @@ else
                                 <a href="babyproducts.php"><i class="fa fa-edit fa-fw"></i> Mother & Baby</a>
                             </li>
                             <li>
-                                <a href="clubs.php"><i class="fa fa-edit fa-fw"></i> Personal Care</a>
+                                <a href="personalcare.php"><i class="fa fa-edit fa-fw"></i> Personal Care</a>
                             </li>
                             <li>
                                 <a href="reg.php"><i class="fa fa-table fa-fw"></i> Pet Care</a>
