@@ -1,3 +1,12 @@
+<?php
+$servername  = "localhost";
+$username = "root";
+$password = "";
+$dbname = "nimedco";
+
+$con = new mysqli($servername,$username,$password,$dbname);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,8 +61,8 @@
             <a class="dropdown-item" href="#pres">Prescription Medicine</a>
             <a class="dropdown-item" href="#homemed">Home Medicine</a>
             <a class="dropdown-item" href="#Baby">Mother & Baby</a>
-            <a class="dropdown-item" href="#">Personal Care</a>
-            <a class="dropdown-item" href="#">Pet Care</a>
+            <a class="dropdown-item" href="#personal">Personal Care</a>
+            <a class="dropdown-item" href="#pet">Pet Care</a>
           </div>
         </li>
 
@@ -253,7 +262,7 @@
 </div>
 <!-- Modal: modalCart -->
     
-  
+
   </nav>
   <!--/.Navbar-->
 
@@ -261,7 +270,7 @@
 <div class="card card-image" style="background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/57/88/275867aaa43520a.jpg);">
 
   <!-- Content -->
-  <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+  <div class="text-white text-center d-flex align-items-center rgba-black-strong py-4 px-4">
     <div>
       <h1 class="card-title pt-2" style="font-size: 50px"><strong>Nimedco Pharmacy</strong></h1>
       <p>Get the treatment you need without leaving your home. With a wide range of medicines at great prices we're sure to ease your ailment with signed for delivery.Choose a safe, quick, cost-effect and convenient way of having your medicines delivered to your door.  </p>
@@ -371,6 +380,7 @@
           <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
         </div>
       </div>
+      <button type="button" class="btn btn-primary">UPLOAD</button>
     </div>
     <!-- Grid column -->
 
@@ -381,7 +391,7 @@
 <!--products-->
 
 <!-- Section: Products v.3 -->
-<section class="text-center my-5" id="homemed">
+<section class="text-center my-5" id="homemed" style="padding: 80px" >
 
   <!-- Section heading -->
   <h2 class="h1-responsive font-weight-bold text-center my-5">Home Medicine</h2>
@@ -389,389 +399,261 @@
   <!-- Grid row -->
   <div class="row">
 
-    <!-- Grid column -->
-    <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
-      <!-- Card -->
-      <div class="card align-items-center">
-        <!-- Card image -->
-        <div class="view overlay">
-          <img src="img/items/listerine-mouthwash-original.jpg" class="card-img-top"
-            alt="">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <!-- Card image -->
-        <!-- Card content -->
-        <div class="card-body text-center">
-          <!-- Category & Title -->
-          <h5>
-              <strong>
-                <a href="" class="dark-grey-text">LISTERINE MOUTHWASH ORIGINAL
-                  <span class="badge badge-pill danger-color">NEW</span>
-                </a>
-              </strong>
-            </h5>
-          <h4 class="font-weight-bold blue-text">
-            <strong>LKR 150.00</strong>
-          </h4>
-          <i class="fas fa-shopping-cart fa-2x"></i><br>
-          <strong>Quantity</strong>
-          <div style="padding-left: 50px;">
-          <div class="def-number-input number-input safari_only">
-              
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-            <input class="quantity" min="0" name="quantity" value="1" type="number">
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-          </div>
-        </div>
-        
-        </div>
-        <!-- Card content -->
-      </div>
-      <!-- Card -->
-    </div>
-    <!-- Grid column -->
+  <?php
 
-    <!-- Grid column -->
-    <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
-      <!-- Card -->
-      <div class="card align-items-center">
-        <!-- Card image -->
-        <div class="view overlay">
-          <img src="img/items/axe-brand-universal-oil.jpg" class="card-img-top"
-            alt="">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <!-- Card image -->
-        <!-- Card content -->
-        <div class="card-body text-center">
-          <!-- Category & Title -->
-          <h5>
-              <strong>
-                <a href="" class="dark-grey-text">Axe brand universal 
-                  <br>oil
-              
-                </a>
-              </strong>
-            </h5>
-          <h4 class="font-weight-bold blue-text">
-            <strong>LKR 100.00</strong>
-          </h4>
-         
-          <i class="fas fa-shopping-cart fa-2x"></i><br>
-          <strong>Quantity</strong>
-          <div style="padding-left: 50px;">
-          <div class="def-number-input number-input safari_only">
-              
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-            <input class="quantity" min="0" name="quantity" value="1" type="number">
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-          </div>
-        </div>
-
-        </div>
-        <!-- Card content -->
-      </div>
-      <!-- Card -->
-    </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="col-lg-3 col-md-6 mb-md-0 mb-4">
-      <!-- Card -->
-      <div class="card align-items-center">
-        <!-- Card image -->
-        <div class="view overlay">
-          <img src="img/items/betadine-solution-10-50ml.jpg" class="card-img-top"
-            alt="">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <!-- Card image -->
-        <!-- Card content -->
-        <div class="card-body text-center">
-          <!-- Category & Title -->
-          <h5>
-              <strong>
-                <a href="" class="dark-grey-text">Betadine solution<br> 10% -50ml
-              
-                </a>
-              </strong>
-            </h5>
-          <h4 class="font-weight-bold blue-text">
-            <strong>LKR 100.00</strong>
-          </h4>
-          <i class="fas fa-shopping-cart fa-2x"></i><br>
-          <strong>Quantity</strong>
-          <div style="padding-left: 50px;">
-          <div class="def-number-input number-input safari_only">
-              
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-            <input class="quantity" min="0" name="quantity" value="1" type="number">
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-          </div>
-        </div>
-        </div>
-        <!-- Card content -->
-      </div>
-      <!-- Card -->
-    </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="col-lg-3 col-md-6">
-      <!-- Card -->
-      <div class="card align-items-center">
-        <!-- Card image -->
-        <div class="view overlay">
-          <img src="img/items/digene-tab-15-pills.jpg" class="card-img-top"
-            alt="">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <!-- Card image -->
-        <!-- Card content -->
-        <div class="card-body text-center">
-            <!-- Category & Title -->
-            <h5>
-                <strong>
-                  <a href="" class="dark-grey-text">Digene tab <br>(15 pills)
-                
-                  </a>
-                </strong>
-              </h5>
-            <h4 class="font-weight-bold blue-text">
-              <strong>LKR 85.05</strong>
-            </h4>
-            <i class="fas fa-shopping-cart fa-2x"></i><br>
-            <strong>Quantity</strong>
-            <div style="padding-left: 50px;">
-            <div class="def-number-input number-input safari_only">
-                
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-              <input class="quantity" min="0" name="quantity" value="1" type="number">
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-            </div>
-          </div>
-        </div>
-        <!-- Card content -->
-      </div>
-      <!-- Card -->
-    </div>
-    <!-- Grid column -->
-
-  </div>
-  <!-- Grid row -->
-
+$sql = "select ID,title,price,image from webHomemed ORDER BY ID desc";
+$result = $con->query($sql);
   
+
+
+while( $row = mysqli_fetch_array($result)){
+
+   echo '<div class="col-lg-3 col-md-6 mb-lg-0 mb-4">'.
+      '<div class="card align-items-center">'.
+        '<div class="view overlay">'.   
+         '<img src ="data:image/jpeg;base64,'.base64_encode($row['image']).'" class="card-img-top">'.
+          '<a>'.
+            '<div class="mask rgba-white-slight">'.'</div>'.
+          '</a>'.
+        '</div>'.
+        '<div class="card-body text-center">'.
+          '<h5>'.
+              '<strong>'.
+                '<a href="" class="dark-grey-text">'.$row['title'].
+                  '<span class="badge badge-pill danger-color">NEW</span>'.
+                '</a>'.
+              '</strong>'.
+            '</h5>'.
+          '<h4 class="font-weight-bold blue-text">'.
+            '<strong>'.$row['price'].'</strong>'.
+          '</h4>'.'<br>'.
+          '<strong>Quantity</strong>'.
+          '<div style="padding-left: 50px;">'.
+          '<div class="def-number-input number-input safari_only">'.
+              
+            '<button  class="minus">'.'</button>'.
+            '<input class="quantity" min="0" name="quantity" value="1" type="number">'.
+            '<button  class="plus">'.'</button>'.
+            
+      '</div>'.
+    
+        '</div>'.
+          '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.
+          
+        
+        '</div>'.
+      '</div>'.
+    '</div>';
+ 
+  }
+
+  echo '</div>';
+    
+ 
+  ?>
+
 
 </section>
 <!-- Section: Products v.3 -->
 
 
-
-
+<hr>
 
 <!-- Section: Products v.3 -->
-<section class="text-center my-5" id="Baby">
+<section class="text-center my-5" id="Baby" style="padding: 80px">
 
     <!-- Section heading -->
     <h2 class="h1-responsive font-weight-bold text-center my-5">Mother & Baby</h2>
    
     <!-- Grid row -->
     <div class="row">
+    <?php
+
+$sql = "select ID,title,price,image from webbabyproducts ORDER BY ID desc";
+$result = $con->query($sql);
   
-      <!-- Grid column -->
-      <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
-        <!-- Card -->
-        <div class="card align-items-center">
-          <!-- Card image -->
-          <div class="view overlay">
-            <img src="img/items/cow-gate-next-steps-4-400g-promo-pack.jpg" class="card-img-top"
-              alt="">
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-          <!-- Card image -->
-          <!-- Card content -->
-          <div class="card-body text-center">
-            <!-- Category & Title -->
-            <h5>
-                <strong>
-                  <a href="" class="dark-grey-text">Cow & Gate Next Steps 4-400g 
-                    
-                  </a>
-                </strong>
-              </h5>
-            <h4 class="font-weight-bold blue-text">
-              <strong>LKR 2,590.00</strong>
-            </h4>
-            <i class="fas fa-shopping-cart fa-2x"></i><br>
-            <strong>Quantity</strong>
-            <div style="padding-left: 50px;">
-            <div class="def-number-input number-input safari_only">
-                
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-              <input class="quantity" min="0" name="quantity" value="1" type="number">
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-            </div>
-          </div>
+
+
+while( $row = mysqli_fetch_array($result)){
+
+   echo '<div class="col-lg-3 col-md-6 mb-lg-0 mb-4">'.
+      '<div class="card align-items-center">'.
+        '<div class="view overlay">'.   
+         '<img src ="data:image/jpeg;base64,'.base64_encode($row['image']).'" class="card-img-top">'.
+          '<a>'.
+            '<div class="mask rgba-white-slight">'.'</div>'.
+          '</a>'.
+        '</div>'.
+        '<div class="card-body text-center">'.
+          '<h5>'.
+              '<strong>'.
+                '<a href="" class="dark-grey-text">'.$row['title'].
+                  /*'<span class="badge badge-pill danger-color">NEW</span>'.*/
+                '</a>'.
+              '</strong>'.
+            '</h5>'.
+          '<h4 class="font-weight-bold blue-text">'.
+            '<strong>'.$row['price'].'</strong>'.
+          '</h4>'.'<br>'.
+          '<strong>Quantity</strong>'.
+          '<div style="padding-left: 50px;">'.
+          '<div class="def-number-input number-input safari_only">'.
+              
+            '<button  class="minus">'.'</button>'.
+            '<input class="quantity" min="0" name="quantity" value="1" type="number">'.
+            '<button  class="plus">'.'</button>'.
+            
+      '</div>'.
+    
+        '</div>'.
+        
+          '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.
           
-          </div>
-          <!-- Card content -->
-        </div>
-        <!-- Card -->
-      </div>
-      <!-- Grid column -->
+        '</div>'.
+      '</div>'.
+    '</div>';
+ 
+  }
+
+  echo '</div>';
+    
+
+  ?>
+
+</section>
+
+<hr>
+
+  <!-- Section: Products v.3 -->
+<section class="text-center my-5" id="personal" style="padding: 80px">
+
+<!-- Section heading -->
+<h2 class="h1-responsive font-weight-bold text-center my-5">Personal Care</h2>
+
+<!-- Grid row -->
+<div class="row">
+<?php
+
+$sql = "select ID,title,price,image from webpersonalcare ORDER BY ID desc";
+$result = $con->query($sql);
+
+
+
+while( $row = mysqli_fetch_array($result)){
+
+echo '<div class="col-lg-3 col-md-6 mb-lg-0 mb-4">'.
+  '<div class="card align-items-center">'.
+    '<div class="view overlay">'.   
+     '<img src ="data:image/jpeg;base64,'.base64_encode($row['image']).'" class="card-img-top">'.
+      '<a>'.
+        '<div class="mask rgba-white-slight">'.'</div>'.
+      '</a>'.
+    '</div>'.
+    '<div class="card-body text-center">'.
+      '<h5>'.
+          '<strong>'.
+            '<a href="" class="dark-grey-text">'.$row['title'].
+              /*'<span class="badge badge-pill danger-color">NEW</span>'.*/
+            '</a>'.
+          '</strong>'.
+        '</h5>'.
+      '<h4 class="font-weight-bold blue-text">'.
+        '<strong>'.$row['price'].'</strong>'.
+      '</h4>'.'<br>'.
+      '<strong>Quantity</strong>'.
+      '<div style="padding-left: 50px;">'.
+      '<div class="def-number-input number-input safari_only">'.
+          
+        '<button  class="minus">'.'</button>'.
+        '<input class="quantity" min="0" name="quantity" value="1" type="number">'.
+        '<button  class="plus">'.'</button>'.
+        
+  '</div>'.
+
+    '</div>'.
+      '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.
+     
+    
+    '</div>'.
+  '</div>'.
+'</div>';
+
+}
+
+echo '</div>';
+
+
+?>
+    
   
-      <!-- Grid column -->
-      <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
-        <!-- Card -->
-        <div class="card align-items-center">
-          <!-- Card image -->
-          <div class="view overlay">
-            <img src="img/items/cow-gate-blue-2-200-g.jpg" class="card-img-top"
-              alt="">
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-          <!-- Card image -->
-          <!-- Card content -->
-          <div class="card-body text-center">
-            <!-- Category & Title -->
-            <h5>
-                <strong>
-                  <a href="" class="dark-grey-text">Cow & Gate Blue 2-200 g
-                  
-                    <span class="badge badge-pill danger-color">NEW</span>
-                  </a>
-                </strong>
-              </h5>
-            <h4 class="font-weight-bold blue-text">
-              <strong>LKR 615.00</strong>
-            </h4>
-           
-            <i class="fas fa-shopping-cart fa-2x"></i><br>
-            <strong>Quantity</strong>
-            <div style="padding-left: 50px;">
-            <div class="def-number-input number-input safari_only">
-                
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-              <input class="quantity" min="0" name="quantity" value="1" type="number">
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-            </div>
-          </div>
-  
-          </div>
-          <!-- Card content -->
-        </div>
-        <!-- Card -->
-      </div>
-      <!-- Grid column -->
-  
-      <!-- Grid column -->
-      <div class="col-lg-3 col-md-6 mb-md-0 mb-4">
-        <!-- Card -->
-        <div class="card align-items-center">
-          <!-- Card image -->
-          <div class="view overlay">
-            <img src="img/items/classic-feeding-bottle-260ml.jpg" class="card-img-top"
-              alt="">
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-          <!-- Card image -->
-          <!-- Card content -->
-          <div class="card-body text-center">
-            <!-- Category & Title -->
-            <h5>
-                <strong>
-                  <a href="" class="dark-grey-text">CLASSIC + FEEDING BOTTLE(260ML)
-                
-                  </a>
-                </strong>
-              </h5>
-            <h4 class="font-weight-bold blue-text">
-              <strong>LKR 1,890.00</strong>
-            </h4>
-            <i class="fas fa-shopping-cart fa-2x"></i><br>
-            <strong>Quantity</strong>
-            <div style="padding-left: 50px;">
-            <div class="def-number-input number-input safari_only">
-                
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-              <input class="quantity" min="0" name="quantity" value="1" type="number">
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-            </div>
-          </div>
-          </div>
-          <!-- Card content -->
-        </div>
-        <!-- Card -->
-      </div>
-      <!-- Grid column -->
-  
-      <!-- Grid column -->
-      <div class="col-lg-3 col-md-6">
-        <!-- Card -->
-        <div class="card align-items-center">
-          <!-- Card image -->
-          <div class="view overlay">
-            <img src="img/items/pigeon-health-hygiene-care-08630m.jpg" class="card-img-top"
-              alt="">
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-          <!-- Card image -->
-          <!-- Card content -->
-          <div class="card-body text-center">
-              <!-- Category & Title -->
-              <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">Pigeon Health & <br>Hygiene Care 
-                  
-                    </a>
-                  </strong>
-                </h5>
-              <h4 class="font-weight-bold blue-text">
-                <strong>LKR 2,365.50</strong>
-              </h4>
-              <i class="fas fa-shopping-cart fa-2x"></i><br>
-              <strong>Quantity</strong>
-              <div style="padding-left: 50px;">
-              <div class="def-number-input number-input safari_only">
-                  
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                <input class="quantity" min="0" name="quantity" value="1" type="number">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-              </div>
-            </div>
-          </div>
-          <!-- Card content -->
-        </div>
-        <!-- Card -->
-      </div>
-      <!-- Grid column -->
-  
-    </div>
-    <!-- Grid row -->
-  
+  </section>
+  <hr>
+
+<!-- Section: Products v.3 -->
+<section class="text-center my-5" id="personal" style="padding: 80px">
+
+<!-- Section heading -->
+<h2 class="h1-responsive font-weight-bold text-center my-5">Pet Care</h2>
+
+<!-- Grid row -->
+<div class="row">
+<?php
+
+$sql = "select ID,title,price,image from webpetcare ORDER BY ID desc";
+$result = $con->query($sql);
+
+
+
+while( $row = mysqli_fetch_array($result)){
+
+echo '<div class="col-lg-3 col-md-6 mb-lg-0 mb-4">'.
+  '<div class="card align-items-center">'.
+    '<div class="view overlay">'.   
+     '<img src ="data:image/jpeg;base64,'.base64_encode($row['image']).'" class="card-img-top">'.
+      '<a>'.
+        '<div class="mask rgba-white-slight">'.'</div>'.
+      '</a>'.
+    '</div>'.
+    '<div class="card-body text-center">'.
+      '<h5>'.
+          '<strong>'.
+            '<a href="" class="dark-grey-text">'.$row['title'].
+              /*'<span class="badge badge-pill danger-color">NEW</span>'.*/
+            '</a>'.
+          '</strong>'.
+        '</h5>'.
+      '<h4 class="font-weight-bold blue-text">'.
+        '<strong>'.$row['price'].'</strong>'.
+      '</h4>'.'<br>'.
+      '<strong>Quantity</strong>'.
+      '<div style="padding-left: 50px;">'.
+      '<div class="def-number-input number-input safari_only">'.
+          
+        '<button  class="minus">'.'</button>'.
+        '<input class="quantity" min="0" name="quantity" value="1" type="number">'.
+        '<button  class="plus">'.'</button>'.
+        
+  '</div>'.
+
+    '</div>'.
+      '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.
+     
+    
+    '</div>'.
+  '</div>'.
+'</div>';
+
+}
+
+echo '</div>';
+
+$con->close();
+?>
     
   
   </section>
 
-
-
-
+  <hr>
 <!--Section: Contact v.2-->
 <section class="contactus" id="contactus">
 <div style="padding: 100px">
