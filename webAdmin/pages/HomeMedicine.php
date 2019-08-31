@@ -195,7 +195,7 @@ if(isset($_POST['submit'])){
                             <span class = "error_all">* <?php echo "$photoValidationError"; ?></span>
                         </div>
 
-                        <input type = "submit" value = "Publish event" name = "submit">
+                        <input type = "submit" value = "Publish" name = "submit">
                         <button type="reset" class="btn btn-default">Clear All</button>
 
                     </form>

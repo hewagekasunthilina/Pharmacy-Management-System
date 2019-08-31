@@ -390,186 +390,64 @@
   <!-- Grid row -->
   <div class="row">
 
-    <!-- Grid column -->
-    <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
-      <!-- Card -->
-      <div class="card align-items-center">
-        <!-- Card image -->
-        <div class="view overlay">
-          <img src="img/items/listerine-mouthwash-original.jpg" class="card-img-top"
-            alt="">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <!-- Card image -->
-        <!-- Card content -->
-        <div class="card-body text-center">
-          <!-- Category & Title -->
-          <h5>
-              <strong>
-                <a href="" class="dark-grey-text">LISTERINE MOUTHWASH ORIGINAL
-                  <span class="badge badge-pill danger-color">NEW</span>
-                </a>
-              </strong>
-            </h5>
-          <h4 class="font-weight-bold blue-text">
-            <strong>LKR 150.00</strong>
-          </h4>
-          <i class="fas fa-shopping-cart fa-2x"></i><br>
-          <strong>Quantity</strong>
-          <div style="padding-left: 50px;">
-          <div class="def-number-input number-input safari_only">
-              
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-            <input class="quantity" min="0" name="quantity" value="1" type="number">
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-          </div>
-        </div>
-        
-        </div>
-        <!-- Card content -->
-      </div>
-      <!-- Card -->
-    </div>
-    <!-- Grid column -->
+  <?php
 
-    <!-- Grid column -->
-    <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
-      <!-- Card -->
-      <div class="card align-items-center">
-        <!-- Card image -->
-        <div class="view overlay">
-          <img src="img/items/axe-brand-universal-oil.jpg" class="card-img-top"
-            alt="">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <!-- Card image -->
-        <!-- Card content -->
-        <div class="card-body text-center">
-          <!-- Category & Title -->
-          <h5>
-              <strong>
-                <a href="" class="dark-grey-text">Axe brand universal 
-                  <br>oil
-              
-                </a>
-              </strong>
-            </h5>
-          <h4 class="font-weight-bold blue-text">
-            <strong>LKR 100.00</strong>
-          </h4>
-         
-          <i class="fas fa-shopping-cart fa-2x"></i><br>
-          <strong>Quantity</strong>
-          <div style="padding-left: 50px;">
-          <div class="def-number-input number-input safari_only">
-              
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-            <input class="quantity" min="0" name="quantity" value="1" type="number">
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-          </div>
-        </div>
+$servername  = "localhost";
+$username = "root";
+$password = "";
+$dbname = "nimedco";
 
-        </div>
-        <!-- Card content -->
-      </div>
-      <!-- Card -->
-    </div>
-    <!-- Grid column -->
+$con = new mysqli($servername,$username,$password,$dbname);
 
-    <!-- Grid column -->
-    <div class="col-lg-3 col-md-6 mb-md-0 mb-4">
-      <!-- Card -->
-      <div class="card align-items-center">
-        <!-- Card image -->
-        <div class="view overlay">
-          <img src="img/items/betadine-solution-10-50ml.jpg" class="card-img-top"
-            alt="">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <!-- Card image -->
-        <!-- Card content -->
-        <div class="card-body text-center">
-          <!-- Category & Title -->
-          <h5>
-              <strong>
-                <a href="" class="dark-grey-text">Betadine solution<br> 10% -50ml
-              
-                </a>
-              </strong>
-            </h5>
-          <h4 class="font-weight-bold blue-text">
-            <strong>LKR 100.00</strong>
-          </h4>
-          <i class="fas fa-shopping-cart fa-2x"></i><br>
-          <strong>Quantity</strong>
-          <div style="padding-left: 50px;">
-          <div class="def-number-input number-input safari_only">
-              
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-            <input class="quantity" min="0" name="quantity" value="1" type="number">
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-          </div>
-        </div>
-        </div>
-        <!-- Card content -->
-      </div>
-      <!-- Card -->
-    </div>
-    <!-- Grid column -->
 
-    <!-- Grid column -->
-    <div class="col-lg-3 col-md-6">
-      <!-- Card -->
-      <div class="card align-items-center">
-        <!-- Card image -->
-        <div class="view overlay">
-          <img src="img/items/digene-tab-15-pills.jpg" class="card-img-top"
-            alt="">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <!-- Card image -->
-        <!-- Card content -->
-        <div class="card-body text-center">
-            <!-- Category & Title -->
-            <h5>
-                <strong>
-                  <a href="" class="dark-grey-text">Digene tab <br>(15 pills)
-                
-                  </a>
-                </strong>
-              </h5>
-            <h4 class="font-weight-bold blue-text">
-              <strong>LKR 85.05</strong>
-            </h4>
-            <i class="fas fa-shopping-cart fa-2x"></i><br>
-            <strong>Quantity</strong>
-            <div style="padding-left: 50px;">
-            <div class="def-number-input number-input safari_only">
-                
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-              <input class="quantity" min="0" name="quantity" value="1" type="number">
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-            </div>
-          </div>
-        </div>
-        <!-- Card content -->
-      </div>
-      <!-- Card -->
-    </div>
-    <!-- Grid column -->
 
-  </div>
-  <!-- Grid row -->
-
+$sql = "select ID,title,price,image from webHomemed ORDER BY ID desc";
+$result = $con->query($sql);
   
+
+
+while( $row = mysqli_fetch_array($result)){
+
+   echo '<div class="col-lg-3 col-md-6 mb-lg-0 mb-4">'.
+      '<div class="card align-items-center">'.
+        '<div class="view overlay">'.   
+         '<img src ="data:image/jpeg;base64,'.base64_encode($row['image']).'" class="card-img-top">'.
+          '<a>'.
+            '<div class="mask rgba-white-slight">'.'</div>'.
+          '</a>'.
+        '</div>'.
+        '<div class="card-body text-center">'.
+          '<h5>'.
+              '<strong>'.
+                '<a href="" class="dark-grey-text">'.$row['title'].
+                  '<span class="badge badge-pill danger-color">NEW</span>'.
+                '</a>'.
+              '</strong>'.
+            '</h5>'.
+          '<h4 class="font-weight-bold blue-text">'.
+            '<strong>'.$row['price'].'</strong>'.
+          '</h4>'.
+          '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.'<br>'.
+          '<strong>Quantity</strong>'.
+          '<div style="padding-left: 50px;">'.
+          '<div class="def-number-input number-input safari_only">'.
+              
+            '<button  class="minus">'.'</button>'.
+            '<input class="quantity" min="0" name="quantity" value="1" type="number">'.
+            '<button  class="plus">'.'</button>'.
+      '</div>'.
+        '</div>'.
+        
+        '</div>'.
+      '</div>'.
+    '</div>';
+ 
+  }
+
+  echo '</div>';
+    
+  $con->close();
+  ?>
 
 </section>
 <!-- Section: Products v.3 -->
