@@ -61,8 +61,8 @@ $con = new mysqli($servername,$username,$password,$dbname);
             <a class="dropdown-item" href="#pres">Prescription Medicine</a>
             <a class="dropdown-item" href="#homemed">Home Medicine</a>
             <a class="dropdown-item" href="#Baby">Mother & Baby</a>
-            <a class="dropdown-item" href="#">Personal Care</a>
-            <a class="dropdown-item" href="#">Pet Care</a>
+            <a class="dropdown-item" href="#personal">Personal Care</a>
+            <a class="dropdown-item" href="#pet">Pet Care</a>
           </div>
         </li>
 
@@ -514,8 +514,70 @@ while( $row = mysqli_fetch_array($result)){
 
   echo '</div>';
     
-  $con->close();
+
   ?>
+
+</section>
+
+  <!-- Section: Products v.3 -->
+<section class="text-center my-5" id="personal" style="padding: 80px">
+
+<!-- Section heading -->
+<h2 class="h1-responsive font-weight-bold text-center my-5">Personal Care</h2>
+
+<!-- Grid row -->
+<div class="row">
+<?php
+
+$sql = "select ID,title,price,image from webpersonalcare ORDER BY ID desc";
+$result = $con->query($sql);
+
+
+
+while( $row = mysqli_fetch_array($result)){
+
+echo '<div class="col-lg-3 col-md-6 mb-lg-0 mb-4">'.
+  '<div class="card align-items-center">'.
+    '<div class="view overlay">'.   
+     '<img src ="data:image/jpeg;base64,'.base64_encode($row['image']).'" class="card-img-top">'.
+      '<a>'.
+        '<div class="mask rgba-white-slight">'.'</div>'.
+      '</a>'.
+    '</div>'.
+    '<div class="card-body text-center">'.
+      '<h5>'.
+          '<strong>'.
+            '<a href="" class="dark-grey-text">'.$row['title'].
+              /*'<span class="badge badge-pill danger-color">NEW</span>'.*/
+            '</a>'.
+          '</strong>'.
+        '</h5>'.
+      '<h4 class="font-weight-bold blue-text">'.
+        '<strong>'.$row['price'].'</strong>'.
+      '</h4>'.
+      '<i class="fas fa-shopping-cart fa-2x">'.'</i>'.'<br>'.
+      '<strong>Quantity</strong>'.
+      '<div style="padding-left: 50px;">'.
+      '<div class="def-number-input number-input safari_only">'.
+          
+        '<button  class="minus">'.'</button>'.
+        '<input class="quantity" min="0" name="quantity" value="1" type="number">'.
+        '<button  class="plus">'.'</button>'.
+        
+  '</div>'.
+
+    '</div>'.
+    
+    '</div>'.
+  '</div>'.
+'</div>';
+
+}
+
+echo '</div>';
+
+$con->close();
+?>
     
   
   </section>
