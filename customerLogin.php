@@ -7,54 +7,29 @@ $dbname = "nimedco";
 
 $con = new mysqli($servername,$username,$password,$dbname);
 
-if($_SERVER["REQUEST_METHOD"]=="POST"){
-
-  $email ="";
-  $passwordtext ="";
-
-if(isset($_POST['customerLogin'])){
-    $email = $_POST['email'];
-    $passwordtext = $_POST['password'];
-}
-
-
-
-    $hashcode  ="SELECT password from customer where email = '$email'";
-    $email12  ="SELECT count(email) from customer where email = '$email'";
-    $result1 = $con->query($hashcode);
-    $result2 = $con->query($email12);
-
-
-
-
-
-while($row2 = mysqli_fetch_array($result2)){
-
-    if((1==$row2['count(email)'])){
-
-
-
-      while($row1 = mysqli_fetch_array($result1)){
-        if(password_verify($passwordtext,$row1['password'])){
-
-            $message = "login is successfull";
-            header('location:delivery.php');
-          }
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
       
+      $email = mysqli_real_escape_string($con,$_POST['email']);
+      $mypassword = mysqli_real_escape_string($con,$_POST['password']); 
+      
+      $sql = "SELECT id FROM customer WHERE email = '$email' and password = '$mypassword'";
+      $result = mysqli_query($con,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
+      
+      $count = mysqli_num_rows($result);
+      
+      // If result matched $email and $mypassword, table row must be 1 row
+		
+      if($count == 1) {
+         session_register("email");
+         $_SESSION['login_user'] = $email;
+         
+         header("location:delivery.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
       }
-    }
-
-    else{
-          $message = "login is unsuccessfull";
-    }
-
-}
-
-
-
-}
-
-
- ?>
-
-
+   }
+?>
