@@ -17,40 +17,49 @@
   
 </head>
 <body>
-  <!--Navbar-->
+    <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
-    <!-- Navbar brand -->
-    <a class="navbar-brand" href="salary_emp.php">NimedcoPharmacy - Salary Managment</a>
-  
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
-  
-      <!-- Links -->
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="salary_emp.php">Time Tracker
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
+<!-- Navbar brand -->
+<a class="navbar-brand" href="index.html">NimedcoPharmacy - Salary Managment</a>
 
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="salary_leave.php">Request Leave
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
+<!-- Collapse button -->
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+  aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
 
-    <!-- Collapsible content -->
+<!-- Collapsible content -->
+<div class="collapse navbar-collapse" id="basicExampleNav">
+
+  <!-- Links -->
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="salary_dashboard.php">Dasboard
+        <span class="sr-only">(current)</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="salary_attendance_view.php">Attendance</a>
+      <span class="sr-only">(current)</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="salary_payroll.php">Payroll</a>
+    </li>
   
-  </nav>
-  <!--/.Navbar-->
+
+  </ul>
+  <!-- Links -->
+
+  <form class="form-inline my-2 my-lg-0 align-self-stretch">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
+<!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
   <br><br>
  
    

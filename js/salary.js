@@ -3,14 +3,14 @@ function empLeaveValidation()
     var ldate = document.forms["leaveForm"]["ldate"].value;
     var eid = document.forms["leaveForm"]["eid"].value;
     var reason = document.forms["leaveForm"]["reason"].value;
-    var email = document.forms["leaveForm"]["email"].value;
+    var e_mail = document.forms["leaveForm"]["e_mail"].value;
     var cnum = document.forms["leaveForm"]["cnum"].value;
     
     var num = /^[0-9]+$/;
     var reas = /^[a-zA-Z]+$/;
     var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-    if ((ldate == null || ldate == "") && (eid == null || eid == "") && (reason == null || reason == "") && (email == null || email == "") && (ecnum == null || cnum == "")){
+    if ((ldate == null || ldate == "") && (eid == null || eid == "") && (reason == null || reason == "") && (e_mail == null || e_mail == "") && (ecnum == null || cnum == "")){
         alert("Plase Fill the Form");
         return false;
     }
@@ -22,23 +22,24 @@ function empLeaveValidation()
         
     
         if (reason == null || reason == ""){
-            alert("Employee Id must be filled");
+            alert("Reason must be filled");
             return false;
         }
         else if(!(reason.match(reas))){
-            alert("Invalid Email format")
+            alert("Invalid Reason format")
             return false;
         }
 
     
-        if (email == null || email == ""){
+        if (e_mail == null || e_mail == ""){
             alert("Email must be filled");
             return false;
-        }else if(!(email.match(mail))){
+        }
+        else if(!(e_mail.match(mail))){
             alert("Invalid Email format")
             return false;
         }
-    
+
        
         if (cnum == null || cnum == ""){
             alert("Contact must be filled out ");

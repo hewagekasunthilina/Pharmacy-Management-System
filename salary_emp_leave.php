@@ -21,7 +21,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="salary_emp.html">NimedcoPharmacy - Salary Managment</a>
+    <a class="navbar-brand" href="salary_emp.php">NimedcoPharmacy - Salary Managment</a>
   
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -35,14 +35,14 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="salary_emp.html">Time Tracker
+          <a class="nav-link" href="salary_emp.php">Time Tracker
             <span class="sr-only">(current)</span>
           </a>
         </li>
 
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="salary_leave.html">Request Leave
+            <a class="nav-link" href="salary_leave.php">Request Leave
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -90,7 +90,7 @@
           <!-- Default input -->
           <div class="form-group col-md-6">
             <label for="inputCity">Email</label>
-            <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+            <input name="e_mail" type="email" class="form-control" id="e_mail" placeholder="Email">
           </div>
           <!-- Default input -->
           <div class="form-group col-md-6">
@@ -99,7 +99,7 @@
           </div>
         </div>
         <!-- Grid row -->
-        <button type="submit" name="lrequest" class="btn btn-primary btn-md" onclick="javascript: return empLeaveValidation();">REGISTER</button>
+        <button type="submit" name="lrequest" class="btn btn-primary btn-md" onclick="javascript: return empLeaveValidation();" >REGISTER</button>
       </form>
       <!-- Extended default form grid --></div> 
     </div>
@@ -113,7 +113,7 @@ if(isset($_POST['lrequest'])){
   $eId = $_POST['eid'];
   $Type = $_POST['type'];
   $Reason = $_POST['reason'];
-  $Email = $_POST['email'];
+  $Email = $_POST['e_mail'];
   $cNum = $_POST['cnum'];
 
   $sql = "INSERT INTO salary_leave (date,empID,type,reason,email,cnum)
