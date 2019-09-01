@@ -218,6 +218,15 @@ if(isset($_POST['submit'])){
     $sql = "select ID,title,price,image from webpetcare";
     $result = $con->query($sql);
 
+    echo '<br/>'.'<h1>Edit Item</h1>'.'<hr>'.'<br>';
+
+    echo    '<div class="form-group">'.'<form action="editpetcare.php" method="POST">'.'<br>'.
+             '<lable> ID :  </lable>'.'<input type="text" name="id"  class="form-control" placeholder="Enter product ID">'.' <br>'.
+            '<lable> Name : </lable>'. '<input type="text" name ="newName"  class="form-control" placeholder="Enter New product Name">'.' <br>'.
+            '<lable> Price : </lable>'.  '<input type="text" name ="newPrice"  class="form-control" placeholder="Enter New product Price">'.'<br>'.
+            '<input type="submit" value="update">'. '<br>'. '<br>'.'<br>'.'<br>'.
+        '</form>'.'<div>'.'<hr>';
+
     echo '<br/>'.'<h1>Item Delete</h1>'.'<hr>';
 
 
@@ -227,7 +236,7 @@ if(isset($_POST['submit'])){
 
 
     echo '<div style="text-align: center;margin-top:5px;margin-left:15px;display: inline-block;word-wrap: break-word;  border-radius: 25px;
-  border: 2px solid #DCDCDC;width: 200px;height: 150px; border-colorrgb(220,220,220);">'.'<br/>'.'<div style= "padding: 10px; ">'.$row['title'].'</br>'.$row['price'].'</br>'.'</br>'.'<button  style = "background-color: #555555;border: none;width:90px;height:30px">'.'<a href = "delpetcare.php?id10='.$row['ID'].'" style="color:white">delete </a>'.'</button>'.'</br>'.'</br>'.'</div>'.'</div>';
+  border: 2px solid #DCDCDC;width: 200px;height: 150px; border-colorrgb(220,220,220);">'.'<br/>'.'<div style= "padding: 10px; ">'.'ID : '.$row['ID'].'<br>'.$row['title'].'</br>'.$row['price'].'</br>'.'</br>'.'<button  style = "background-color: #555555;border: none;width:90px;height:30px">'.'<a href = "delpetcare.php?id10='.$row['ID'].'" style="color:white">delete </a>'.'</button>'.'</br>'.'</br>'.'</div>'.'</div>';
 
     }
 

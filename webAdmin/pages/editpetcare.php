@@ -13,11 +13,11 @@ session_start();
         $id = $_POST['id'];
 
     
-         $sql = "UPDATE webpersonalcare SET title='$newName',price = '$newPrice' WHERE ID ='$id'";
+         $sql = "UPDATE webpetcare SET title='$newName',price = '$newPrice' WHERE ID ='$id'";
         
          $con->query($sql);
 
-         header('location:webpersonalcare.php');
+         header('location:petcare.php');
          
     $con->close();
 ?>
