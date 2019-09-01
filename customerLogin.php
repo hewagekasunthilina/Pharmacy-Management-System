@@ -1,21 +1,23 @@
 <?php
 
-$servername  = "localhost";
+/*$servername  = "localhost";
 $username = "root";
 $password = "";
 $dbname = "nimedco";
 
-$con = new mysqli($servername,$username,$password,$dbname);
+$con = new mysqli($servername,$username,$password,$dbname);*/
+
+include "connection.php";
 
    session_start();
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       
-      $email = mysqli_real_escape_string($con,$_POST['email']);
-      $mypassword = mysqli_real_escape_string($con,$_POST['password']); 
+      $email = mysqli_real_escape_string($conn,$_POST['email']);
+      $mypassword = mysqli_real_escape_string($conn,$_POST['password']); 
       
       $sql = "SELECT id FROM customer WHERE email = '$email' and password = '$mypassword'";
-      $result = mysqli_query($con,$sql);
+      $result = mysqli_query($conn,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
       
