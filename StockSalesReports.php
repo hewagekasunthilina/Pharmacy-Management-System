@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Out of Stock | Nimedco Pharmacy</title>
+  <title>Sales Reports | Nimedco Pharmacy</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -55,10 +55,6 @@
                 
               </div>
             </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="stock.php">Stock</a>
-            </li>
       
           </ul>
           <!-- Links -->
@@ -75,132 +71,9 @@
   <br><br>
 
 
-  <?php
-	       $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
-        	$result = $mysqli->query("SELECT * FROM stockitem WHERE ItemQuantity = 0 order by id") or die($mysqli->error);
-	        //pre_r($result);
-        ?>
 
-  <div class="container">
-      <div class="row">
-        <div class="col">
-          <h2>OUT OF STOCK</h2>
-          <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-              <thead class="bg-info" style="color: white;">
-                <tr>
-                  <th class="th-sm">ItemID
-                  </th>
-                  <th class="th-sm">ItemName
-                  </th>
-                  <th class="th-sm">Description
-                  </th>
-                  <th class="th-sm">Category
-                  </th>
-                  <th class="th-sm">Price
-                  </th>
-          
-                </tr>
-              </thead>
-              <tbody>
-                
-              <?php
-		          	while($row = $result->fetch_assoc()): ?>
-			          	<tr>
-					          <td><?php echo $row['ItemID']; ?></td>
-                    <td><?php echo $row['ItemName']; ?></td>
-                    <td><?php echo $row['Description']; ?></td>
-                    <td><?php echo $row['Category']; ?></td>
-                    <td><?php echo $row['Price']; ?></td>
-				          	
-			          	</tr>
-			        <?php endwhile; ?>
 
-              </tbody>
-              <!--
-              <tfoot>
-                <tr>
-                  <th>ItemID
-                  </th>
-                  <th>ItemName
-                  </th>
-                  <th>Description
-                  </th>
-                  <th>Category
-                  </th>
-                  <th>Price
-                  </th>
-                  <th >Action
-                  </th>
-                </tr>
-              </tfoot> -->
-            </table>
-
-        </div>
-        <div class="col">
-            <h2>RUNNING OUT OF STOCK</h2>
-
-            <?php
-	       $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
-        	$result2 = $mysqli->query("SELECT * FROM stockitem WHERE (ItemQuantity <= 10) and (ItemQuantity != 0) order by ItemQuantity") or die($mysqli->error);
-	        //pre_r($result);
-        ?>
-
-            <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-              <thead class="bg-info" style="color: white;">
-                <tr>
-                  <th class="th-sm">ItemID
-                  </th>
-                  <th class="th-sm">ItemName
-                  </th>
-                  <th class="th-sm">Description
-                  </th>
-                  <th class="th-sm">Category
-                  </th>
-                  <th class="th-sm">Price
-                  </th>
-                  <th class="th-sm">Qty
-                  </th>
-          
-                </tr>
-              </thead>
-              <tbody>
-                
-              <?php
-		          	while($row = $result2->fetch_assoc()): ?>
-			          	<tr>
-					          <td><?php echo $row['ItemID']; ?></td>
-                    <td><?php echo $row['ItemName']; ?></td>
-                    <td><?php echo $row['Description']; ?></td>
-                    <td><?php echo $row['Category']; ?></td>
-                    <td><?php echo $row['Price']; ?></td>
-                    <td><?php echo $row['ItemQuantity']; ?></td>
-				          	
-			          	</tr>
-			        <?php endwhile; ?>
-
-              </tbody>
-              <!--
-              <tfoot>
-                <tr>
-                  <th>ItemID
-                  </th>
-                  <th>ItemName
-                  </th>
-                  <th>Description
-                  </th>
-                  <th>Category
-                  </th>
-                  <th>Price
-                  </th>
-                  <th >Action
-                  </th>
-                </tr>
-              </tfoot> -->
-            </table>
-
-        </div>
-      </div>
-    </div>
+ 
 
 
 
@@ -209,7 +82,7 @@
 
 
 
-<br><br><br>
+
 
 
 
