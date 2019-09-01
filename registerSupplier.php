@@ -59,6 +59,8 @@
   
       </ul>
       <!-- Links -->
+
+      
   
       <form class="form-inline my-2 my-lg-0 align-self-stretch">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -75,25 +77,40 @@
 
 
 
-
+  
   <div class="container">
-    <div class="row">
-      <div class="col-md-5"><h2>REGISTER</h2>  
+    <div class="row"  style="margin-left:300px;">
+      <div><h2 style="margin-left:150px;">REGISTER</h2>  
         <br>    
-        <!-- Extended default form grid -->
-        <form id="myform1" method="POST">
-          <!-- Grid row -->
-          <div class="form-row">
+        
+        <?php require_once 'validateSupplier.php';?>
+
+        <?php
+        if (isset($_SESSION['message'])):?>
+
+        <div class = "alert alert-<?=$_SESSION['msg_type']?>">
+
+          <?php 
+              echo $_SESSION['message'];
+              unset($_SESSION['message']);
+          ?>
+         </div>
+         <?php endif ?> 
+
+
+        <form id="myform1" method="POST" action="validateSupplier.php">
+         <input type = "hidden" name = "id" value = "<?php echo $id; ?>">
+          <div class="form-row" >
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="supplierid">SupplireID</label>
-              <input type="text" class="form-control" id="supplierid" placeholder="SupplireID" name="supplerid">
+              <input type="text" class="form-control" id="supplierid" value="<?php echo $supplierid; ?>" placeholder="SupplireID" name="supplierid" >
               <span id="supplerId" class="text-danger font-weight-bold"></span>
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+              <input type="text" class="form-control" id="name" value="<?php echo $name;?>" placeholder="Name" name="name">
               <span class="helper-text"></span>
             </div>
           </div>
@@ -102,13 +119,13 @@
           <!-- Default input -->
           <div class="form-group">
             <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" placeholder="1234 Main St" name="address">
+            <input type="text" class="form-control" id="address" value="<?php echo $address;?>" placeholder="1234 Main St" name="address">
             <span class="helper-text"></span>
           </div>
           <!-- Default input -->
           <div class="form-group">
             <label for="brand">Medicine Brand</label>
-            <input type="text" class="form-control" id="brand" placeholder="SPC,MPC,ACC" name="brand">
+            <input type="text" class="form-control" id="brand" value="<?php echo $brand;?>" placeholder="SPC,MPC,ACC" name="brand">
             <span id="Brand" class="text-danger font-weight-bold"></span>
           </div>
           <!-- Grid row -->
@@ -116,23 +133,35 @@
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+              <input type="email" class="form-control" id="email" value="<?php echo $email;?>" placeholder="Email" name="email">
               <span class="helper-text"></span>
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="contact">Contact Number</label>
-              <input type="text" class="form-control" id="contact" placeholder="xxxxxxxxxx" name="contact">
+              <input type="text" class="form-control" id="contact" value="<?php echo $contact;?>" placeholder="xxxxxxxxxx" name="contact">
               <span class="helper-text"></span>
             </div>
           </div>
-          <!-- Grid row -->
-          <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateRegisterForm();">REGISTER</button>
+          <?php
+          if ($update == true):
+          ?>
+          <a href="registerSupplier.php"><button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateRegisterForm();" name="UPDATE">UPDATE</button></a>
+          <?php else: ?>  
+          <a href="registerSupplier.php"><button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateRegisterForm();" name="REGISTER">REGISTER</button></a>
+          <?php endif; ?>
         </form>
         <!-- Extended default form grid --></div>
-      <div class="col-md-1"></div>
-      <div class="col-md-6"><h2>SUPPLIERS</h2>  
-        <br>    
+     
+      <br><br>
+      <div style="margin-left:-402px;margin-top:50px"><h2>SUPPLIERS</h2>  
+        <br>
+
+        <?php
+          $mysqli = new mysqli('localhost', 'root', '', 'supplier') or die (mysqli_error($mysqli));
+          $result = $mysqli->query("SELECT * FROM supplierdetails") or die($mysqli->error);
+          //pre_r($result);
+          ?>    
         <!-- Extended default form grid -->
         <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
@@ -149,93 +178,38 @@
                 </th>
                 <th class="th-sm">Contact
                 </th>
+                <th class="th-sm">Edit
+                </th>
+                <th class="th-sm">Delete
+                </th>
+                
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>S1</td>
-                <td>MAdhawa Amarasinghe</td>
-                <td>Kuliyapitiya</td>
-                <td>Panadol</td>
-                <td>madhawa@gmail.com</td>
-                <td>0715864875</td>
-              </tr>
-              <tr>
-                <td>S2</td>
-                <td>Kasun Thilina</td>
-                <td>Horana</td>
-                <td>coraxD</td>
-                <td>kasun@gmail.com</td>
-                <td>07758469257</td>
-              </tr>
-              <tr>
-                <td>Ashton Cox</td>
-                <td>Junior Technical Author</td>
-                <td>San Francisco</td>
-                <td>66</td>
-                <td>2009/01/12</td>
-                <td>$86,000</td>
-              </tr>
-              <tr>
-                <td>Cedric Kelly</td>
-                <td>Senior Javascript Developer</td>
-                <td>Edinburgh</td>
-                <td>22</td>
-                <td>2012/03/29</td>
-                <td>$433,060</td>
-              </tr>
-              <tr>
-                <td>Airi Satou</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>33</td>
-                <td>2008/11/28</td>
-                <td>$162,700</td>
-              </tr>
-              <tr>
-                <td>Brielle Williamson</td>
-                <td>Integration Specialist</td>
-                <td>New York</td>
-                <td>61</td>
-                <td>2012/12/02</td>
-                <td>$372,000</td>
-              </tr>
-              <tr>
-                <td>Herrod Chandler</td>
-                <td>Sales Assistant</td>
-                <td>San Francisco</td>
-                <td>59</td>
-                <td>2012/08/06</td>
-                <td>$137,500</td>
-              </tr>
-              <tr>
-                <td>Rhona Davidson</td>
-                <td>Integration Specialist</td>
-                <td>Tokyo</td>
-                <td>55</td>
-                <td>2010/10/14</td>
-                <td>$327,900</td>
-              </tr>
 
-            </tbody>
-            <tfoot>
+            <?php
+              while ($row = $result->fetch_assoc()):?>
+              
               <tr>
-                <th>Name
-                </th>
-                <th>Position
-                </th>
-                <th>Office
-                </th>
-                <th>Age
-                </th>
-                <th>Start date
-                </th>
-                <th>Salary
-                </th>
+                  <td><?php echo $row['supplierid']; ?></td>
+                  <td><?php echo $row['name']; ?></td>
+                  <td><?php echo $row['address']; ?></td>
+                  <td><?php echo $row['brand']; ?></td>
+                  <td><?php echo $row['email']; ?></td>
+                  <td><?php echo $row['contact']; ?></td>
+                  <td><a href="registerSupplier.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">Edit</a></td>
+                  <td><a href="validateSupplier.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
               </tr>
-            </tfoot>
-          </table>
-        <!-- Extended default form grid --></div>
+                  <?php endwhile; ?>
+                
+            </table>
+      </div>
+      <?php
+          function pre_r( $array ) {
+            echo '<pre>';
+            print_r($array);
+            echo '</pre>';
+          }
+      ?> 
     </div>
   </div>
 
