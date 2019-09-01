@@ -1,4 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+</head>
+<body>
+
+
 <?php
+
+
 $dbhost = 'localhost';
 $dbuser = 'root';
 $dbpass = '';
@@ -11,7 +25,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT empID, basic, tet FROM salary_payroll";
+$sql = "SELECT empID, basic FROM salary_payroll";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -27,3 +41,7 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
+
+</body>
+
+</html>
