@@ -5,11 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-<<<<<<< HEAD
-  <title>Stock Report | Nimedco Pharmacy</title>
-=======
   <title>Stock Reports | Nimedco Pharmacy</title>
->>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -75,57 +71,10 @@
   <br><br>
 
 
-<<<<<<< HEAD
-  
-
-  <?php
-	       $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
-        	$result = $mysqli->query("SELECT * FROM stockitem order by id") or die($mysqli->error);
-	        //pre_r($result);
-        ?>
-
-  <div class="container">
-      <div class="row">
-      <h2>STOCK REPORT</h2>
-      <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-              <thead class="bg-info" style="color: white;">
-                <tr>
-                  <th class="th-sm">ItemID
-                  </th>
-                  <th class="th-sm">ItemName
-                  </th>
-                  
-                  <th class="th-sm">Price
-                  </th>
-                  <th class="th-sm">Qty
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                
-              <?php
-		          	while($row = $result->fetch_assoc()): ?>
-			          	<tr>
-					          <td><b><?php echo $row['ItemID']; ?></b></td>
-                    <td><b><?php echo $row['ItemName']; ?></b></td>
-                    <td><b><?php echo $row['Price']; ?></b></td>
-                    <td><b><?php echo $row['ItemQuantity']; ?></b></td>
-				          	
-			          	</tr>
-			        <?php endwhile; ?>
-
-              </tbody>
-            
-            </table>
-
-      </div>
-    </div>
-=======
 
 
  
 
->>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
 
 
 
@@ -134,10 +83,6 @@
 
 
 
-<<<<<<< HEAD
-<br><br><br>
-=======
->>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
 
 
 
