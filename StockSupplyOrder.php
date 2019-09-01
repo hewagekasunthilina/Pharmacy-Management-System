@@ -210,7 +210,7 @@
 
         </div>
         <?php
-	       $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
+	       $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
         	$result = $mysqli->query("SELECT * FROM StockSupplyOrder order by id desc limit 0, 7") or die($mysqli->error);
 	        //pre_r($result);
         ?>

@@ -33,10 +33,10 @@
                     <th class="th-sm">Paid Date
                       </th>
                   </tr>
-                </thead>'
-                <?php
+                </thead>
+                '.<?php.'
                 
-             $reterive_query = "SELECT * FROM  employee ";
+             '.$reterive_query = "SELECT * FROM  employee ";.'
             $result = $conn->query($reterive_query) or die($conn -> error);
          
                 while($rows = mysqli_fetch_assoc($result))
