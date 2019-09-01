@@ -223,7 +223,7 @@ if(isset($_POST['submit'])){
     echo '<br/>'.'<h1>Edit Item</h1>'.'<hr>'.'<br>';
 
     echo    '<div class="form-group">'.'<form action="editbabyproducts.php" method="POST">'.
-             '<lable> ID :  </lable>'.'<input type="text" name="id"  class="form-control" placeholder="Enter product ID">'.
+             '<lable> ID :  </lable>'.'<input type="text" name="id"  class="form-control" placeholder="Enter product ID">'.' <br>'.
             '<lable> Name : </lable>'. '<input type="text" name ="newName"  class="form-control" placeholder="Enter New product Name">'.' <br>'.
             '<lable> Price : </lable>'.  '<input type="text" name ="newPrice"  class="form-control" placeholder="Enter New product Price">'.'<br>'.
             '<input type="submit" value="update">'. '<br>'. '<br>'.'<br>'.'<br>'.
