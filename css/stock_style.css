@@ -155,7 +155,38 @@ input[type=text2] {
   cursor: pointer;
 }
 .buttoncheackcash:hover {
-  background-color: #ffffff;
-  border: 2px solid #008CBA;
+  background-color: #9dcae9d3;
+  border: 2px solid #ffffff;
   color: black;
 }
+
+input[type=text4] {
+  width: 15%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: black;
+  border: 2px solid #008CBA;
+  border-radius: 4px;
+}
+
+
+.buttoncheack1 {
+  background-color: #008CBA;
+  border: 2px solid #e4b45c;
+  color: #e4b45c;
+  padding: 12px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}/*
+.buttoncheack:hover1 {
+  background-color: #008CBA;
+  border: 2px solid #ffffff;
+  color: white;
+}*/
+

@@ -19,8 +19,23 @@
 
 </head>
 <body>
-  <nav class="blue" role="navigation"><font size="4"> &nbsp Admin Panel
-    
+  <nav class="blue" role="navigation"><font size="4"> &nbsp Admin Panel</font>
+  &nbsp&nbsp&nbsp Home
+  &nbsp&nbsp&nbsp Features
+  &nbsp&nbsp&nbsp Pricing
+  &nbsp&nbsp&nbsp Reports
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+  <input type="text4" id="" name="" placeholder="Search">
+        
+        <button class="buttoncheack1">Search</button>
   </nav>
 
   <div id="index-banner" class="parallax-container">
@@ -32,11 +47,11 @@
           <font color = "black"><h5 class="header col s12 light">Check availability of item In the stock</h5></font>
         </div>
         <div class="row center">
-			<form>
+			<form action="StockAvailability.php" method="POST">
   
-				<input type="text1" id="fname" name="fname" placeholder="Enter Item Number......">
+				<input type="text1" id="ItemID" name="ItemID" placeholder="Enter Item Number......" required>
         
-				  <button class="buttoncheack">Check</button>
+				  <button class="buttoncheack" onclick="action= 'StockAvailability.php';">Check</button>
 		  </form>
         </div>
         <br><br>
@@ -54,7 +69,7 @@
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-			<p align="center"> <a href="StockItem.html">
+			<p align="center"> <a href="StockItem.php">
 			<button class="button button2"><i class="material-icons" style="font-size:60px">
           enhanced_encryption</i><br>&nbsp&nbsp&nbsp&nbsp Stock Items &nbsp&nbsp&nbsp&nbsp</button>
 			</p></a>
@@ -63,7 +78,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-			<p align="center"><a href="StockSupplyOrder.html">
+			<p align="center"><a href="StockSupplyOrder.php">
 				<button class="button button2"><i class="material-icons" style="font-size:60px">local_shipping</i>
 				<br>&nbsp&nbsp Supply Orders &nbsp&nbsp</button></a>
 			</p>
@@ -72,7 +87,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-			<p align="center"><a href="StockOutofStock.html">
+			<p align="center"><a href="StockOutofStock.php">
 				<button class="button button2">
 					<i class="material-icons" style="font-size:60px">warning</i>
 					<br>&nbsp&nbsp&nbsp Out Of Stock &nbsp&nbsp&nbsp
@@ -91,11 +106,11 @@
       <div class="container">
         <div class="row center">
           <h5 class="header col s12 light"><font color="black">Get reports and details about stock and sales taransactions</h5></font>
-          <a href="StockReports.html">
+          <a href="StockReports.php">
       <button class="buttoncheack"style="font-size:20px"><i class="material-icons" style="font-size:40px">insert_chart</i><br>Stock Reports</button>
           </a>
       &nbsp&nbsp&nbsp&nbsp&nbsp
-      <a href="StockSalesReports.html">
+      <a href="StockSalesReports.php">
       <button class="buttoncheack"style="font-size:20px"><i class="material-icons" style="font-size:40px">local_grocery_store</i><br>Sales Reports</button>
       </a>
         </div>

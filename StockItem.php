@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Supply Order | Nimedco Pharmacy</title>
+  <title>Add Item | Nimedco Pharmacy</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -14,6 +14,7 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  <script src="js/stockvalidation.js"></script>
 </head>
 <body>
   <!--Navbar-->
@@ -44,6 +45,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Pricing</a>
             </li>
+            
       
             <!-- Dropdown -->
             <li class="nav-item dropdown">
@@ -55,7 +57,10 @@
                 
               </div>
             </li>
-      
+            <li class="nav-item">
+              <a class="nav-link" href="stock.php">Stock</a>
+            </li>
+
           </ul>
           <!-- Links -->
       
@@ -72,196 +77,170 @@
 
 
 
+  
   <div class="container">
       <div class="row">
-        <div class=""><h2>ADD SUPPLY ORDER</h2>  
+
+
+        <div class="col-md-5">
+          
+
+        <?php require_once 'StockItem_process.php'; ?>
+      <?php
+      	if(isset($_SESSION['message'])): ?>
+	        <div class = "alert alert-<?=$_SESSION['msg_type']?>">
+	    	<?php
+		    	echo $_SESSION['message'];
+		    	unset($_SESSION['message']);
+	    	?>
+	    </div>
+  	<?php endif ?>
+
+    <?php
+		              if ($update == true):
+		            ?>
+                  <h2>UPDATE ITEM DETAILS</h2>  
+		            <?php else: ?>
+                <h2>ADD NEW ITEM</h2>  
+                  <?php endif; ?>
+                
+
           <br>    
           <!-- Extended default form grid -->
-          <form name="SupplyOrderForm" method="POST" action="">
+          <form name="addItemForm" method="POST" action="StockItem_process.php">
               <!-- Grid row -->
               <div class="form-row">
                 <!-- Default input -->
                 <div class="form-group col-md-6">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <label for="ItemID">ItemID</label>
-                    <input type="text" class="form-control" name="ItemID" placeholder="ItemID">
+                    <input type="text" class="form-control" value ="<?php echo $ItemID; ?>" name="ItemID" id="ItemID" placeholder="ItemID">
                   </div>
                   <!-- Default input -->
                   <div class="form-group col-md-6">
-                    <label for="ItemQuantity">Quantity</label>
-                    <input type="text" class="form-control" name="ItemQuantity" placeholder="Quantity">
+                    <label for="ItemName">ItemName</label>
+                    <input type="text" class="form-control" value ="<?php echo $ItemName; ?>" id="ItemName" name="ItemName" placeholder="ItemName">
                   </div>
                 </div>
                 <!-- Grid row -->
+              
+                <!-- Default input -->
+                <div class="form-group">
+                  <label for="Description">Description</label>
+                  <input type="text" class="form-control" value ="<?php echo $Description; ?>" id="Description" name="Description"  placeholder="Description">
+                </div>
+                <!-- Default input -->
                 <div class="form-row">
                     <!-- Default input -->
                     <div class="form-group col-md-6">
-                        <label for="SupplerID">SupplerID</label>
-                        <input type="text" class="form-control" name="SupplerID" placeholder="SupplerID">
-                      </div>
-                      <!-- Default input -->
-                      <div class="form-group col-md-6">
-                        <label for="OrderID">OrderID</label>
-                        <input type="text" class="form-control" name="OrderID" placeholder="OrderID">
-                      </div>
-                    </div>
-                <!-- Default input -->
-                <div class="form-row">
-                    <!-- Default input -->
-                    <div class="form-group col-md-2">
-                        <label for="exp_date">Exp Date</label>
-                        <input type="text" class="form-control" name="exp_date" placeholder="DD" maxlength="2">
-                      </div>
-                      <!-- Default input -->
-                      <div class="form-group col-md-2">
-                        <label for="exp_month"><font color="white">.</font></label>
-                        <input type="text" class="form-control" name="exp_month" placeholder="MM" maxlength="2">
-                      </div>
-                      
-                      <div class="form-group col-md-2">
-                          <label for="exp_year"><font color="white">.</font></label>
-                          <input type="text" class="form-control" name="exp_year" placeholder="YYYY" maxlength="4">
-                        </div>
-
-                        <div class="form-group col-md-2">
-                            <label for="mfg_date">Mfg Date</label>
-                            <input type="text" class="form-control" name="mfg_date" placeholder="DD" maxlength="2">
-                          </div>
-                          <!-- Default input -->
-                          <div class="form-group col-md-2">
-                            <label for="mfg_month"><font color="white">.</font></label>
-                            <input type="text" class="form-control" name="mfg_month" placeholder="MM" maxlength="2">
-                          </div>
-                          
-                          <div class="form-group col-md-2">
-                              <label for="mfg_year"><font color="white">.</font></label>
-                              <input type="text" class="form-control" name="mfg_year" placeholder="YYYY" maxlength="4">
-                            </div>
-    
-
-                    </div>
-                <!-- Default input -->
-                <div class="form-row">
-                    <!-- Default input -->
-                    <div class="form-group col-md-2">
-                        <label for="phs_date">Purchase Date</label>
-                        <input type="text" class="form-control" name="phs_date" placeholder="DD" maxlength="2">
-                      </div>
-                      <!-- Default input -->
-                      <div class="form-group col-md-2">
-                        <label for="phs_month"><font color="">.</font></label>
-                        <input type="text" class="form-control" name="phs_month" placeholder="MM" maxlength="2">
-                      </div>
-                      
-                      <div class="form-group col-md-2">
-                          <label for="phs_year"><font color="white">.</font></label>
-                          <input type="text" class="form-control" name="phs_year" placeholder="YYYY" maxlength="4">
-                        </div>
-
-                      <!-- Default input -->
-                      <div class="form-group col-md-6">
-                        <label for="Pu_price">Purchase Price (each)</label>
-                        <input type="text" class="form-control" name="Pu_price" placeholder="Rs:">
-                      </div>
-                    </div>
+                <label for="Category">Category</label>
+                <input type="text" class="form-control" value ="<?php echo $Category; ?>" name="Category" id="Category" placeholder="Category">
+                </div>
                 <!-- Grid row -->
-                
+                <div class="form-group col-md-6">
+                    <label for="Price">Price (each)</label>
+                    <input type="text" class="form-control" value ="<?php echo $Price; ?>" name="Price" id="Price" placeholder="Rs:">
+                  </div></div>
               
                 <!-- Grid row -->
+                <?php
+		              if ($update == true):
+		            ?>
+                  <button type="submit" class="btn btn-warning btn-md" name="update" onclick="javascript: return validateAddItemForm();">Update</button>
+                  <button type="submit" class="btn btn-danger btn-md" name="cancle" onclick="action='StockItem.php';">Cancle</button>
+		            <?php else: ?>
+		            	<button type="submit" class="btn btn-primary btn-md" name="save" onclick="javascript: return validateAddItemForm();">SUBMIT</button>
+                  <button type="reset" class="btn btn-danger btn-md">RESET</button>
+                  <?php endif; ?>
                 
-              <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateSupplyOrderForm();">SUBMIT</button>
-              <button type="reset" class="btn btn-primary btn-md">RESET</button>
+    
             </form>
             <br><br><br>
 
 
 
         </div>
+
+        <?php
+	       $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
+        	$result = $mysqli->query("SELECT * FROM stockitem order by id desc limit 0, 7") or die($mysqli->error);
+	        //pre_r($result);
+        ?>
+  
       <div class="col">
-        <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-              <thead>
+        
+
+          <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+              <thead style="color: white;" class="bg-primary" align="center">
                 <tr>
-                  <th class="th-sm">#
-                  </th>
                   <th class="th-sm">ItemID
                   </th>
-                  <th class="th-sm">Quantity
+                  <th class="th-sm">ItemName
                   </th>
-                  <th class="th-sm">SupplerID
+                  <th class="th-sm">Description
                   </th>
-                  <th class="th-sm">OrderID
+                  <th class="th-sm">Category
                   </th>
-                  <th class="th-sm">Purchase Day
+                  <th class="th-sm">Price
                   </th>
-                  <th class="th-sm">Purchase Month
-                  </th>
-                  <th class="th-sm">Purchase Year
-                  </th>
-                  <th class="th-sm">Purchase Price
-                  </th>
-                  <th class="th-sm">
+                  <th class="th-sm">Action
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
-                </tr>
                 
-                
+              <?php
+		          	while($row = $result->fetch_assoc()): ?>
+			          	<tr>
+					          <td><b><?php echo $row['ItemID']; ?></b></td>
+                    <td><b><?php echo $row['ItemName']; ?></b></td>
+                    <td><b><?php echo $row['Description']; ?></b></td>
+                    <td><b><?php echo $row['Category']; ?></b></td>
+                    <td><b><?php echo $row['Price']; ?></b></td>
+				          	<td align="center">
+					            	<a href="StockItem.php?edit=<?php echo $row['id']; ?>"
+                          class ="btn btn-info btn-sm" >
+                          <i class="fa fa-edit"></i>
+                        </a>
+					            	<a href="StockItem_process.php?delete=<?php echo $row['id']; ?>"
+                          class ="btn btn-danger btn-sm">
+                          <i class="fa fa-trash"></i>
+                        </a>
+				          	</td>
+			          	</tr>
+			        <?php endwhile; ?>
+
               </tbody>
+              <!--
               <tfoot>
                 <tr>
-                  <th class="th-sm">#
+                  <th>ItemID
                   </th>
-                  <th class="th-sm">ItemID
+                  <th>ItemName
                   </th>
-                  <th class="th-sm">Quantity
+                  <th>Description
                   </th>
-                  <th class="th-sm">SupplerID
+                  <th>Category
                   </th>
-                  <th class="th-sm">OrderID
+                  <th>Price
                   </th>
-                  <th class="th-sm">Purchase Day
-                  </th>
-                  <th class="th-sm">Purchase Month
-                  </th>
-                  <th class="th-sm">Purchase Year
-                  </th>
-                  <th class="th-sm">Purchase Price
-                  </th>
-                  <th class="th-sm">
+                  <th >Action
                   </th>
                 </tr>
-              </tfoot>
+              </tfoot> -->
             </table>
-
-
+            <br>
+            <?php
+	            function pre_r( $array ){
+		            echo '<pre>';
+	            	print_r($array);
+		            echo '</pre>';
+              	}
+          	?>
 
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
- 
 
 
 
@@ -424,6 +403,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    
     <script src="js/stockvalidation.js"></script>
   
 
