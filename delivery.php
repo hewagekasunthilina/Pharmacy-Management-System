@@ -113,13 +113,13 @@ $con = new mysqli($servername,$username,$password,$dbname);
               <div class="modal-body mb-1">
                 <div class="md-form form-sm mb-5">
                   <i class="fas fa-envelope prefix"></i>
-                  <input type="email" name="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                  <input type="email" name="email" id="modalLRInput10" class="form-control-sm validate">
                   <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
                 </div>
   
                 <div class="md-form form-sm mb-4">
                   <i class="fas fa-lock prefix"></i>
-                  <input type="password" name="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                  <input type="password" name="password" id="modalLRInput11" class="form-control-sm validate">
                   <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
                 </div>
                 <div class="text-center mt-2">
@@ -189,7 +189,7 @@ $con = new mysqli($servername,$username,$password,$dbname);
                 </div>
 
                 <div class="text-center form-sm mt-2">
-                  <input type="submit" class="btn btn-info" name = "submit" value="Submit" onclick = "javascript:return validatecustomerSign();">
+                  <input type="submit" class="btn btn-info" name = "submit" value="Submit" onclick = "javascript:return validateRegisterForm();">
                 </div>
 
                 </form>
