@@ -2,7 +2,7 @@
 $dbhost = 'localhost';
 $dbuser = 'root';
 $dbpass = 'root';
-$db = 'admin_panel';
+$db = 'nimedco-pharmacy';
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $db);
 if($conn -> connect_error){
