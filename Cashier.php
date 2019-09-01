@@ -105,7 +105,6 @@
      
 <br>
 
-<<<<<<< HEAD:Cashier.php
 
 
  
@@ -123,8 +122,6 @@
 
 
 
-=======
->>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63:StockAvailability.php
 <!-- Footer -->
 <footer class="page-footer font-small mdb-color pt-4">
 
