@@ -6,11 +6,19 @@ function  ValidateForm(billyear,totalamount,Date)
    var decimal =  /^[-+]?[0-9]+\.[0-9]+$/;
    var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
 
-   validatebillyear(billyear);
-   validateamount(totalamount);
-   validatedate(Date);
+    var invalidbill = validatebillyear(billyear);
 
+    
 
+    if(invalidbill == true)
+    {    
+        var validamount = validateamount(totalamount);
+         
+        if(validamount == true)
+         {
+              validatedate(Date);
+        }
+    }
 
    function validatebillyear(billyear)
    {  if(billyear.value.match(numbers))
@@ -19,8 +27,13 @@ function  ValidateForm(billyear,totalamount,Date)
        }
       else    
        {
-        alert('Please input numeric characters  for billyear');
-        return false;
+           alert("Invalid bill year format");   
+           confirm("Do you want to Re enter values??");
+           document.getElementById("expenditureform").reset();
+           return false;
+        
+
+
        }
    }
 
@@ -31,10 +44,11 @@ function  ValidateForm(billyear,totalamount,Date)
             return true;
         }
        else
-        {
-            alert('Please input decimal value  for totalamount');
+        {    
+            alert("Invalid  amount format"); 
+            confirm("Do you want to Re enter values??");
+            document.getElementById("expenditureform").reset();
             return false;
-
         }
 
 
@@ -42,8 +56,8 @@ function  ValidateForm(billyear,totalamount,Date)
    
     function validatedate(Date)
     {
-
-        if(Date.value.match(dateformat))
+       if(document.getElementById('defaultGroupExample1').checked)
+      {  if(Date.value.match(dateformat))
         {
        
         //Test which seperator is used '/' or '-'
@@ -69,8 +83,10 @@ function  ValidateForm(billyear,totalamount,Date)
         {
         if (dd>ListofDays[mm-1])
         {
-        alert('Invalid date format!');
-        return false;
+            alert("Invalid  Date format"); 
+            confirm("Do you want to Re enter values??");
+            document.getElementById("expenditureform").reset();
+            return false;
         }
         }
         if (mm==2)
@@ -81,25 +97,39 @@ function  ValidateForm(billyear,totalamount,Date)
         lyear = true;
         }
         if ((lyear==false) && (dd>=29))
-        {
-        alert('Invalid date format!');
-        return false;
+        {   
+            alert("Invalid  Date format"); 
+            confirm("Do you want to Re enter values??");
+            document.getElementById("expenditureform").reset();
+            return false;
         }
         if ((lyear==true) && (dd>29))
         {
-        alert('Invalid date format!');
-        return false;
+            alert("Invalid  Date format"); 
+            confirm("Do you want to Re enter values??");
+            document.getElementById("expenditureform").reset();
+            return false;
         }
         }
         }
         else
         {
-        alert("Invalid date format!");
-        return false;
+           alert("Invalid  Date format"); 
+           confirm("Do you want to Re enter values??");
+           document.getElementById("expenditureform").reset();
+            return false;
         }
-
+      }
     } 
-     
-
-
+    
 }
+
+//disable the paid date text box
+function enable_text(status)
+{    
+    
+     document.expenditureform.paiddate.disabled = status;
+
+    
+}
+

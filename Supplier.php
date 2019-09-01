@@ -71,7 +71,7 @@
   <br><br>
 
 
-  <table class="panel-table-1">
+  <table class="panel-table-1" align="center">
 
     <tr>
       <th>
@@ -80,7 +80,7 @@
           <div class="card-body">
             <h5 class="card-title">New Suppliers are Welcome</h5>
             <p class="card-text">Add new Suppliers to the NimedcoPharmacy System.</p>
-            <a href="registerSupplier.html" class="btn btn-primary">ADD</a>
+            <a href="registerSupplier.php" class="btn btn-primary">ADD</a>
 
           </div>
         </div>      
@@ -93,8 +93,8 @@
             <h5 class="card-title">Registerd Suppliers are Welcome.</h5>
             <p class="card-text">Update / Remove Registerd Supplier details.</p>
 
-            <a href="supplierDetails.html" class="btn btn-primary">UPDATE</a>
-            <a href="supplierDetails.html" class="btn btn-primary">REMOVE</a>
+            <a href="supplierDetails.php" class="btn btn-primary">UPDATE</a>
+            <a href="supplierDetails.php" class="btn btn-primary">REMOVE</a>
           </div>
         </div>    
       </th>
@@ -106,9 +106,9 @@
             <h5 class="card-title">Onboard Supplies reports.</h5>
             <p class="card-text">Add / Update / Delete Spplies reports.</p>
             
-            <a href="Reports.html" class="btn btn-primary">ADD</a>
-            <a href="updateReports.html" class="btn btn-primary">UPDATE</a>
-            <a href="updateReports.html" class="btn btn-primary">REMOVE</a>
+            <a href="Reports.php" class="btn btn-primary">ADD</a>
+            <a href="updateReports.php" class="btn btn-primary">UPDATE</a>
+            <a href="updateReports.php" class="btn btn-primary">REMOVE</a>
             
           </div>
         </div>    
@@ -122,7 +122,7 @@
           <div class="card-body">
             <h5 class="card-title">Summary of the Supplies. </h5>
             <p class="card-text">View Supplies summary.</p>
-            <a href="#!" class="btn btn-primary">VIEW</a>
+            <a href="Summary.php" class="btn btn-primary">VIEW</a>
 
           </div>
         </div>      
@@ -133,9 +133,9 @@
           <div class="card-body">
             <h5 class="card-title">Orders Stock need.</h5>
             <p class="card-text">Add orders and Send Orders to Suppliers.</p>
-            <a href="Orders.html" class="btn btn-primary">ADD</a>
-            <a href="updateOrders.html" class="btn btn-primary">UPDATE</a>
-            <a href="updateOrders.html" class="btn btn-primary">REMOVE</a>
+            <a href="Orders.php" class="btn btn-primary">ADD</a>
+            <a href="updateOrders.php" class="btn btn-primary">UPDATE</a>
+            <a href="updateOrders.php" class="btn btn-primary">REMOVE</a>
 
           </div>
         </div>      
@@ -146,141 +146,140 @@
 
 <br>
 <br>
-   <!--Footer start-->
+    <!--Footer start-->
 
 <!-- Footer -->
 <footer class="page-footer font-small mdb-color pt-4">
 
-<!-- Footer Links -->
-<div class="container text-center text-md-left">
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
 
-  <!-- Footer links -->
-  <div class="row text-center text-md-left mt-3 pb-3">
+    <!-- Footer links -->
+    <div class="row text-center text-md-left mt-3 pb-3">
 
-    <!-- Grid column -->
-    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-      <h6 class="text-uppercase mb-4 font-weight-bold">Nimedco Pharmacy</h6>
-      <p>Get the treatment you need without leaving your home. With a wide range of medicines at great prices we're sure to ease your ailment with signed for delivery.Choose a safe, quick, cost-effect and convenient way of having your medicines delivered to your door.</p>
-    </div>
-    <!-- Grid column -->
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Nimedco Pharmacy</h6>
+        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+          consectetur
+          adipisicing elit.</p>
+      </div>
+      <!-- Grid column -->
 
-    <hr class="w-100 clearfix d-md-none">
+      <hr class="w-100 clearfix d-md-none">
 
-    <!-- Grid column -->
-    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-      <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-      <p>
-        <a href="#!">Drugs</a>
-      </p>
-      <p>
-        <a href="#!">Medicine</a>
-      </p>
-      <p>
-        <a href="#!">Child Items</a>
-      </p>
-      <p>
-        <a href="#!">Energy Drinks</a>
-      </p>
-    </div>
-    <!-- Grid column -->
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+        <p>
+          <a href="#!">Drugs</a>
+        </p>
+        <p>
+          <a href="#!">Medicine</a>
+        </p>
+        <p>
+          <a href="#!">Child Items</a>
+        </p>
+        <p>
+          <a href="#!">Energy Drinks</a>
+        </p>
+      </div>
+      <!-- Grid column -->
 
-    <hr class="w-100 clearfix d-md-none">
+      <hr class="w-100 clearfix d-md-none">
 
-    <!-- Grid column -->
-    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-      <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-      <p>
-        <a href="#!">Your Account</a>
-      </p>
-      <p>
-        <a href="#!">Medicines</a>
-      </p>
-      <p>
-        <a href="#!">Delivery</a>
-      </p>
-      <p>
-        <a href="#!">Help</a>
-      </p>
-    </div>
-
-    <!-- Grid column -->
-    <hr class="w-100 clearfix d-md-none">
-
-    <!-- Grid column -->
-    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-      <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-      <p>
-        <i class="fas fa-home mr-3"></i> Pohonnaruwa Mirigama (Nearby, Jayathissa Stores, Mirigama</p>
-      <p>
-        <i class="fas fa-envelope mr-3"></i> nimedcopharmacy@info.com</p>
-      <p>
-        <i class="fas fa-phone mr-3"></i> 071 977 4774</p>
-      <p>
-      <i class="fas fa-map-marker-alt"></i><a href ="location.php"> Find Us</p></a>
-      <p>
-      
-      
-    </div>
-    <!-- Grid column -->
-
-  </div>
-  <!-- Footer links -->
-
-  <hr>
-
-  <!-- Grid row -->
-  <div class="row d-flex align-items-center">
-
-    <!-- Grid column -->
-    <div class="col-md-7 col-lg-8">
-
-      <!--Copyright-->
-      <p class="text-center text-md-left">© 2019 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/">
-          <strong> NimedcoPharmacy.com</strong>
-        </a>
-      </p>
-
-    </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="col-md-5 col-lg-4 ml-lg-0">
-
-      <!-- Social buttons -->
-      <div class="text-center text-md-right">
-        <ul class="list-unstyled list-inline">
-          <li class="list-inline-item">
-            <a class="btn-floating btn-sm rgba-white-slight mx-1">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-sm rgba-white-slight mx-1">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-sm rgba-white-slight mx-1">
-              <i class="fab fa-google-plus-g"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-sm rgba-white-slight mx-1">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </li>
-        </ul>
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+        <p>
+          <a href="#!">Your Account</a>
+        </p>
+        <p>
+          <a href="#!">Medicines</a>
+        </p>
+        <p>
+          <a href="#!">Delivery</a>
+        </p>
+        <p>
+          <a href="#!">Help</a>
+        </p>
       </div>
 
+      <!-- Grid column -->
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+        <p>
+          <i class="fas fa-home mr-3"></i> NimedcoPharmacy, Meerigama</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> nimedcopharmacy@.com</p>
+        <p>
+          <i class="fas fa-phone mr-3"></i> + 94 770 828 319</p>
+        <p>
+          <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+      </div>
+      <!-- Grid column -->
+
     </div>
-    <!-- Grid column -->
+    <!-- Footer links -->
+
+    <hr>
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8">
+
+        <!--Copyright-->
+        <p class="text-center text-md-left">© 2019 Copyright:
+          <a href="https://mdbootstrap.com/education/bootstrap/">
+            <strong> NimedcoPharmacy.com</strong>
+          </a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-google-plus-g"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
 
   </div>
-  <!-- Grid row -->
-
-</div>
-<!-- Footer Links -->
+  <!-- Footer Links -->
 
 </footer>
 <!-- Footer -->

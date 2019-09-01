@@ -1,3 +1,8 @@
+<?php
+       require_once "expendituredetails.php"; 
+       
+       include "connection.php";  //connection created
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,7 +83,7 @@
         <div class="card-body">
     
             <!--form-->
-            <form >
+            <form  method="POST" action="expendituredetails.php"  >
               <h5 class="card-header info-color white-text text-center py-4">
                 <strong>Update Expenditure Details</strong>
                </h5>
@@ -86,10 +91,15 @@
                 <h3  style="margin-left: 15px;"><b>Bill Information</b></h3>
                 <hr style = " border: 1px solid black;">  
 
+              <!--input hidden field-->
+              <input type="hidden" name="billid"  value="<?php echo $bill_id;?>">
+
+
+
                 <!--input year -->
                 <label for="billyear" class="text-primary">Bill Year</label>
                 <div class="form-group col-md-6">
-                <input type="text" id="defaultFormCardNameEx" class="form-control" placeholder="Enter Bill Year" name="billyear">
+                <input type="text" id="defaultFormCardNameEx" class="form-control" placeholder="Enter Bill Year" name="updatebillyear" value="<?php echo  $bill_year;?> ">
                 </div>
 
                 <br>
@@ -98,48 +108,39 @@
                 <!--Dropdown primary-->
          <div class="dropdown">
        
-         <label for="billmonth" class="text-primary">Bill Month</label>
-         <br>
-         <!--Trigger-->
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false" name ="billmonth">Bill Month</button>
-      
-      
-        <!--Menu-->
-        <div class="dropdown-menu dropdown-primary">
-          <a class="dropdown-item" href="#">January</a>
-          <a class="dropdown-item" href="#">February</a>
-          <a class="dropdown-item" href="#">March</a>
-          <a class="dropdown-item" href="#">April</a>
-          <a class="dropdown-item" href="#">May</a>
-          <a class="dropdown-item" href="#">June</a>
-          <a class="dropdown-item" href="#">July</a>
-          <a class="dropdown-item" href="#">August</a>
-          <a class="dropdown-item" href="#">September</a>
-          <a class="dropdown-item" href="#">October</a>
-          <a class="dropdown-item" href="#">November</a>
-          <a class="dropdown-item" href="#">December</a>
-        </div>
-       </div>
-      <!--/Dropdown primary-->
+       <label for="billmonth" class="text-primary">Bill Month</label>
+       <br>
+       <select class="btn btn-primary dropdown-toggle mr-4" style="margin-left:20px" name="updatebillmonth" required>
+        <option value = "<?php echo  $bill_month;?>"  class="dropdown-item" href="#"><?php echo  $bill_month;?></option>
+        <option value="January" class="dropdown-item" href="#">January</option>
+        <option value="February" class="dropdown-item" href="#">February</option>
+        <option value="March"  class="dropdown-item" href="#">March</option>
+        <option value="April" class="dropdown-item" href="#">April</option>
+        <option value="May" class="dropdown-item" href="#">May</option>
+        <option value="June" class="dropdown-item" href="#">June</option>
+        <option value="July" class="dropdown-item" href="#">July</option>
+        <option value="August" class="dropdown-item" href="#">August</option>
+        <option value="September" class="dropdown-item" href="#">September</option>
+        <option value="October" class="dropdown-item" href="#">October</option>
+        <option value="November" class="dropdown-item" href="#">November</option>
+        <option value="December" class="dropdown-item" href="#">December</option>   
+      </select>
+      </div>
+    <!--/Dropdown primary-->
       <br>
 
 
-      <div class="dropdown">
-       
+      <div class="dropdown">  
         <label for="billtype" class="text-primary">Bill Type</label>
         <br>
-        <!--Trigger-->
-       <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-         aria-haspopup="true" aria-expanded="false" name ="billmonth">Bill Type</button>
-     
-     
        <!--Menu-->
-       <div class="dropdown-menu dropdown-primary">
-         <a class="dropdown-item" href="#">Electricity</a>
-         <a class="dropdown-item" href="#">Water</a>
-         <a class="dropdown-item" href="#">Other</a>
-       </div>
+          <select class="btn btn-primary dropdown-toggle mr-4"  style="margin-left:20px"  name="updatebilltype"  required>
+              <option value="<?php echo  $bill_type;?>" class="dropdown-item" href="#"><?php echo $bill_type;?></option>
+              <option value="Electricity" class="dropdown-item" href="#" >Electricity</option>
+              <option value="Water" class="dropdown-item" href="#">Water</option>
+              <option value="Other" class="dropdown-item" href="#">Other</option>
+          </select>
+       
       </div>
      <!--/Dropdown primary-->
      <br> 
@@ -149,7 +150,7 @@
                 <!--input units -->
                 <label for="totalunits" class="text-primary">Total No Of Unit Consumed</label>
                 <div class="form-group col-md-6">
-                <input type="email" id="defaultFormCardEmailEx" class="form-control" name="noofunits" placeholder="Enter  Total No Of Units">
+                <input type="text" id="defaultFormCardEmailEx" class="form-control" name="updatenoofunits" placeholder="Enter  Total No Of Units" value="<?php echo  $total_units;?>">
                 </div>
 
                 <br>
@@ -158,7 +159,7 @@
                 <!--input units -->
                 <label for="totalamount" class="text-primary">Total Amount(Rs)</label>
                 <div class="form-group col-md-6">
-                <input type="email" id="defaultFormCardEmailEx" class="form-control" name="totamouunt" placeholder="Enter Total Amount">
+                <input type="text" id="defaultFormCardEmailEx" class="form-control" name="updatetotamouunt" placeholder="Enter Total Amount"  value="<?php echo  $total_amount;?>">
                 </div>
 
                  <br>
@@ -166,11 +167,11 @@
                  <label for="paid" class="text-primary">Paid</label>
                   <!-- Default checked -->
                     <div class="custom-control custom-radio">
-                          <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="paid">
+                          <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="updaterdb" value ="Yes"  <?php echo ($paid=='Yes') ?  "checked" : "";?>  onclick = "enable_text(false)"/>
                           <label class="custom-control-label" for="defaultGroupExample1">Yes</label>
                     </div>
                     <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="paid" >
+                                <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="updaterdb" value="No" <?php echo ($paid=='No') ?  "checked" : "";?> />
                                 <label class="custom-control-label" for="defaultGroupExample2">No</label>
                     </div>
 
@@ -178,14 +179,15 @@
                     <!--input units -->
                     <label for="paiddate" class="text-primary">Paid Date</label>
                     <div class="form-group col-md-6">
-                      <input type="text" class="form-control" id="inputZip" placeholder="DD/MM/YYYY">
+                      <input type="text" class="form-control" id="inputZip" placeholder="DD/MM/YYYY"  name="updatepaiddate"  value="<?php echo  $paid_date;?>">
                     </div>
                     <br>
-
-                    <button type="submit" class="btn btn-primary btn-rounded" style="margin-left:500px">UPDATE</button>
-                    <button type="submit" class="btn btn-primary btn-rounded" style="margin-left:10px">VIEW BILL TABLE</button>
-                <br><br>
-              </form>
+                    <input type="submit" class="btn btn-primary btn-rounded" style="margin-left:500px" value="UPDATE" name="updated" />
+                    </form>
+                    <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="POST">
+                    <input  type="submit" class="btn btn-primary btn-rounded" style="margin-left:10px" value="VIEW BILL TABLE" name="viewupdatetable" />
+                     </form>
+                     <br>
               <!-- Default form subscription -->
                 <h3  style="margin-left: 15px;"><b> Updated Bill Table</b></h3>
                 <hr style = " border: 1px solid black;">  
@@ -193,6 +195,8 @@
             <table id="billtable" class="table table-striped table-bordered" cellspacing="0" width="80%" style="margin-left:10px;">
                 <thead>
                   <tr>
+                  <th class="th-sm">Bill Id
+                   </th>
                     <th class="th-sm">Bill Year
                     </th>
                     <th class="th-sm">Bill Month
@@ -209,47 +213,35 @@
                       </th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>2018</td>
-                    <td>January</td>
-                    <td>Electricity</td>
-                    <td>150</td>
-                    <td>5000</td>
-                    <td>Yes</td>
-                    <td>25/02/2019</td> 
-                  </tr>
-                  <tr>
-                      <td>2018</td>
-                      <td>February</td>
-                      <td>Electricity</td>
-                      <td>100</td>
-                      <td>3000</td>
-                      <td>No</td>
-                      <td>00/00/0000</td>
-                    </tr>
+                <?php 
+                    
+                    if(isset($_POST['viewupdatetable']))
+                    {
+                          
+                          $reterive_query = "SELECT * FROM  expenditure";
+                          $result = $conn->query($reterive_query) or die($conn -> error);
+
+                          while($row = mysqli_fetch_assoc($result))
+                          {
+                 
+                  ?>
+                  <tbody>
                     <tr>
-                        <td>2018</td>
-                        <td>February</td>
-                        <td>Water</td>
-                        <td>10</td>
-                        <td>1500</td>
-                        <td>No</td>
-                        <td>00/00/0000</td>
+                    <td> <?php echo $row['BillId']; ?></td>
+                    <td> <?php echo $row['BillYear']; ?></td>
+                    <td> <?php echo $row['BillMonth']; ?></td>
+                    <td> <?php echo $row['BillType'];?></td>
+                    <td> <?php echo $row['TotalUnits'];?></td>
+                    <td> <?php echo $row['TotalAmount'];?></td>
+                    <td> <?php echo $row['Paid']; ?></td>
+                    <td> <?php echo $row['PaidDate'];?></td>
                     </tr>
-                    <tr>
-                        <td>2018</td>
-                        <td>February</td>
-                        <td>Other</td>
-                        <td>00</td>
-                        <td>1500</td>
-                        <td>Yes</td>
-                        <td>02/01/2019</td>
-                     </tr>
-                </tbody>
-              </table>      
-      
-    
+                    </tbody>
+                    <?php 
+                          }
+                        }
+                        ?>
+                    </table>    
         </div>
         <!-- Card body -->
     
@@ -257,146 +249,143 @@
     <!-- Card -->
      
 
- <!--Footer start-->
-
-<!-- Footer -->
+ <!-- Footer -->
 <footer class="page-footer font-small mdb-color pt-4">
 
-<!-- Footer Links -->
-<div class="container text-center text-md-left">
-
-  <!-- Footer links -->
-  <div class="row text-center text-md-left mt-3 pb-3">
-
-    <!-- Grid column -->
-    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-      <h6 class="text-uppercase mb-4 font-weight-bold">Nimedco Pharmacy</h6>
-      <p>Get the treatment you need without leaving your home. With a wide range of medicines at great prices we're sure to ease your ailment with signed for delivery.Choose a safe, quick, cost-effect and convenient way of having your medicines delivered to your door.</p>
-    </div>
-    <!-- Grid column -->
-
-    <hr class="w-100 clearfix d-md-none">
-
-    <!-- Grid column -->
-    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-      <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-      <p>
-        <a href="#!">Drugs</a>
-      </p>
-      <p>
-        <a href="#!">Medicine</a>
-      </p>
-      <p>
-        <a href="#!">Child Items</a>
-      </p>
-      <p>
-        <a href="#!">Energy Drinks</a>
-      </p>
-    </div>
-    <!-- Grid column -->
-
-    <hr class="w-100 clearfix d-md-none">
-
-    <!-- Grid column -->
-    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-      <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-      <p>
-        <a href="#!">Your Account</a>
-      </p>
-      <p>
-        <a href="#!">Medicines</a>
-      </p>
-      <p>
-        <a href="#!">Delivery</a>
-      </p>
-      <p>
-        <a href="#!">Help</a>
-      </p>
-    </div>
-
-    <!-- Grid column -->
-    <hr class="w-100 clearfix d-md-none">
-
-    <!-- Grid column -->
-    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-      <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-      <p>
-        <i class="fas fa-home mr-3"></i> Pohonnaruwa Mirigama (Nearby, Jayathissa Stores, Mirigama</p>
-      <p>
-        <i class="fas fa-envelope mr-3"></i> nimedcopharmacy@info.com</p>
-      <p>
-        <i class="fas fa-phone mr-3"></i> 071 977 4774</p>
-      <p>
-      <i class="fas fa-map-marker-alt"></i><a href ="location.php"> Find Us</p></a>
-      <p>
-      
-      
-    </div>
-    <!-- Grid column -->
-
-  </div>
-  <!-- Footer links -->
-
-  <hr>
-
-  <!-- Grid row -->
-  <div class="row d-flex align-items-center">
-
-    <!-- Grid column -->
-    <div class="col-md-7 col-lg-8">
-
-      <!--Copyright-->
-      <p class="text-center text-md-left">© 2019 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/">
-          <strong> NimedcoPharmacy.com</strong>
-        </a>
-      </p>
-
-    </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="col-md-5 col-lg-4 ml-lg-0">
-
-      <!-- Social buttons -->
-      <div class="text-center text-md-right">
-        <ul class="list-unstyled list-inline">
-          <li class="list-inline-item">
-            <a class="btn-floating btn-sm rgba-white-slight mx-1">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-sm rgba-white-slight mx-1">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-sm rgba-white-slight mx-1">
-              <i class="fab fa-google-plus-g"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-sm rgba-white-slight mx-1">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </li>
-        </ul>
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+  
+      <!-- Footer links -->
+      <div class="row text-center text-md-left mt-3 pb-3">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Nimedco Pharmacy</h6>
+          <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+            consectetur
+            adipisicing elit.</p>
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="w-100 clearfix d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+          <p>
+            <a href="#!">Drugs</a>
+          </p>
+          <p>
+            <a href="#!">Medicine</a>
+          </p>
+          <p>
+            <a href="#!">Child Items</a>
+          </p>
+          <p>
+            <a href="#!">Energy Drinks</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="w-100 clearfix d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+          <p>
+            <a href="#!">Your Account</a>
+          </p>
+          <p>
+            <a href="#!">Medicines</a>
+          </p>
+          <p>
+            <a href="#!">Delivery</a>
+          </p>
+          <p>
+            <a href="#!">Help</a>
+          </p>
+        </div>
+  
+        <!-- Grid column -->
+        <hr class="w-100 clearfix d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+          <p>
+            <i class="fas fa-home mr-3"></i> NimedcoPharmacy, Meerigama</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> nimedcopharmacy@.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> + 94 770 828 319</p>
+          <p>
+            <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+  
       </div>
-
+      <!-- Footer links -->
+  
+      <hr>
+  
+      <!-- Grid row -->
+      <div class="row d-flex align-items-center">
+  
+        <!-- Grid column -->
+        <div class="col-md-7 col-lg-8">
+  
+          <!--Copyright-->
+          <p class="text-center text-md-left">© 2019 Copyright:
+            <a href="https://mdbootstrap.com/education/bootstrap/">
+              <strong> NimedcoPharmacy.com</strong>
+            </a>
+          </p>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-5 col-lg-4 ml-lg-0">
+  
+          <!-- Social buttons -->
+          <div class="text-center text-md-right">
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-google-plus-g"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
     </div>
-    <!-- Grid column -->
-
-  </div>
-  <!-- Grid row -->
-
-</div>
-<!-- Footer Links -->
-
-</footer>
-<!-- Footer -->
-
-<!--Ens of the footer-->       
+    <!-- Footer Links -->
+  
+  </footer>
+  <!-- Footer -->
+  
+  <!--Ens of the footer-->        
   
   
 

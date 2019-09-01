@@ -5,7 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+<<<<<<< HEAD
   <title>Out of Stock | Nimedco Pharmacy</title>
+=======
+  <title>Stock Report | Nimedco Pharmacy</title>
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -55,10 +59,13 @@
                 
               </div>
             </li>
+<<<<<<< HEAD
 
             <li class="nav-item">
               <a class="nav-link" href="stock.php">Stock</a>
             </li>
+=======
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
       
           </ul>
           <!-- Links -->
@@ -75,23 +82,37 @@
   <br><br>
 
 
+<<<<<<< HEAD
   <?php
 	       $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
         	$result = $mysqli->query("SELECT * FROM stockitem WHERE ItemQuantity = 0 order by id") or die($mysqli->error);
+=======
+  
+
+  <?php
+	       $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
+        	$result = $mysqli->query("SELECT * FROM stockitem order by id") or die($mysqli->error);
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
 	        //pre_r($result);
         ?>
 
   <div class="container">
       <div class="row">
+<<<<<<< HEAD
         <div class="col">
           <h2>OUT OF STOCK</h2>
           <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+=======
+      <h2>STOCK REPORT</h2>
+      <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
               <thead class="bg-info" style="color: white;">
                 <tr>
                   <th class="th-sm">ItemID
                   </th>
                   <th class="th-sm">ItemName
                   </th>
+<<<<<<< HEAD
                   <th class="th-sm">Description
                   </th>
                   <th class="th-sm">Category
@@ -156,16 +177,23 @@
                   </th>
                   <th class="th-sm">Category
                   </th>
+=======
+                  
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
                   <th class="th-sm">Price
                   </th>
                   <th class="th-sm">Qty
                   </th>
+<<<<<<< HEAD
           
+=======
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
                 </tr>
               </thead>
               <tbody>
                 
               <?php
+<<<<<<< HEAD
 		          	while($row = $result2->fetch_assoc()): ?>
 			          	<tr>
 					          <td><?php echo $row['ItemID']; ?></td>
@@ -174,11 +202,20 @@
                     <td><?php echo $row['Category']; ?></td>
                     <td><?php echo $row['Price']; ?></td>
                     <td><?php echo $row['ItemQuantity']; ?></td>
+=======
+		          	while($row = $result->fetch_assoc()): ?>
+			          	<tr>
+					          <td><b><?php echo $row['ItemID']; ?></b></td>
+                    <td><b><?php echo $row['ItemName']; ?></b></td>
+                    <td><b><?php echo $row['Price']; ?></b></td>
+                    <td><b><?php echo $row['ItemQuantity']; ?></b></td>
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
 				          	
 			          	</tr>
 			        <?php endwhile; ?>
 
               </tbody>
+<<<<<<< HEAD
               <!--
               <tfoot>
                 <tr>
@@ -199,6 +236,11 @@
             </table>
 
         </div>
+=======
+            
+            </table>
+
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
       </div>
     </div>
 

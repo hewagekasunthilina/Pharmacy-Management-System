@@ -5,7 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+<<<<<<< HEAD
   <title>Stock Report | Nimedco Pharmacy</title>
+=======
+  <title>Stock Reports | Nimedco Pharmacy</title>
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -71,6 +75,7 @@
   <br><br>
 
 
+<<<<<<< HEAD
   
 
   <?php
@@ -115,6 +120,12 @@
 
       </div>
     </div>
+=======
+
+
+ 
+
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
 
 
 
@@ -123,7 +134,10 @@
 
 
 
+<<<<<<< HEAD
 <br><br><br>
+=======
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
 
 
 
