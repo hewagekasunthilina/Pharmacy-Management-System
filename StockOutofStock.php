@@ -76,7 +76,7 @@
 
 
   <?php
-	       $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
+	        $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
         	$result = $mysqli->query("SELECT * FROM stockitem WHERE ItemQuantity = 0 order by id") or die($mysqli->error);
 	        //pre_r($result);
         ?>
@@ -140,7 +140,7 @@
             <h2>RUNNING OUT OF STOCK</h2>
 
             <?php
-	       $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
+	       $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
         	$result2 = $mysqli->query("SELECT * FROM stockitem WHERE (ItemQuantity <= 10) and (ItemQuantity != 0) order by ItemQuantity") or die($mysqli->error);
 	        //pre_r($result);
         ?>

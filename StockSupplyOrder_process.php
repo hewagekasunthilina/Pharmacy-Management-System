@@ -2,7 +2,7 @@
 
 session_start();
 
-$mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
+$mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
 
 $id = 0;
 $update = false;
@@ -77,7 +77,7 @@ if (isset($_GET['edit'])){
 	$id = $_GET['edit'];
 	$update = true;
 	$result = $mysqli->query("SELECT * FROM StockSupplyOrder WHERE id=$id") or die($mysqli->error());
-	if(count($result)==1){
+	
 		$row = $result->fetch_array();
 		$ItemID = $row['ItemID'];
         $ItemQuantity = $row['ItemQuantity'];
@@ -93,7 +93,7 @@ if (isset($_GET['edit'])){
         $phs_month = $row['phs_month'];
         $phs_year = $row['phs_year'];
         $Pu_price = $row['Pu_price'];
-	}
+	
 }
 
 if(isset($_POST['update'])){

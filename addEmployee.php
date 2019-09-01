@@ -38,7 +38,7 @@
     
             <!-- Form -->
             <form class="text-center" style="color: #757575;" action="addEmployee_process.php" name="addEmployee" method="POST">
-            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="hidden" name="EmpId" value="<?php echo $EmpId; ?>">
                 <div class="form-row">
                     <div class="col">
                         <!-- First name -->
@@ -131,8 +131,8 @@
     </div>
     <div class="container">
     <?php
-	       $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
-        	$result = $mysqli->query("SELECT * FROM employee order by id desc limit 0, 7") or die($mysqli->error);
+	       $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
+        	$result = $mysqli->query("SELECT * FROM employee") or die($mysqli->error);
 	        //pre_r($result);
         ?>
   
@@ -142,7 +142,7 @@
           <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
               <thead>
                 <tr>
-                  <th class="th-sm">empID
+                  <th class="th-sm">EmpId
                   </th>
                   <th class="th-sm">FirstName
                   </th>
@@ -168,7 +168,7 @@
 		          	while($row = $result->fetch_assoc()): ?>
 			          	<tr>
                   
-                              <td><?php echo $row['id']; ?></td>
+                              <td><?php echo $row['EmpId']; ?></td>
                               <td><?php echo $row['FirstName']; ?></td>
                               <td><?php echo $row['LastName']; ?></td>
                               <td><?php echo $row['UserName']; ?></td>
@@ -178,11 +178,11 @@
                               <td><?php echo $row['PhoneNumber']; ?></td>
                    
 				          	<td>
-					            	<a href="addEmployee.php?edit=<?php echo $row['id']; ?>"
+					            	<a href="addEmployee.php?edit=<?php echo $row['EmpId']; ?>"
                           class ="btn btn-info btn-sm" >
                           <i class="fa fa-edit"></i>
                         </a>
-					            	<a href="addEmployee_process.php?delete=<?php echo $row['id']; ?>"
+					            	<a href="addEmployee_process.php?delete=<?php echo $row['EmpId']; ?>"
                           class ="btn btn-danger btn-sm">
                           <i class="fa fa-trash"></i>
                         </a>

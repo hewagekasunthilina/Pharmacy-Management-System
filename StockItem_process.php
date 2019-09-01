@@ -2,7 +2,7 @@
 
 session_start();
 
-$mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
+$mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
 
 $id = 0;
 $update = false;
@@ -41,14 +41,14 @@ if (isset($_GET['edit'])){
 	$id = $_GET['edit'];
 	$update = true;
 	$result = $mysqli->query("SELECT * FROM stockitem WHERE id=$id") or die($mysqli->error());
-	if(count($result)==1){
+	
 		$row = $result->fetch_array();
 		$ItemID = $row['ItemID'];
         $ItemName = $row['ItemName'];
         $Description = $row['Description'];
         $Category = $row['Category'];
         $Price = $row['Price'];
-	}
+	
 }
 
 if(isset($_POST['update'])){

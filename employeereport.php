@@ -1,50 +1,65 @@
 <?php
+    include "connection.php";
       namespace Dompdf;
       require_once 'dompdf/autoload.inc.php';
-                                                          
-            if(isset($_POST['viewemployeetable']))
-            {
 
+
+
+
+                                                          
+            if(isset($_POST['employeereport']))
+            {
+                
 
                 $dompdf = new Dompdf(); 
                 $dompdf->loadHtml('
-                <h4 style="margin-left: 3px;"><b>Address: NimedcoPharmacy, Meerigama</b></h4>
-                <h4 style="margin-left: 3px;"><b>G-mail: nimedcopharmacy@.com</b></h4>
-                <h4 style="margin-left: 3px;"><b>Tp.No: +94 770 828 319</b></h4>
-                <h4 style="margin-left: 3px;"><b>Fax: +011 234 567 89</b></h4>
-                <h2  style="margin-left: 400px;"><b>Employee Report</b></h2>
-                <hr style = " border: 1px solid black; length:180px"> 
-                <br>
- 
-          <label for="" class="text-primary" style="margin-left: 50px;margin-top: -90px;"><h2><b>First Name :</b></h2></label>
-          <h3 for="" class="text-primary" style="margin-left:  230px;margin-top: -44px;"><b>'.$_POST[''].'</b></h3>
-           <br>
-          
-          <label for="" class="text-primary" style="margin-left: 50px;margin-top: -90px;"><h2><b>Last Name :</b></h2></label>
-          <h3 for="" class="text-primary" style="margin-left: 230px;margin-top: -44px;"><b>'.$_POST[''].'</b></h3>
-               
-           <br>
-            
-          <label for="" class="text-primary" style="margin-left: 50px;margin-top: -90px;"><h2><b>User Name:</b></h2></label>
-          <h3 for="" class="text-primary" style="margin-left: 230px;margin-top: -44px;"><b>'.$_POST[''].'</b></h3>
-           <br>
-
-            
-          <label for="" class="text-primary" style="margin-left: 50px;margin-top: -90px;"><h2><b>E-mail:</b></h2></label>
-          <h3 for="" class="text-primary" style="margin-left: 230px;margin-top: -44px;"><b>'.$_POST[''].'</b></h3>
+                <table id="billtable" class="table table-striped table-bordered" cellspacing="0" width="80%" style="margin-left:10px;">
+                <thead>
+                  <tr>
+                  <th class="th-sm">Bill Id
+                    </th>
+                    <th class="th-sm">Bill Year
+                    </th>
+                    <th class="th-sm">Bill Month
+                    </th>
+                    <th class="th-sm">Bill Type
+                    </th>
+                    <th class="th-sm">Total No of Units 
+                    </th>
+                    <th class="th-sm">Total Amount
+                    </th>
+                    <th class="th-sm">Paid
+                    </th>
+                    <th class="th-sm">Paid Date
+                      </th>
+                  </tr>
+                </thead>
+                '.<?php.'
                 
-          <label for="" class="text-primary" style="margin-left: 50px;margin-top: -90px;"><h2><b>NIC Number:</b></h2></label>
-          <h3 for="" class="text-primary" style="margin-left: 230px;margin-top: -44px;"><b>'.$_POST[''].'</b></h3>
-          
-          <label for="" class="text-primary" style="margin-left: 50px;margin-top: -90px;"><h2><b>Address:</b></h2></label>
-          <h3 for="" class="text-primary" style="margin-left: 230px;margin-top: -44px;"><b>'.$_POST[''].'</b></h3>
-          
-          <label for="" class="text-primary" style="margin-left: 50px;margin-top: -90px;"><h2><b>Phone Number:</b></h2></label>
-          <h3 for="" class="text-primary" style="margin-left: 230px;margin-top: -44px;"><b>'.$_POST[''].'</b></h3>
-          
-          <h4 style="margin-left:650px;"><b>....................................</b></h4>
-          <h4 style="margin-left:700px;"><b>Signature</b></h4> 
-
+             '.$reterive_query = "SELECT * FROM  employee ";.'
+            $result = $conn->query($reterive_query) or die($conn -> error);
+         
+                while($rows = mysqli_fetch_assoc($result))
+                {
+                   ?> 
+              '<tbody>
+                <tr>
+                <td>'.$rows['EmpId'].' </td>
+                <td> '.$rows['FirstName'].' </td>
+                <td> '.$rows['LastName'].' </td>
+                <td> '.$rows['UserName'].' </td>
+                <td> '.$rows['Email'].' </td>
+                <td> '.$rows['NICNumber'].' </td>
+                <td> '.$rows['Address'].'</td>
+                <td> '.$rows['PhoneNumber'].' </td>  
+                 </tr>
+                </tbody>'
+                 <?php
+                    }
+                  
+                   ?>
+               '</table>
+                      
 
               ');
                 $dompdf->setPaper('A4', 'landscape');
