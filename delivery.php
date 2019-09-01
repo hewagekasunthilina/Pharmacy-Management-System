@@ -6,7 +6,6 @@ $dbname = "nimedco";
 
 $con = new mysqli($servername,$username,$password,$dbname);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,22 +108,26 @@ $con = new mysqli($servername,$username,$password,$dbname);
             <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
   
               <!--Body-->
+              
+              <form name="customerLogin" method="post" action="customerLogin.php">
               <div class="modal-body mb-1">
                 <div class="md-form form-sm mb-5">
                   <i class="fas fa-envelope prefix"></i>
-                  <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                  <input type="email" name="email" id="modalLRInput10" class="form-control-sm validate">
                   <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
                 </div>
   
                 <div class="md-form form-sm mb-4">
                   <i class="fas fa-lock prefix"></i>
-                  <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                  <input type="password" name="password" id="modalLRInput11" class="form-control-sm validate">
                   <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
                 </div>
                 <div class="text-center mt-2">
-                  <button class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                  <input class="btn btn-info" type = "submit" name = "loginsubmit" value="Login">
                 </div>
               </div>
+
+              </form>
               <!--Footer-->
               <div class="modal-footer">
                 <div class="options text-center text-md-right mt-1">
@@ -143,50 +146,53 @@ $con = new mysqli($servername,$username,$password,$dbname);
               <!--Body-->
               
 
+              <form name="customerSign" method="post" action="addCustomer.php">
               
               <div class="modal-body">
 
               <div class="md-form form-sm mb-5">
                   <i class="fas fa-lock prefix"></i>
-                  <input type="text" id="name" class="form-control form-control-sm validate">
+                  <input type="text" name="name" class="form-control-sm">
                   <label data-error="wrong" data-success="right" for="modalLRInput13">Your Name</label>
                 </div>
 
                 <div class="md-form form-sm mb-5">
                   <i class="fas fa-envelope prefix"></i>
-                  <input type="email" id="email" class="form-control form-control-sm validate">
+                  <input type="email" name="email" class="form-control-sm">
                   <label data-error="wrong" data-success="right" for="modalLRInput12">Email</label>
                 </div>
   
                
                 <div class="md-form form-sm mb-5">
                 <i class="fas fa-address-book prefix"></i>
-                  <input type="text" id="address" class="form-control form-control-sm validate">
+                  <input type="text" name="address" class="form-control-sm">
                   <label data-error="wrong" data-success="right" for="modalLRInput13">Address</label>
                 </div>
 
                 <div class="md-form form-sm mb-5">
                 <i class="fas fa-mobile-alt prefix"></i>
-                  <input type="text" id="number" class="form-control form-control-sm validate">
+                  <input type="text" name="number" class="form-control-sm">
                   <label data-error="wrong" data-success="right" for="modalLRInput13">Mobile number</label>
                 </div>
 
 
                 <div class="md-form form-sm mb-5">
                   <i class="fas fa-lock prefix"></i>
-                  <input type="password" id="password" class="form-control form-control-sm validate">
+                  <input type="password" name="password" class="form-control-sm validate">
                   <label data-error="wrong" data-success="right" for="modalLRInput13">Password</label>
                 </div>
   
                 <div class="md-form form-sm mb-4">
                   <i class="fas fa-lock prefix"></i>
-                  <input type="password" id="repeat" class="form-control form-control-sm validate">
+                  <input type="password" name="repeat" class="form-control-sm validate">
                   <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
                 </div>
-  
+
                 <div class="text-center form-sm mt-2">
-                  <button class="btn btn-info">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+                  <input type="submit" class="btn btn-info" name = "submit" value="Submit" onclick = "javascript:return validateRegisterForm();">
                 </div>
+
+                </form>
   
               </div>
               <!--Footer-->
@@ -577,7 +583,6 @@ echo '<div class="col-lg-3 col-md-6 mb-lg-0 mb-4">'.
       '<h5>'.
           '<strong>'.
             '<a href="" class="dark-grey-text">'.$row['title'].
-              /*'<span class="badge badge-pill danger-color">NEW</span>'.*/
             '</a>'.
           '</strong>'.
         '</h5>'.
@@ -929,6 +934,7 @@ $con->close();
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
 
+  <script type="text/javascript" src="js/customersign.js"></script>
 </body>
 
 </html>
