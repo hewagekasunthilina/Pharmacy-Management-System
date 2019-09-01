@@ -35,16 +35,16 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="salary_dashboard.html">Dasboard
+          <a class="nav-link" href="salary_dashboard.php">Dasboard
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="salary_attendance.html">Attendance</a>
+          <a class="nav-link" href="salary_attendance_view.php">Attendance</a>
           <span class="sr-only">(current)</span>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="salary_payroll.html">Payroll</a>
+          <a class="nav-link" href="salary_payroll.php">Payroll</a>
         </li>
       
         
