@@ -8,12 +8,14 @@ $message ="*Use jpg type and  upload image below 500kb";
 
 
 
-  $servername  = "localhost";
+  /*$servername  = "localhost";
   $username = "root";
   $password = "";
   $dbname = "nimedco";
 
-  $con = new mysqli($servername,$username,$password,$dbname);
+  $con = new mysqli($servername,$username,$password,$dbname);*/
+
+  include "connection.php";
 
 
 if(isset($_POST['submit'])){
@@ -61,7 +63,7 @@ if(isset($_POST['submit'])){
      
 
     $sql = "INSERT INTO webHomemed(title,price,image) values('$title','$price','$imagecontent')";
-    $con->query($sql);
+    $conn->query($sql);
 
 
 
@@ -216,7 +218,7 @@ if(isset($_POST['submit'])){
 
 
     $sql = "select ID,title,price,image from webHomemed";
-    $result = $con->query($sql);
+    $result = $conn->query($sql);
 
 
     echo '<br/>'.'<h1>Edit Item</h1>'.'<hr>'.'<br>';
@@ -243,7 +245,7 @@ if(isset($_POST['submit'])){
     }
 
     echo '<hr>';
-    $con->close();
+    $conn->close();
 
      ?>
 

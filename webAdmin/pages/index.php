@@ -2,12 +2,14 @@
 
 
 
-$servername  = "localhost";
+/*$servername  = "localhost";
 $username = "root";
 $password = "";
 $dbname = "nimedco";
 
-  $con = new mysqli($servername,$username,$password,$dbname);
+  $con = new mysqli($servername,$username,$password,$dbname);*/
+
+  include "connection.php";
 
 
 
@@ -33,12 +35,12 @@ if(isset($_POST['submiti'])){
  if($imagecontenti != null)
 {
     $sql = "INSERT INTO news(topic,date,description,image) values('$topici','$datei','$descriptioni','$imagecontenti')";
-    $con->query($sql);
+    $conn->query($sql);
 }
 else
 {
     $sql = "INSERT INTO news(topic,date,description) values('$topici','$datei','$descriptioni')";
-    $con->query($sql);
+    $conn->query($sql);
 }
     
 
