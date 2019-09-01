@@ -1,8 +1,3 @@
-<?php
-       require_once "expendituredetails.php"; 
-       
-       include "connection.php";  //connection created
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,8 +14,14 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  <!--Form validation-->
+  <script src = "expenditure.js"> </script>  
+  <!--Datepicker validate-->
+  <script src = "expendituredate.js"></script>
+
+
 </head>
-<body>
+<body  onload=enable_text(false);>
   <!--Header-->
 
   <!--Navbar-->
@@ -75,48 +76,34 @@
     
     </nav>
 <!--/.Navbar-->
-
+ 
        <!-- Card -->
- <div class="card mx-xl-5">
+       <div class="card mx-xl-5">
 
-        <!-- Card body -->
-        <div class="card-body">
-    
-            <!--form-->
-            <form  method="POST" action="expendituredetails.php"  >
-              <h5 class="card-header info-color white-text text-center py-4">
-                <strong>Update Expenditure Details</strong>
-               </h5>
+<!-- Card body -->
+<div class="card-body">
+  
+<form  method="POST" action="expenditurereportdb.php" name="expenditurereportform" >
         
-                <h3  style="margin-left: 15px;"><b>Bill Information</b></h3>
-                <hr style = " border: 1px solid black;">  
+      <br><br>
 
-              <!--input hidden field-->
-              <input type="hidden" name="billid"  value="<?php echo $bill_id;?>">
-
-
-
-                <!--input year -->
-                <label for="billyear" class="text-primary">Bill Year</label>
-                <div class="form-group col-md-6">
-                <input type="text" id="defaultFormCardNameEx" class="form-control" placeholder="Enter Bill Year" name="updatebillyear" value="<?php echo  $bill_year;?> ">
-                </div>
-
-                <br>
-                
+            <!-- Default input -->
+            <div class="form-group col-md-6" style="margin-left: 15px;">
+              <input type="text" class="form-control" id="inputbillyear" placeholder="Enter Bill Year" name="billyear" />
+            </div>
+             
+            
                 <!--input month-->
                 <!--Dropdown primary-->
-         <div class="dropdown">
+        
        
-       <label for="billmonth" class="text-primary">Bill Month</label>
-       <br>
-       <select class="btn btn-primary dropdown-toggle mr-4" style="margin-left:20px" name="updatebillmonth" required>
-        <option value = "<?php echo  $bill_month;?>"  class="dropdown-item" href="#"><?php echo  $bill_month;?></option>
-        <option value="January" class="dropdown-item" href="#">January</option>
+       
+        <select class="btn btn-primary dropdown-toggle mr-4"  style="margin-left:410px; margin-top: -90px;" name="billmonth" required>
+        <option value="January" class="dropdown-item" href="#" >January</option>
         <option value="February" class="dropdown-item" href="#">February</option>
-        <option value="March"  class="dropdown-item" href="#">March</option>
+        <option value="March" class="dropdown-item" href="#">March</option>
         <option value="April" class="dropdown-item" href="#">April</option>
-        <option value="May" class="dropdown-item" href="#">May</option>
+        <option value="May"   class="dropdown-item" href="#">May</option>
         <option value="June" class="dropdown-item" href="#">June</option>
         <option value="July" class="dropdown-item" href="#">July</option>
         <option value="August" class="dropdown-item" href="#">August</option>
@@ -125,131 +112,66 @@
         <option value="November" class="dropdown-item" href="#">November</option>
         <option value="December" class="dropdown-item" href="#">December</option>   
       </select>
-      </div>
-    <!--/Dropdown primary-->
-      <br>
+             <div style="margin-left:640px;margin-top:-86px;" >
+            <input type="submit" name="Addexpenditurereport" class="btn btn-primary btn-rounded"  onclick="ValidateForm(document.expenditurereportform.billyear)" value="Report"/>
+             </div>
+         <br><br>
 
+         
+         <h3  style="margin-left: 150px;"><b>Monthly Expenditure Report</b></h3>
+                <hr style = " border: 1px solid black; length:180px"> 
+                <br><br>
 
-      <div class="dropdown">  
-        <label for="billtype" class="text-primary">Bill Type</label>
-        <br>
-       <!--Menu-->
-          <select class="btn btn-primary dropdown-toggle mr-4"  style="margin-left:20px"  name="updatebilltype"  required>
-              <option value="<?php echo  $bill_type;?>" class="dropdown-item" href="#"><?php echo $bill_type;?></option>
-              <option value="Electricity" class="dropdown-item" href="#" >Electricity</option>
-              <option value="Water" class="dropdown-item" href="#">Water</option>
-              <option value="Other" class="dropdown-item" href="#">Other</option>
-          </select>
-       
-      </div>
-     <!--/Dropdown primary-->
-     <br> 
-
-
-
-                <!--input units -->
-                <label for="totalunits" class="text-primary">Total No Of Unit Consumed</label>
+</form>
+         <form  method="POST" action="expenditurereportdb.php">
+          <!--output report id -->
+          <label for="" class="text-primary">Report Id</label>
+           <br>
                 <div class="form-group col-md-6">
-                <input type="text" id="defaultFormCardEmailEx" class="form-control" name="updatenoofunits" placeholder="Enter  Total No Of Units" value="<?php echo  $total_units;?>">
+                <input type="text" id="outputreportid" class="form-control" placeholder="Report Id" name="Reportid"  value ="<?php echo $_GET['reportid'];?>">
                 </div>
-
-                <br>
-
-
-                <!--input units -->
-                <label for="totalamount" class="text-primary">Total Amount(Rs)</label>
+           <br>
+            <!--output report id -->
+          <label for="" class="text-primary">Year</label>
+           <br>
                 <div class="form-group col-md-6">
-                <input type="text" id="defaultFormCardEmailEx" class="form-control" name="updatetotamouunt" placeholder="Enter Total Amount"  value="<?php echo  $total_amount;?>">
+                <input type="text" id="year" class="form-control" placeholder="Year" name="year" value ="<?php echo $_GET['year'];?>" >
                 </div>
+           <br>
+            <!--output report id -->
+          <label for="" class="text-primary">Month</label>
+           <br>
+                <div class="form-group col-md-6">
+                <input type="text" id="month" class="form-control" placeholder="Month" name="month" value ="<?php echo $_GET['month'];?>" >
+                </div>
+           <br>
+            <!--output All monthly expenses  -->
+          <label for="" class="text-primary">Total Monthly Expenses(Rs.)</label>
+           <br>
+                <div class="form-group col-md-6">
+                <input type="text" id="Totalmontlyexpenses" class="form-control" placeholder="Total Montly Expenses" name="Totalmontlyexpenses" value ="<?php echo $_GET['totalexpenses'];?>" >
+                </div>
+           <br>
+           <input type="submit" name="Addpdf" class="btn btn-primary btn-rounded" style="margin-left:10px" onclick="ValidateForm(document.expenditureform.billyear,document.expenditureform.totamouunt,document.expenditureform.paiddate)" value="PDF"/>
+           </form>
+                   
+                    <br><br>
 
-                 <br>
-                 <!--input units -->
-                 <label for="paid" class="text-primary">Paid</label>
-                  <!-- Default checked -->
-                    <div class="custom-control custom-radio">
-                          <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="updaterdb" value ="Yes"  <?php echo ($paid=='Yes') ?  "checked" : "";?>  onclick = "enable_text(false)"/>
-                          <label class="custom-control-label" for="defaultGroupExample1">Yes</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="updaterdb" value="No" <?php echo ($paid=='No') ?  "checked" : "";?> />
-                                <label class="custom-control-label" for="defaultGroupExample2">No</label>
-                    </div>
-
-                    <br>
-                    <!--input units -->
-                    <label for="paiddate" class="text-primary">Paid Date</label>
-                    <div class="form-group col-md-6">
-                      <input type="text" class="form-control" id="inputZip" placeholder="DD/MM/YYYY"  name="updatepaiddate"  value="<?php echo  $paid_date;?>">
-                    </div>
-                    <br>
-                    <input type="submit" class="btn btn-primary btn-rounded" style="margin-left:500px" value="UPDATE" name="updated" />
-                    </form>
-                    <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="POST">
-                    <input  type="submit" class="btn btn-primary btn-rounded" style="margin-left:10px" value="VIEW BILL TABLE" name="viewupdatetable" />
-                     </form>
-                     <br>
-              <!-- Default form subscription -->
-                <h3  style="margin-left: 15px;"><b> Updated Bill Table</b></h3>
-                <hr style = " border: 1px solid black;">  
-               <!--Bill Table-->
-            <table id="billtable" class="table table-striped table-bordered" cellspacing="0" width="80%" style="margin-left:10px;">
-                <thead>
-                  <tr>
-                  <th class="th-sm">Bill Id
-                   </th>
-                    <th class="th-sm">Bill Year
-                    </th>
-                    <th class="th-sm">Bill Month
-                    </th>
-                    <th class="th-sm">Bill Type
-                    </th>
-                    <th class="th-sm">Total No of Units 
-                    </th>
-                    <th class="th-sm">Total Amount
-                    </th>
-                    <th class="th-sm">Paid
-                    </th>
-                    <th class="th-sm">Paid Date
-                      </th>
-                  </tr>
-                </thead>
-                <?php 
-                    
-                    if(isset($_POST['viewupdatetable']))
-                    {
-                          
-                          $reterive_query = "SELECT * FROM  expenditure";
-                          $result = $conn->query($reterive_query) or die($conn -> error);
-
-                          while($row = mysqli_fetch_assoc($result))
-                          {
-                 
-                  ?>
-                  <tbody>
-                    <tr>
-                    <td> <?php echo $row['BillId']; ?></td>
-                    <td> <?php echo $row['BillYear']; ?></td>
-                    <td> <?php echo $row['BillMonth']; ?></td>
-                    <td> <?php echo $row['BillType'];?></td>
-                    <td> <?php echo $row['TotalUnits'];?></td>
-                    <td> <?php echo $row['TotalAmount'];?></td>
-                    <td> <?php echo $row['Paid']; ?></td>
-                    <td> <?php echo $row['PaidDate'];?></td>
-                    </tr>
-                    </tbody>
-                    <?php 
-                          }
-                        }
-                        ?>
-                    </table>    
-        </div>
-        <!-- Card body -->
     
-    </div>
-    <!-- Card -->
-     
+           
 
- <!-- Footer -->
+    
+          </div>
+            <!-- Card body -->
+        
+  </div>
+  <!-- Card -->
+
+
+
+
+
+<!-- Footer -->
 <footer class="page-footer font-small mdb-color pt-4">
 
     <!-- Footer Links -->
@@ -386,11 +308,8 @@
   <!-- Footer -->
   
   <!--Ens of the footer-->        
-  
-  
 
-
-
+    
   <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -400,7 +319,7 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
- </fieldset>
-</body>
 
+
+</body>
 </html>
