@@ -122,8 +122,8 @@
             
               <!-- Grid row -->
             <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateDetailsForm();">UPDATE</button>
-            <button type="submit" class="btn btn-primary btn-md">DELETE</button>
-            <button type="submit" class="btn btn-primary btn-md">SEARCH</button>
+            <button type="submit" class="btn btn-danger" onclick="javascript: return validateDetailsForm();">DELETE</button>
+            
           </form>
         <!-- Extended default form grid --></div>
       <div class="col-md-1"></div>

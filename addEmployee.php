@@ -64,7 +64,6 @@
     
                 <!-- E-mail -->
                 <div class="md-form mt-0">
-                    <input type="email" id="Email" value="<?php echo $Email; ?>" name="Email" class="form-control">
                     <label for="Email">E-mail</label>
                 </div>
 
