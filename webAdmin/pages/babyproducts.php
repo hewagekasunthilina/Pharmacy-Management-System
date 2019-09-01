@@ -8,12 +8,15 @@ $message ="*Use jpg type and  upload image below 500kb";
 
 
 
-  $servername  = "localhost";
+ /* $servername  = "localhost";
   $username = "root";
   $password = "";
   $dbname = "nimedco";
 
-  $con = new mysqli($servername,$username,$password,$dbname);
+  $con = new mysqli($servername,$username,$password,$dbname);*/
+
+  include "connection.php";
+
 
 
 if(isset($_POST['submit'])){
@@ -61,7 +64,7 @@ if(isset($_POST['submit'])){
      
 
     $sql = "INSERT INTO webbabyproducts(title,price,image) values('$title','$price','$imagecontent')";
-    $con->query($sql);
+    $conn->query($sql);
 
 
 
@@ -118,7 +121,7 @@ if(isset($_POST['submit'])){
                 </div>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="../../index.php"><i class="fa fa-home fa-fw"></i> Website</a></li>
+                    <li><a href="../../delivery.php"><i class="fa fa-home fa-fw"></i> Website</a></li>
                 </ul>
 
 

@@ -1,12 +1,13 @@
 
 <?php 
 session_start();
-     $servername  = "localhost";
+     /*$servername  = "localhost";
      $username = "root";
      $password = "";
      $dbname = "nimedco";
    
-     $con = new mysqli($servername,$username,$password,$dbname);
+     $con = new mysqli($servername,$username,$password,$dbname);*/
+     include "connection.php";
  
         $newName = $_POST['newName'];
         $newPrice = $_POST['newPrice'];
@@ -15,11 +16,11 @@ session_start();
     
          $sql = "UPDATE webpersonalcare SET title='$newName',price = '$newPrice' WHERE ID ='$id'";
         
-         $con->query($sql);
+         $conn->query($sql);
 
          header('location:webpersonalcare.php');
          
-    $con->close();
+    $conn->close();
 ?>
 
 

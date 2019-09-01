@@ -1,12 +1,14 @@
 <?php
 
 session_start();
-$servername  = "localhost";
+/*$servername  = "localhost";
 $username = "root";
 $password = "";
 $dbname = "nimedco";
 
-$con = new mysqli($servername,$username,$password,$dbname);
+$con = new mysqli($servername,$username,$password,$dbname);*/
+
+include "connection.php";
 
   $id10 = $_GET['id10'];
 
@@ -14,7 +16,7 @@ $con = new mysqli($servername,$username,$password,$dbname);
   $sql11 = "DELETE FROM webHomemed WHERE  ID = $id10";
 
 
-  $con -> query($sql11);
+  $conn -> query($sql11);
 
   header('location:HomeMedicine.php');
 
