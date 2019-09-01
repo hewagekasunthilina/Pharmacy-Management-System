@@ -55,8 +55,8 @@
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Employee Report</a>
           <a class="dropdown-item" href="#">Customer Details Reports</a>
-          <a class="dropdown-item" href="#">Expenditure Report</a>
-          <a class="dropdown-item" href="#">Salary Report</a>
+          <a class="dropdown-item" href="expenditurereport.php">Expenditure Report</a>
+          <a class="dropdown-item" href="StockReports.php">Stock Report</a>
           
         </div>
       </li>
@@ -87,9 +87,7 @@
         <div class="card-body">
           <h5 class="card-title">Special title treatment</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#!" class="btn btn-primary">ADD</a>
-          <a href="#!" class="btn btn-primary">UPDATE</a>
-          <a href="#!" class="btn btn-primary">REMOVE</a>
+          <a href="#!" class="btn btn-primary">Report</a>
         </div>
       </div>      
     </th>
@@ -115,7 +113,7 @@
         <div class="card-body">
           <h5 class="card-title">Special title treatment</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#!" class="btn btn-primary">VIEW</a>
+          <a href="Stock.php" class="btn btn-primary">VIEW</a>
         </div>
       </div>    
     </th>
@@ -130,8 +128,7 @@
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <a href="Expenditure.php" class="btn btn-primary">VIEW</a>
-            <a href="#!" class="btn btn-primary">BILLS</a>
-            <a href="#!" class="btn btn-primary">REPORTS</a>
+            <a href="expenditurereport.php" class="btn btn-primary">REPORTS</a>
           </div>
         </div>      
       </th>
@@ -142,9 +139,9 @@
           <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#!" class="btn btn-primary">VIEW</a>
+            <a href="salary_dashboard.php" class="btn btn-primary">VIEW</a>
             <a href="#!" class="btn btn-primary">REPORTS</a>
-            <a href="#!" class="btn btn-primary">text</a>
+            <a href="salary_emp.php" class="btn btn-primary">Employee Tracker </a>
           </div>
         </div>    
       </th>
@@ -155,8 +152,8 @@
           <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#!" class="btn btn-primary">VIEW</a>
-            <a href="#!" class="btn btn-primary">REPORTS</a>
+            <a href="Cashier.php" class="btn btn-primary">Cashier</a>
+            
           </div>
         </div>    
       </th>
