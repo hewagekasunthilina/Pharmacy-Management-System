@@ -55,7 +55,7 @@
     
                 <!-- E-mail -->
                 <div class="md-form mt-0">
-                    <input type="email" id="Email" class="form-control">
+                    <input type="email" id="email" class="form-control">
                     <label for="Email">E-mail</label>
                 </div>
 
