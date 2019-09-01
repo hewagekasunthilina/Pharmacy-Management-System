@@ -14,6 +14,7 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  
 </head>
 <body>
   <!--Navbar-->
@@ -41,7 +42,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Features</a>
         </li>
-       
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
   
         <!-- Dropdown -->
         <li class="nav-item dropdown">
@@ -78,47 +81,53 @@
       <div class="col-md-5"><h2>REGISTER</h2>  
         <br>    
         <!-- Extended default form grid -->
-        <form>
+        <form id="myform1" method="POST">
           <!-- Grid row -->
           <div class="form-row">
             <!-- Default input -->
             <div class="form-group col-md-6">
-              <label for="inputEmail4">SupplireID</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="SupplireID">
+              <label for="supplierid">SupplireID</label>
+              <input type="text" class="form-control" id="supplierid" placeholder="SupplireID" name="supplerid">
+              <span id="supplerId" class="text-danger font-weight-bold"></span>
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
-              <label for="inputPassword4">Name</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Name">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+              <span class="helper-text"></span>
             </div>
           </div>
           <!-- Grid row -->
         
           <!-- Default input -->
           <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" name="address">
+            <span class="helper-text"></span>
           </div>
           <!-- Default input -->
           <div class="form-group">
-            <label for="inputAddress2">Medicine Brand</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="SPC,MPC,ACC">
+            <label for="brand">Medicine Brand</label>
+            <input type="text" class="form-control" id="brand" placeholder="SPC,MPC,ACC" name="brand">
+            <span id="Brand" class="text-danger font-weight-bold"></span>
           </div>
           <!-- Grid row -->
           <div class="form-row">
             <!-- Default input -->
             <div class="form-group col-md-6">
-              <label for="inputCity">Email</label>
-              <input type="text" class="form-control" id="inputCity" placeholder="Email">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+              <span class="helper-text"></span>
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
-              <label for="inputZip">Contact Number</label>
-              <input type="text" class="form-control" id="inputZip" placeholder="xxxxxxxxxx">
+              <label for="contact">Contact Number</label>
+              <input type="text" class="form-control" id="contact" placeholder="xxxxxxxxxx" name="contact">
+              <span class="helper-text"></span>
             </div>
           </div>
           <!-- Grid row -->
-          <button type="submit" class="btn btn-primary btn-md">REGISTER</button>
+          <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateRegisterForm();">REGISTER</button>
         </form>
         <!-- Extended default form grid --></div>
       <div class="col-md-1"></div>
@@ -384,6 +393,8 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
+  
+  <script src="js/supvalidation.js"></script>
 
 </body>
 

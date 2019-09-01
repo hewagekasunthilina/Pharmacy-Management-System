@@ -1,3 +1,8 @@
+<?php
+  include('connection.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,13 +20,13 @@
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
   <!--Form validation-->
-  <script src = "js/expenditure.js"> </script>  
+  <script src = "expenditure.js"> </script>  
   <!--Datepicker validate-->
   <script src = "expendituredate.js"></script>
 
 
 </head>
-<body>
+<body  onload=enable_text(false);>
   <!--Header-->
 
   <!--Navbar-->
@@ -87,7 +92,7 @@
      <div class="card-body">
     
             <!--form-->
-            <form  method="POST" action="expenditure-backend.php"  name="expenditureform">
+            <form  method="POST" action="expendituredetails.php"  name="expenditureform" id="expenditureform">
               <h5 class="card-header info-color white-text text-center py-4">
                 <strong>Expenditure Details</strong>
                </h5>
@@ -109,19 +114,19 @@
        
          <label for="billmonth" class="text-primary">Bill Month</label>
          <br>
-         <select class="mdb-select" style="margin-left:20px" required>
-          <option value="January" >January</option>
-          <option value="February">February</option>
-          <option value="March">March</option>
-          <option value="April">April</option>
-          <option value="May">May</option>
-          <option value="June">June</option>
-          <option value="July">July</option>
-          <option value="August">August</option>
-          <option value="September">September</option>
-          <option value="October">October</option>
-          <option value="November">November</option>
-          <option value="December">December</option>   
+         <select class="btn btn-primary dropdown-toggle mr-4"  style="margin-left:20px" name="billmonth" required>
+          <option value="January" class="dropdown-item" href="#" >January</option>
+          <option value="February" class="dropdown-item" href="#">February</option>
+          <option value="March" class="dropdown-item" href="#">March</option>
+          <option value="April" class="dropdown-item" href="#">April</option>
+          <option value="May"   class="dropdown-item" href="#">May</option>
+          <option value="June" class="dropdown-item" href="#">June</option>
+          <option value="July" class="dropdown-item" href="#">July</option>
+          <option value="August" class="dropdown-item" href="#">August</option>
+          <option value="September" class="dropdown-item" href="#">September</option>
+          <option value="October" class="dropdown-item" href="#">October</option>
+          <option value="November" class="dropdown-item" href="#">November</option>
+          <option value="December" class="dropdown-item" href="#">December</option>   
         </select>
         </div>
       <!--/Dropdown primary-->
@@ -132,10 +137,10 @@
         <label for="billtype" class="text-primary">Bill Type</label>
         <br>
        <!--Menu-->
-          <select class="mdb-select"  style="margin-left:20px"  required>
-              <option value="Electricity" >Electricity</option>
-              <option value="Water">Water</option>
-              <option value="Other">Other</option>
+          <select class="btn btn-primary dropdown-toggle mr-4"  style="margin-left:20px"  name="billtype"  required>
+              <option value="Electricity" class="dropdown-item" href="#" >Electricity</option>
+              <option value="Water" class="dropdown-item" href="#">Water</option>
+              <option value="Other" class="dropdown-item" href="#">Other</option>
           </select>
        
       </div>
@@ -163,11 +168,11 @@
                  <label for="paid" class="text-primary">Paid</label>
                   <!-- Default checked -->
                     <div class="custom-control custom-radio">
-                          <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="paid">
+                          <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="rdb" value ="Yes"  onclick = "enable_text(false)" /> 
                           <label class="custom-control-label" for="defaultGroupExample1">Yes</label>
                     </div>
                     <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="paid" >
+                                <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="rdb" value="No" onclick = "enable_text(this.checked)" />
                                 <label class="custom-control-label" for="defaultGroupExample2">No</label>
                     </div>
 
@@ -175,14 +180,19 @@
                     <!--input units -->
                     <label for="paiddate" class="text-primary">Paid Date</label>
                     <div class="form-group col-md-6">
-                      <input type="text" class="form-control" id="inputZip" placeholder="DD/MM/YYYY" name="paiddate">
+                      <input type="text" class="form-control" id="inputZip" placeholder="DD/MM/YYYY" name="paiddate" required >
                     </div>
                      <br>
 
-                    <input type="submit" class="btn btn-primary btn-rounded" style="margin-left:500px" onclick="ValidateForm(document.expenditureform.billyear,document.expenditureform.totamouunt,document.expenditureform.paiddate)" value="OK"/>
-                    <input type="submit" class="btn btn-primary btn-rounded" style="margin-left:10px" value="VIEW BILL TABLE" />
-                <br><br>
-              </form>
+                    <input type="submit" name="Addexpenditure" class="btn btn-primary btn-rounded" style="margin-left:500px" onclick="ValidateForm(document.expenditureform.billyear,document.expenditureform.totamouunt,document.expenditureform.paiddate)" value="OK"/>
+                    <a href="expenditurereport.php"  class="btn btn-primary btn-rounded" style="margin-left:670px;margin-top:-74px;">REPORT</a>
+                    </form>
+                    <form  method ="POST"  action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                    <input type="submit" name="Viewbilltable" class="btn btn-primary btn-rounded" style="margin-left:10px" value="VIEW BILL TABLE" />
+                             
+                      </form>
+                    <br><br>
+                    
 
 
     
@@ -200,85 +210,66 @@
                 <hr style = " border: 1px solid black; width: 240px;">  
                 <br><br>
                 <!--Bill Table-->
-            <table id="billtable" class="table table-striped table-bordered" cellspacing="0" width="80%" style="margin-left:10px;">
-                    <thead>
-                      <tr>
-                        <th class="th-sm">Bill Year
-                        </th>
-                        <th class="th-sm">Bill Month
-                        </th>
-                        <th class="th-sm">Bill Type
-                        </th>
-                        <th class="th-sm">Total No of Units 
-                        </th>
-                        <th class="th-sm">Total Amount
-                        </th>
-                        <th class="th-sm">Paid
-                        </th>
-                        <th class="th-sm">Paid Date
-                          </th>
-                        <th class="th-sm">Update
-                          </th>
-                        <th class="th-sm">Delete
-                          </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>2018</td>
-                        <td>January</td>
-                        <td>Electricity</td>
-                        <td>150</td>
-                        <td>5000</td>
-                        <td>Yes</td>
-                        <td>25/02/2019</td>
-                        <td><button type="submit"
-                          class="btn btn-primary btn-rounded">Update</button></td>
-                          <td><button type="submit"
-                            class="btn btn-primary btn-rounded">Delete</button></td>  
-                      </tr>
-                      <tr>
-                          <td>2018</td>
-                          <td>February</td>
-                          <td>Electricity</td>
-                          <td>100</td>
-                          <td>3000</td>
-                          <td>No</td>
-                          <td>00/00/0000</td>
-                          <td><button type="button"
-                            class="btn btn-primary btn-rounded">Update</button></td>
-                            <td><button type="button"
-                              class="btn btn-primary btn-rounded">Delete</button></td>  
-                        </tr>
-                        <tr>
-                            <td>2018</td>
-                            <td>February</td>
-                            <td>Water</td>
-                            <td>10</td>
-                            <td>1500</td>
-                            <td>No</td>
-                            <td>00/00/0000</td>
-                            <td><button type="button"
-                              class="btn btn-primary btn-rounded">Update</button></td>
-                              <td><button type="button"
-                                class="btn btn-primary btn-rounded">Delete</button></td>  
-                        </tr>
-                        <tr>
-                            <td>2018</td>
-                            <td>February</td>
-                            <td>Other</td>
-                            <td>00</td>
-                            <td>1500</td>
-                            <td>Yes</td>
-                            <td>02/01/2019</td>
-                            <td><button type="button"
-                              class="btn btn-primary btn-rounded">Update</button></td>
-                              <td><button type="button"
-                                class="btn btn-primary btn-rounded">Delete</button></td>  
-                         </tr>
-                    </tbody>
-                  </table>    
+                             
+                <table id="billtable" class="table table-striped table-bordered" cellspacing="0" width="80%" style="margin-left:10px;">
+              <thead>
+                <tr>
+                <th class="th-sm">Bill Id
+                  </th>
+                  <th class="th-sm">Bill Year
+                  </th>
+                  <th class="th-sm">Bill Month
+                  </th>
+                  <th class="th-sm">Bill Type
+                  </th>
+                  <th class="th-sm">Total No of Units 
+                  </th>
+                  <th class="th-sm">Total Amount
+                  </th>
+                  <th class="th-sm">Paid
+                  </th>
+                  <th class="th-sm">Paid Date
+                    </th>
+                  <th class="th-sm">Update
+                    </th>
+                  <th class="th-sm">Delete
+                    </th>
+                </tr>
+              </thead>
+              
+              <?php
+                 if(isset($_POST['Viewbilltable']))
+                 {
+                      $reterive_query = "SELECT * FROM  expenditure ";
+                      $result = $conn->query($reterive_query) or die($conn -> error);
+                         
+
+                  while($rows = mysqli_fetch_assoc($result))
+                  {
+
                   
+              ?>
+              <tbody>
+              <tr>
+              <td> <?php echo $rows['BillId']; ?> </td>
+              <td> <?php echo $rows['BillYear']; ?> </td>
+              <td> <?php echo $rows['BillMonth']; ?> </td>
+              <td> <?php echo $rows['BillType']; ?> </td>
+              <td> <?php echo $rows['TotalUnits']; ?> </td>
+              <td> <?php echo $rows['TotalAmount']; ?> </td>
+              <td> <?php echo $rows['Paid']; ?></td>
+              <td> <?php echo $rows['PaidDate']; ?> </td>
+              <td><a href="UpdateExpenditure.php?Update=<?php echo $rows['BillId'];?>" 
+                class="btn btn-primary btn-rounded">Update</a></td>
+                <td><a href="expendituredetails.php?Delete=<?php echo $rows['BillId'];?>"
+                  class="btn btn-danger btn-rounded">Delete</button></td>  
+               </tr>
+              </tbody>
+               <?php
+                  }
+                }
+                 ?>
+             </table>
                   
 
 

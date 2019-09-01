@@ -80,47 +80,47 @@
       <div class="col-md-5"><h2>ADD REPORTS</h2>  
         <br>    
         <!-- Extended default form grid -->
-        <form>
+        <form id="myform4" method="POST">
           <!-- Grid row -->
           <div class="form-row">
             <!-- Default input -->
             <div class="form-group col-md-6">
-              <label for="inputEmail4">SupplireID</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="SupplireID">
+              <label for="reportid">ReportID</label>
+              <input type="text" class="form-control" id="reportid" placeholder="ReportID" name="reportid">
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
-              <label for="inputPassword4">Name</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Name">
+              <label for="supplireid">SupplireID</label>
+              <input type="text" class="form-control" id="supplireid" placeholder="SupplireID" name="supplireid">
             </div>
           </div>
           <!-- Grid row -->
         
           <!-- Default input -->
           <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <label for="medName">Medicine Name</label>
+            <input type="text" class="form-control" id="medName" placeholder="SPC,MPC,ACC" name="medName">
           </div>
           <!-- Default input -->
           <div class="form-group">
-            <label for="inputAddress2">Medicine Brand</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="SPC,MPC,ACC">
+            <label for="date">Date</label>
+            <input type="text" class="form-control" id="date" placeholder="DD/MM/YYYY" name="date">
           </div>
           <!-- Grid row -->
           <div class="form-row">
             <!-- Default input -->
             <div class="form-group col-md-6">
-              <label for="inputCity">Email</label>
-              <input type="text" class="form-control" id="inputCity" placeholder="Email">
+              <label for="qty">QTY</label>
+              <input type="text" class="form-control" id="qty" placeholder="QTY" name="qty">
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
-              <label for="inputZip">Contact Number</label>
-              <input type="text" class="form-control" id="inputZip" placeholder="xxxxxxxxxx">
+              <label for="price">Price </label>
+              <input type="text" class="form-control" id="price" placeholder="Price" name="price">
             </div>
           </div>
           <!-- Grid row -->
-          <button type="submit" class="btn btn-primary btn-md">ADD REPORTS</button>
+          <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateReportForm();">ADD REPORTS</button>
         </form>
         <!-- Extended default form grid --></div>
       <div class="col-md-1"></div>
@@ -386,6 +386,8 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
+
+  <script src="js/supvalidation.js"></script>
 
 </body>
 

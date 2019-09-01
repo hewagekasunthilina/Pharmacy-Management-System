@@ -71,7 +71,7 @@
   <br><br>
 
 
-  <table class="panel-table-1">
+  <table class="panel-table-1" align="center">
 
     <tr>
       <th>
@@ -80,7 +80,7 @@
           <div class="card-body">
             <h5 class="card-title">New Suppliers are Welcome</h5>
             <p class="card-text">Add new Suppliers to the NimedcoPharmacy System.</p>
-            <a href="registerSupplier.html" class="btn btn-primary">ADD</a>
+            <a href="registerSupplier.php" class="btn btn-primary">ADD</a>
 
           </div>
         </div>      
@@ -93,8 +93,8 @@
             <h5 class="card-title">Registerd Suppliers are Welcome.</h5>
             <p class="card-text">Update / Remove Registerd Supplier details.</p>
 
-            <a href="supplierDetails.html" class="btn btn-primary">UPDATE</a>
-            <a href="supplierDetails.html" class="btn btn-primary">REMOVE</a>
+            <a href="supplierDetails.php" class="btn btn-primary">UPDATE</a>
+            <a href="supplierDetails.php" class="btn btn-primary">REMOVE</a>
           </div>
         </div>    
       </th>
@@ -106,9 +106,9 @@
             <h5 class="card-title">Onboard Supplies reports.</h5>
             <p class="card-text">Add / Update / Delete Spplies reports.</p>
             
-            <a href="Reports.html" class="btn btn-primary">ADD</a>
-            <a href="updateReports.html" class="btn btn-primary">UPDATE</a>
-            <a href="updateReports.html" class="btn btn-primary">REMOVE</a>
+            <a href="Reports.php" class="btn btn-primary">ADD</a>
+            <a href="updateReports.php" class="btn btn-primary">UPDATE</a>
+            <a href="updateReports.php" class="btn btn-primary">REMOVE</a>
             
           </div>
         </div>    
@@ -122,7 +122,7 @@
           <div class="card-body">
             <h5 class="card-title">Summary of the Supplies. </h5>
             <p class="card-text">View Supplies summary.</p>
-            <a href="#!" class="btn btn-primary">VIEW</a>
+            <a href="Summary.php" class="btn btn-primary">VIEW</a>
 
           </div>
         </div>      
@@ -133,9 +133,9 @@
           <div class="card-body">
             <h5 class="card-title">Orders Stock need.</h5>
             <p class="card-text">Add orders and Send Orders to Suppliers.</p>
-            <a href="Orders.html" class="btn btn-primary">ADD</a>
-            <a href="updateOrders.html" class="btn btn-primary">UPDATE</a>
-            <a href="updateOrders.html" class="btn btn-primary">REMOVE</a>
+            <a href="Orders.php" class="btn btn-primary">ADD</a>
+            <a href="updateOrders.php" class="btn btn-primary">UPDATE</a>
+            <a href="updateOrders.php" class="btn btn-primary">REMOVE</a>
 
           </div>
         </div>      

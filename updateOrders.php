@@ -80,44 +80,44 @@
       <div class="col-md-5"><h2>ADD ORDERS</h2>  
         <br>    
         <!-- Extended default form grid -->
-        <form>
+        <form id="myform3" method="POST">
           <!-- Grid row -->
           <div class="form-row">
             <!-- Default input -->
             <div class="form-group col-md-6">
-              <label for="inputEmail4">OrderID</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="OrderID">
+              <label for="orderid">OrderID</label>
+              <input type="text" class="form-control" id="orderid" placeholder="OrderID">
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
-              <label for="inputPassword4">SupplireID</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="SupplireID">
+              <label for="supplierid">SupplireID</label>
+              <input type="text" class="form-control" id="supplierid" placeholder="SupplireID">
             </div>
           </div>
           <!-- Grid row -->
         
           <!-- Default input -->
           <div class="form-group">
-            <label for="inputAddress">MedName</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Name of the Medicine">
+            <label for="medname">MedName</label>
+            <input type="text" class="form-control" id="medname" placeholder="Name of the Medicine">
           </div>
 
           <!-- Grid row -->
           <div class="form-row">
             <!-- Default input -->
             <div class="form-group col-md-6">
-              <label for="inputCity">QTY</label>
-              <input type="text" class="form-control" id="inputCity" placeholder="Quantity">
+              <label for="qty">QTY</label>
+              <input type="text" class="form-control" id="qty" placeholder="Quantity">
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
-              <label for="inputZip">Date</label>
-              <input type="text" class="form-control" id="inputZip" placeholder="DD/MM/YYYY">
+              <label for="date">Date</label>
+              <input type="text" class="form-control" id="date" placeholder="DD/MM/YYYY">
             </div>
           </div>
           <!-- Grid row -->
-          <button type="submit" class="btn btn-primary btn-md">UPDATE</button>
-          <button type="submit" class="btn btn-primary btn-md">REMOVE</button>
+          <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateOrderForm();">UPDATE</button>
+          <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateOrderForm();">REMOVE</button>
 
         </form>
         <!-- Extended default form grid --></div>
@@ -382,6 +382,8 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
+
+  <script src="js/supvalidation.js"></script>
 
 </body>
 
