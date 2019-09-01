@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Add Item | Nimedco Pharmacy</title>
+  <title>Stock Reports | Nimedco Pharmacy</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -14,7 +14,6 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
-  <script src="js/stockvalidation.js"></script>
 </head>
 <body>
   <!--Navbar-->
@@ -71,144 +70,90 @@
   <!--/.Navbar-->
   <br><br>
 
-
-
-
-  <div class="container">
-      <div class="row">
-        <div class="col-md-5"><h2>ADD NEW ITEM</h2>  
-          <br>    
-          <!-- Extended default form grid -->
-          <form name="addItemForm" method="POST" action="">
-              <!-- Grid row -->
-              <div class="form-row">
-                <!-- Default input -->
-                <div class="form-group col-md-6">
-                    <label for="ItemID">ItemID</label>
-                    <input type="text" class="form-control" name="ItemID" id="ItemID" placeholder="ItemID">
-                  </div>
-                  <!-- Default input -->
-                  <div class="form-group col-md-6">
-                    <label for="ItemName">ItemName</label>
-                    <input type="text" class="form-control" id="ItemName" name="ItemName" placeholder="ItemName">
-                  </div>
-                </div>
-                <!-- Grid row -->
-              
-                <!-- Default input -->
-                <div class="form-group">
-                  <label for="Description">Description</label>
-                  <input type="text" class="form-control" id="Description" name="Description"  placeholder="Description">
-                </div>
-                <!-- Default input -->
-                <div class="form-row">
-                    <!-- Default input -->
-                    <div class="form-group col-md-6">
-                  <label for="Category">Category</label>
-                  <select class="browser-default custom-select" name="Category">
-                      <option selected>Select Category</option>
-                      <option value="1">Injection</option>
-                      <option value="2">Tablets</option>
-                      <option value="3">Syrup</option>
-                      <option value="4">Cream</option>
-                      <option value="5">Bandage</option>
-                    </select>
-                </div>
-                <!-- Grid row -->
-                <div class="form-group col-md-6">
-                    <label for="Price">Price (each)</label>
-                    <input type="text" class="form-control" name="Price" id="Price" placeholder="Rs:">
-                  </div></div>
-              
-                <!-- Grid row -->
-                
-              <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateAddItemForm();">SUBMIT</button>
-              <button type="reset" class="btn btn-primary btn-md">RESET</button>
-            </form>
-            <br><br><br>
-
-
-
-        </div>
-      <div class="col">
+  <?php
+         $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
+         $ItemID = $_POST['ItemID'];
+        	$result = $mysqli->query("SELECT * FROM stockitem WHERE ItemID='$ItemID'") or die($mysqli->error);
         
-
-          <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-              <thead>
-                <tr>
-                  <th class="th-sm">ItemID
-                  </th>
-                  <th class="th-sm">ItemName
-                  </th>
-                  <th class="th-sm">Description
-                  </th>
-                  <th class="th-sm">Category
-                  </th>
-                  <th class="th-sm">Price
-                  </th>
-                  <th class="th-sm">
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                  <td>Edinburgh</td>
-                  <td>61</td>
-                  <td>2011/04/25</td>
-                  <td>$320,800</td>
-                </tr>
-                <tr>
-                  <td>Garrett Winters</td>
-                  <td>Accountant</td>
-                  <td>Tokyo</td>
-                  <td>63</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                </tr>
-                <tr>
-                  <td>Ashton Cox</td>
-                  <td>Junior Technical Author</td>
-                  <td>San Francisco</td>
-                  <td>66</td>
-                  <td>2009/01/12</td>
-                  <td>$86,000</td>
-                </tr>
-                <tr>
-                  <td>Cedric Kelly</td>
-                  <td>Senior Javascript Developer</td>
-                  <td>Edinburgh</td>
-                  <td>22</td>
-                  <td>2012/03/29</td>
-                  <td>$433,060</td>
-                </tr>
-                
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>ItemID
-                  </th>
-                  <th>ItemName
-                  </th>
-                  <th>Description
-                  </th>
-                  <th>Category
-                  </th>
-                  <th>Price
-                  </th>
-                  <th>
-                  </th>
-                </tr>
-              </tfoot>
-            </table>
+          
+          $row = $result->fetch_assoc();
+        ?>
 
 
 
-      </div>
+  <div class="container w-50">
+<div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info ">
+      <h1>ITEM</h1>
+    </div>
+    <div class="col col-lg-5 bg-info ">
+    <p class="text-right">
+					            <a href="CashierInvoice.php"
+                          class ="btn btn-danger btn-sm" align="center">
+                          &nbsp &nbsp   <i class="fa fa-times fa-2x"></i>   &nbsp &nbsp
+                        </a> </p>
     </div>
   </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info ">
+    <b><br>ItemID :</b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    <b><br><font size="5"><?php echo $row['ItemID']; ?></font></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b>Item Name : </b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    <b> <?php echo $row['ItemName']; ?></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b>Description :</b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    <b><?php echo $row['Description']; ?></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b>Category : </b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    <b><?php echo $row['Category']; ?></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b>Price : <br><br></b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    Rs: <b><?php echo $row['Price']; ?> <br><br></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b><br>Availability : </b>
+    </div>
+    <?php
+		              if ($row['ItemQuantity'] == 0):
+		            ?>
+                  <div class="col col-lg-5 bg-danger   ">
+                  <b><font size="6">Out of stock</font></b></br></br>
+    </div>  
+		            <?php else: ?>
+                <div class="col col-lg-5 bg-success   ">
+    <b><font size="20"><?php echo $row['ItemQuantity']; ?></font></b>
+    </div> 
+                  <?php endif; ?>
+  </div>
+</div>
 
+<br><br>
+ 
 
 
 
@@ -371,8 +316,6 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-    
-    <script src="js/stockvalidation.js"></script>
   
 
   </body>

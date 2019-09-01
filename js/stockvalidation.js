@@ -8,7 +8,7 @@ function validateAddItemForm()
 
     var decimal = /^\d+(\.\d+)?$/;
 
-    if ((ItemID == null || ItemID == "") && (ItemName == null || ItemName == "") && (Description == null || Description == "") && (Category == null || Category == "Select Category") && (Price == null || Price == "")){
+    if ((ItemID == null || ItemID == "") && (ItemName == null || ItemName == "") && (Description == null || Description == "") && (Category == null || Category == "") && (Price == null || Price == "")){
         alert("Plase Fill the Add Item form");
         return false;
     }
@@ -28,7 +28,7 @@ function validateAddItemForm()
         return false;
     }
 
-    if (Category == null || Category == "Select Category"){
+    if (Category == null || Category == ""){
         alert("Item category must be filled out ");
         return false;
     }

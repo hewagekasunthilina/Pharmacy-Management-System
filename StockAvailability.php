@@ -5,7 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+<<<<<<< HEAD
   <title>Stock Reports | Nimedco Pharmacy</title>
+=======
+  <title>Cashier | Nimedco Pharmacy</title>
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -14,6 +18,11 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+<<<<<<< HEAD
+=======
+
+  <link href="css/stock_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
 </head>
 <body>
   <!--Navbar-->
@@ -68,8 +77,158 @@
       
       </nav>
   <!--/.Navbar-->
+<<<<<<< HEAD
   <br><br>
 
+  <?php
+         $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
+         $ItemID = $_POST['ItemID'];
+        	$result = $mysqli->query("SELECT * FROM stockitem WHERE ItemID='$ItemID'") or die($mysqli->error);
+        
+          
+          $row = $result->fetch_assoc();
+        ?>
+
+
+
+  <div class="container w-50">
+<div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info ">
+      <h1>ITEM</h1>
+    </div>
+    <div class="col col-lg-5 bg-info ">
+    <p class="text-right">
+					            <a href="Stock.php"
+                          class ="btn btn-danger btn-sm" align="center">
+                          &nbsp &nbsp   <i class="fa fa-times fa-2x"></i>   &nbsp &nbsp
+                        </a> </p>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info ">
+      <br><b>ItemID :</b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+      <br><b><font size="5"><?php echo $row['ItemID']; ?> </font></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b>Item Name :</b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    <b><?php echo $row['ItemName']; ?></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b>Description :</b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    <b><?php echo $row['Description']; ?></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b>Category :</b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    <b><?php echo $row['Category']; ?></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b>Price : <br><br></b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    Rs: <b><?php echo $row['Price']; ?> <br><br></b>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b><br>Availability : </b>
+    </div>
+
+  
+    <?php
+		              if ($row['ItemQuantity'] == 0):
+		            ?>
+                  <div class="col col-lg-5 bg-danger   ">
+                  <b><font size="6">Out of stock</font></b></br></br>
+    </div>  
+		            <?php else: ?>
+                <div class="col col-lg-5 bg-success   ">
+    <b><font size="20"><?php echo $row['ItemQuantity']; ?></font></b>
+    </div> 
+                  <?php endif; ?>
+
+    
+  </div>
+</div>
+
+<br><br>
+=======
+ 
+
+  <div>
+    <img src="img/stock/gif2.gif" width="100%">
+  </div>
+  <div style="background-color: rgba(33, 89, 194, 0.753)">
+    <form align = "center" name = "CashierCheckAvailabilityForm" method="POST" action="CashierAvailability.php">
+      <input type="text2" id="fname" name="ItemID" placeholder="Enter Item Number" required>
+      
+      <button class="buttoncheackcash" name="check" data-toggle="modal" onclick="action='CashierAvailability.php';" data-target="#modalLoginForm">Check Availability</button>
+    
+      </form>
+  </div>
+
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+      <p align="center"> <a href="CashierInvoice.php">
+			<button class="button buttoncheack"><i class="fa fa-file-medical fa-3x"></i>
+          </i><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp New Invoice &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+			</p></a>
+      </div>
+      
+      <div class="col">
+      <p align="center"> <a href="StockSalesReports.php">
+			<button class="button buttoncheack"><i class="fa fa-chart-line fa-3x"></i>
+          </i><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Sales Report &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+			</p></a>
+      </div>
+      </div>
+</div>
+     
+<br>
+
+<<<<<<< HEAD:Cashier.php
+
+
+ 
+
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63:StockAvailability.php
+>>>>>>> 55260f1ccda51cad2b32e31001aed0fadd020c63
 <!-- Footer -->
 <footer class="page-footer font-small mdb-color pt-4">
 
