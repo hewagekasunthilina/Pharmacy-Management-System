@@ -120,7 +120,7 @@ if(isset($_POST['submit'])){
                 </div>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="../../index.php"><i class="fa fa-home fa-fw"></i> Website</a></li>
+                    <li><a href="../../delivery.php"><i class="fa fa-home fa-fw"></i> Website</a></li>
                 </ul>
 
 
