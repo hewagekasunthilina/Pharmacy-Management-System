@@ -44,9 +44,7 @@
           <span class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
+    
       
       <!-- Dropdown -->
       <li class="nav-item dropdown">
