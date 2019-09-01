@@ -79,19 +79,20 @@
     <div class="row">
       <div class="col-md-5"><h2>ADD ORDERS</h2>  
         <br>    
-        <!-- Extended default form grid -->
-        <form id="myform3" method="POST">
+        
+        <?php require_once 'validateorder.php';?>
+        <form id="myform3" method="POST" action="validateorder.php">
           <!-- Grid row -->
           <div class="form-row">
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="orderid">OrderID</label>
-              <input type="text" class="form-control" id="orderid" placeholder="OrderID">
+              <input type="text" class="form-control" id="orderid" placeholder="OrderID" name="orderid">
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="supplierid">SupplireID</label>
-              <input type="text" class="form-control" id="supplierid" placeholder="SupplireID">
+              <input type="text" class="form-control" id="supplierid" placeholder="SupplireID" name="supplierid">
             </div>
           </div>
           <!-- Grid row -->
@@ -99,7 +100,7 @@
           <!-- Default input -->
           <div class="form-group">
             <label for="medname">MedName</label>
-            <input type="text" class="form-control" id="medname" placeholder="Name of the Medicine">
+            <input type="text" class="form-control" id="medname" placeholder="Name of the Medicine" name="medname">
           </div>
 
           <!-- Grid row -->
@@ -107,16 +108,16 @@
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="qty">QTY</label>
-              <input type="text" class="form-control" id="qty" placeholder="Quantity">
+              <input type="text" class="form-control" id="qty" placeholder="Quantity" name="qty">
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="date">Date</label>
-              <input type="text" class="form-control" id="date" placeholder="DD/MM/YYYY">
+              <input type="text" class="form-control" id="date" placeholder="DD/MM/YYYY" name="date">
             </div>
           </div>
           <!-- Grid row -->
-          <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateOrderForm();">ADD ORDERS</button>
+          <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateOrderForm();" name="ORDER">ADD ORDERS</button>
         </form>
         <!-- Extended default form grid --></div>
       <div class="col-md-1"></div>

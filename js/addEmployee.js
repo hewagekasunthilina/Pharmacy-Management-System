@@ -10,6 +10,7 @@ function validateaddEmployee(){
     var ConfirmPassword = document.forms["addEmployee"]["ConfirmPassword"].value;
 
     var numbers = /^\d+(\.\d+)?$/;
+    var Email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if(FirstName == null || FirstName == ""){
         alert("First Name must be filled out!");
@@ -26,8 +27,11 @@ function validateaddEmployee(){
         return false;
     }
 
-    if(Email == null || Email == ""){
-        alert("E-mail must be filled out!");
+    if (email == null || email == ""){
+        alert("Email must be filled out ");
+        return false;
+    }else if(!(email.match(Email))){
+        alert("Invalid Email format")
         return false;
     }
 
