@@ -93,8 +93,8 @@
             <h5 class="card-title">Registerd Suppliers are Welcome.</h5>
             <p class="card-text">Update / Remove Registerd Supplier details.</p>
 
-            <a href="supplierDetails.php" class="btn btn-primary">UPDATE</a>
-            <a href="supplierDetails.php" class="btn btn-primary">REMOVE</a>
+            <a href="registerSupplier.php" class="btn btn-primary">UPDATE</a>
+            <a href="registerSupplier.php" class="btn btn-primary">REMOVE</a>
           </div>
         </div>    
       </th>

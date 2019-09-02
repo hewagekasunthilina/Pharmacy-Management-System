@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include('connectiontest.php'); ?>
+<?php include('connection.php'); ?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +21,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="salary_emp.html">NimedcoPharmacy - Salary Managment</a>
+    <a class="navbar-brand" href="salary_emp.php">NimedcoPharmacy - Salary Managment</a>
   
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -54,7 +54,7 @@
   <br><br>
  <!--TIME TRACKER-->
          <div>
-           <form id="form-id"  method="POST" onsubmit = "return(validateEmpid())">
+           <form id="form-id"  method="POST">
            <div class="md-form" style="max-width: 400px">
                 <input type="text" name="empID" id="empid" class="form-control" required>
                 <label for="inputMDEx">Choose your Employee ID</label>               

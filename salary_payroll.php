@@ -40,7 +40,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="salary_attendance.php">Attendance</a>
+          <a class="nav-link" href="salary_attendance_view.php">Attendance</a>
           <span class="sr-only">(current)</span>
         </li>
         <li class="nav-item">

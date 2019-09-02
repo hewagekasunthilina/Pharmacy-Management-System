@@ -1,10 +1,13 @@
 <?php
-$servername  = "localhost";
+/*$servername  = "localhost";
 $username = "root";
 $password = "";
 $dbname = "nimedco";
 
-$con = new mysqli($servername,$username,$password,$dbname);
+$con = new mysqli($servername,$username,$password,$dbname);*/
+
+include "connection.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -432,7 +435,7 @@ $con = new mysqli($servername,$username,$password,$dbname);
   <?php
 
 $sql = "select ID,title,price,image from webHomemed ORDER BY ID desc";
-$result = $con->query($sql);
+$result = $conn->query($sql);
   
 
 
@@ -500,7 +503,7 @@ while( $row = mysqli_fetch_array($result)){
     <?php
 
 $sql = "select ID,title,price,image from webbabyproducts ORDER BY ID desc";
-$result = $con->query($sql);
+$result = $conn->query($sql);
   
 
 
@@ -565,7 +568,7 @@ while( $row = mysqli_fetch_array($result)){
 <?php
 
 $sql = "select ID,title,price,image from webpersonalcare ORDER BY ID desc";
-$result = $con->query($sql);
+$result = $conn->query($sql);
 
 
 
@@ -629,7 +632,7 @@ echo '</div>';
 <?php
 
 $sql = "select ID,title,price,image from webpetcare ORDER BY ID desc";
-$result = $con->query($sql);
+$result = $conn->query($sql);
 
 
 
@@ -676,7 +679,7 @@ echo '<div class="col-lg-3 col-md-6 mb-lg-0 mb-4">'.
 
 echo '</div>';
 
-$con->close();
+$conn->close();
 ?>
     
   

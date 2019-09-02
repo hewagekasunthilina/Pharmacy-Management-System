@@ -19,7 +19,7 @@
 
 </head>
 <body>
-  <nav class="blue" role="navigation"><font size="4"> &nbsp Admin Panel</font>
+  <nav class="blue" role="navigation"><font size="4"> &nbsp<a href = "Dashboard.php"> Admin Panel</font></a>
   &nbsp&nbsp&nbsp Home
   &nbsp&nbsp&nbsp Features
   &nbsp&nbsp&nbsp Pricing
