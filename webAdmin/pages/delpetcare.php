@@ -9,15 +9,16 @@ $dbname = "nimedco";
 $con = new mysqli($servername,$username,$password,$dbname);*/
 
 include "connection.php";
+
   $id10 = $_GET['id10'];
 
 
-  $sql11 = "DELETE FROM webpersonalcare WHERE  ID = $id10";
+  $sql11 = "DELETE FROM webpetcare WHERE  ID = $id10";
 
 
   $conn -> query($sql11);
 
-  header('location:personalcare.php');
+  header('location:petcare.php');
 
 
  ?>

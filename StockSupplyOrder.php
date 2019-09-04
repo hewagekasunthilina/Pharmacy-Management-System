@@ -55,7 +55,11 @@
                 
               </div>
             </li>
-      
+              
+            <li class="nav-item">
+              <a class="nav-link" href="stock.php">Stock</a>
+            </li>
+
           </ul>
           <!-- Links -->
       
@@ -74,21 +78,44 @@
 
   <div class="container">
       <div class="row">
-        <div class=""><h2>ADD SUPPLY ORDER</h2>  
+        <div class="">
+          
+        <?php require_once 'StockSupplyOrder_process.php'; ?>
+      <?php
+      	if(isset($_SESSION['message'])): ?>
+	        <div class = "alert alert-<?=$_SESSION['msg_type']?>">
+	    	<?php
+		    	echo $_SESSION['message'];
+		    	unset($_SESSION['message']);
+	    	?>
+	    </div>
+    <?php endif ?>
+    
+
+    <?php
+		              if ($update == true):
+		            ?>
+                  <h2>UPDATE SUPPLY ORDER</h2>  
+		            <?php else: ?>
+                <h2>ADD SUPPLY ORDER</h2>   
+                  <?php endif; ?>
+        
+         
           <br>    
           <!-- Extended default form grid -->
           <form name="SupplyOrderForm" method="POST" action="">
+          <input type="hidden" name="id" value="<?php echo $id; ?>">
               <!-- Grid row -->
               <div class="form-row">
                 <!-- Default input -->
                 <div class="form-group col-md-6">
                     <label for="ItemID">ItemID</label>
-                    <input type="text" class="form-control" name="ItemID" placeholder="ItemID">
+                    <input type="text" class="form-control" value ="<?php echo $ItemID; ?>" name="ItemID" placeholder="ItemID">
                   </div>
                   <!-- Default input -->
                   <div class="form-group col-md-6">
                     <label for="ItemQuantity">Quantity</label>
-                    <input type="text" class="form-control" name="ItemQuantity" placeholder="Quantity">
+                    <input type="text" class="form-control" value ="<?php echo $ItemQuantity; ?>" name="ItemQuantity" placeholder="Quantity">
                   </div>
                 </div>
                 <!-- Grid row -->
@@ -96,12 +123,12 @@
                     <!-- Default input -->
                     <div class="form-group col-md-6">
                         <label for="SupplerID">SupplerID</label>
-                        <input type="text" class="form-control" name="SupplerID" placeholder="SupplerID">
+                        <input type="text" class="form-control" value ="<?php echo $SupplerID; ?>" name="SupplerID" placeholder="SupplerID">
                       </div>
                       <!-- Default input -->
                       <div class="form-group col-md-6">
                         <label for="OrderID">OrderID</label>
-                        <input type="text" class="form-control" name="OrderID" placeholder="OrderID">
+                        <input type="text" class="form-control" value ="<?php echo $OrderID; ?>" name="OrderID" placeholder="OrderID">
                       </div>
                     </div>
                 <!-- Default input -->
@@ -109,32 +136,32 @@
                     <!-- Default input -->
                     <div class="form-group col-md-2">
                         <label for="exp_date">Exp Date</label>
-                        <input type="text" class="form-control" name="exp_date" placeholder="DD" maxlength="2">
+                        <input type="text" class="form-control" value ="<?php echo $exp_date; ?>" name="exp_date" placeholder="DD" maxlength="2">
                       </div>
                       <!-- Default input -->
                       <div class="form-group col-md-2">
                         <label for="exp_month"><font color="white">.</font></label>
-                        <input type="text" class="form-control" name="exp_month" placeholder="MM" maxlength="2">
+                        <input type="text" class="form-control" value ="<?php echo $exp_month; ?>" name="exp_month" placeholder="MM" maxlength="2">
                       </div>
                       
                       <div class="form-group col-md-2">
                           <label for="exp_year"><font color="white">.</font></label>
-                          <input type="text" class="form-control" name="exp_year" placeholder="YYYY" maxlength="4">
+                          <input type="text" class="form-control" value ="<?php echo $exp_year; ?>" name="exp_year" placeholder="YYYY" maxlength="4">
                         </div>
 
                         <div class="form-group col-md-2">
                             <label for="mfg_date">Mfg Date</label>
-                            <input type="text" class="form-control" name="mfg_date" placeholder="DD" maxlength="2">
+                            <input type="text" class="form-control" value ="<?php echo $mfg_date; ?>" name="mfg_date" placeholder="DD" maxlength="2">
                           </div>
                           <!-- Default input -->
                           <div class="form-group col-md-2">
                             <label for="mfg_month"><font color="white">.</font></label>
-                            <input type="text" class="form-control" name="mfg_month" placeholder="MM" maxlength="2">
+                            <input type="text" class="form-control" value ="<?php echo $mfg_month; ?>" name="mfg_month" placeholder="MM" maxlength="2">
                           </div>
                           
                           <div class="form-group col-md-2">
                               <label for="mfg_year"><font color="white">.</font></label>
-                              <input type="text" class="form-control" name="mfg_year" placeholder="YYYY" maxlength="4">
+                              <input type="text" class="form-control" value ="<?php echo $mfg_year; ?>" name="mfg_year" placeholder="YYYY" maxlength="4">
                             </div>
     
 
@@ -144,43 +171,55 @@
                     <!-- Default input -->
                     <div class="form-group col-md-2">
                         <label for="phs_date">Purchase Date</label>
-                        <input type="text" class="form-control" name="phs_date" placeholder="DD" maxlength="2">
+                        <input type="text" class="form-control" value ="<?php echo $phs_date; ?>" name="phs_date" placeholder="DD" maxlength="2">
                       </div>
                       <!-- Default input -->
                       <div class="form-group col-md-2">
                         <label for="phs_month"><font color="">.</font></label>
-                        <input type="text" class="form-control" name="phs_month" placeholder="MM" maxlength="2">
+                        <input type="text" class="form-control" value ="<?php echo $phs_month; ?>" name="phs_month" placeholder="MM" maxlength="2">
                       </div>
                       
                       <div class="form-group col-md-2">
                           <label for="phs_year"><font color="white">.</font></label>
-                          <input type="text" class="form-control" name="phs_year" placeholder="YYYY" maxlength="4">
+                          <input type="text" class="form-control" value ="<?php echo $phs_year; ?>" name="phs_year" placeholder="YYYY" maxlength="4">
                         </div>
 
                       <!-- Default input -->
                       <div class="form-group col-md-6">
                         <label for="Pu_price">Purchase Price (each)</label>
-                        <input type="text" class="form-control" name="Pu_price" placeholder="Rs:">
+                        <input type="text" class="form-control" value ="<?php echo $Pu_price; ?>" name="Pu_price" placeholder="Rs:">
                       </div>
                     </div>
                 <!-- Grid row -->
                 
               
                 <!-- Grid row -->
-                
-              <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateSupplyOrderForm();">SUBMIT</button>
-              <button type="reset" class="btn btn-primary btn-md">RESET</button>
-            </form>
+                <?php
+		              if ($update == true):
+		            ?>
+              <button type="submit" class="btn btn-warning btn-md" name="update" onclick="javascript: return validateSupplyOrderForm();">Update</button>
+                  <button type="submit" class="btn btn-danger btn-md" name="cancle" onclick="action='StockSupplyOrder.php';">Cancle</button>
+              <?php else: ?>
+		            	<button type="submit" class="btn btn-primary btn-md" name="save" onclick="javascript: return validateSupplyOrderForm();">SUBMIT</button>
+                  <button type="reset" class="btn btn-danger btn-md">RESET</button>
+                  <?php endif; ?>
+            </form> 
             <br><br><br>
 
 
 
         </div>
+        <?php
+	       $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
+        	$result = $mysqli->query("SELECT * FROM StockSupplyOrder order by id desc limit 0, 7") or die($mysqli->error);
+	        //pre_r($result);
+        ?>
+
       <div class="col">
         <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-              <thead>
+              <thead style="color: white;" class="bg-primary" align="center">
                 <tr>
-                  <th class="th-sm">#
+                <th class="th-sm">ID
                   </th>
                   <th class="th-sm">ItemID
                   </th>
@@ -190,35 +229,47 @@
                   </th>
                   <th class="th-sm">OrderID
                   </th>
-                  <th class="th-sm">Purchase Day
+                  <th class="th-sm">Purchase Date
                   </th>
-                  <th class="th-sm">Purchase Month
+                  <th class="th-sm">Exp Date
                   </th>
-                  <th class="th-sm">Purchase Year
+                  <th class="th-sm">Mfg Date
                   </th>
                   <th class="th-sm">Purchase Price
                   </th>
-                  <th class="th-sm">
+                  <th class="th-sm">Action
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
-                </tr>
+              <?php
+		          	while($row = $result->fetch_assoc()): ?>
+			          	<tr>
+                    <td><b><?php echo $row['id']; ?></b></td>
+					          <td><b><?php echo $row['ItemID']; ?></b></td>
+                    <td><b><?php echo $row['ItemQuantity']; ?></b></td>
+                    <td><b><?php echo $row['SupplerID']; ?></b></td>
+                    <td><b><?php echo $row['OrderID']; ?></b></td>
+                    <td><b><?php echo $row['phs_date']; ?>/<?php echo $row['phs_month']; ?>/<?php echo $row['phs_year']; ?></b></td>
+                    <td><b><?php echo $row['exp_date']; ?>/<?php echo $row['exp_month']; ?>/<?php echo $row['exp_year']; ?></b></td>
+                    <td><b><?php echo $row['mfg_date']; ?>/<?php echo $row['mfg_month']; ?>/<?php echo $row['mfg_year']; ?></b></td>
+                    <td><b><?php echo $row['Pu_price']; ?></b></td>
+                    
+				          	<td align="center">
+					            	<a href="StockSupplyOrder.php?edit=<?php echo $row['id']; ?>"
+                          class ="btn btn-info btn-sm" >
+                          <i class="fa fa-edit"></i>
+                        </a>
+					            	<a href="StockSupplyOrder_process.php?delete=<?php echo $row['id']; ?>&ItemID=<?php echo $row['ItemID']; ?>"
+                          class ="btn btn-danger btn-sm">
+                          <i class="fa fa-trash"></i>
+                        </a>
+				          	</td>
+			          	</tr>
+			        <?php endwhile; ?>
                 
                 
-              </tbody>
+              </tbody> <!--
               <tfoot>
                 <tr>
                   <th class="th-sm">#
@@ -242,9 +293,15 @@
                   <th class="th-sm">
                   </th>
                 </tr>
-              </tfoot>
+              </tfoot> -->
             </table>
-
+            <?php
+	            function pre_r( $array ){
+		            echo '<pre>';
+	            	print_r($array);
+		            echo '</pre>';
+              	}
+          	?>
 
 
       </div>

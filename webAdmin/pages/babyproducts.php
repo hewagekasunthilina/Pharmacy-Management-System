@@ -8,12 +8,15 @@ $message ="*Use jpg type and  upload image below 500kb";
 
 
 
-  $servername  = "localhost";
+ /* $servername  = "localhost";
   $username = "root";
   $password = "";
   $dbname = "nimedco";
 
-  $con = new mysqli($servername,$username,$password,$dbname);
+  $con = new mysqli($servername,$username,$password,$dbname);*/
+
+  include "connection.php";
+
 
 
 if(isset($_POST['submit'])){
@@ -61,7 +64,7 @@ if(isset($_POST['submit'])){
      
 
     $sql = "INSERT INTO webbabyproducts(title,price,image) values('$title','$price','$imagecontent')";
-    $con->query($sql);
+    $conn->query($sql);
 
 
 
@@ -118,9 +121,12 @@ if(isset($_POST['submit'])){
                 </div>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="../../index.php"><i class="fa fa-home fa-fw"></i> Website</a></li>
+                    <li><a href="../../delivery.php"><i class="fa fa-home fa-fw"></i> Website</a></li>
                 </ul>
 
+                <ul class="nav navbar-nav navbar-left navbar-top-links">
+                    <li><a href="../../Dashboard.php"><i class="fa fa-home fa-fw"></i> Dashboard</a></li>
+                </ul>
 
                 <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
@@ -223,7 +229,7 @@ if(isset($_POST['submit'])){
     echo '<br/>'.'<h1>Edit Item</h1>'.'<hr>'.'<br>';
 
     echo    '<div class="form-group">'.'<form action="editbabyproducts.php" method="POST">'.
-             '<lable> ID :  </lable>'.'<input type="text" name="id"  class="form-control" placeholder="Enter product ID">'.
+             '<lable> ID :  </lable>'.'<input type="text" name="id"  class="form-control" placeholder="Enter product ID">'.' <br>'.
             '<lable> Name : </lable>'. '<input type="text" name ="newName"  class="form-control" placeholder="Enter New product Name">'.' <br>'.
             '<lable> Price : </lable>'.  '<input type="text" name ="newPrice"  class="form-control" placeholder="Enter New product Price">'.'<br>'.
             '<input type="submit" value="update">'. '<br>'. '<br>'.'<br>'.'<br>'.

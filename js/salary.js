@@ -1,58 +1,52 @@
-const empID = document.getElementById('empid');
-const atDate = document.getElementById('inputMDEx');
-const intime = document.getElementById('inputMDEx1');
-const outime = document.getElementById('inputMDEx2');
+function empLeaveValidation()
+{
+    var ldate = document.forms["leaveForm"]["ldate"].value;
+    var eid = document.forms["leaveForm"]["eid"].value;
+    var reason = document.forms["leaveForm"]["reason"].value;
+    var e_mail = document.forms["leaveForm"]["e_mail"].value;
+    var cnum = document.forms["leaveForm"]["cnum"].value;
+    
+    var num = /^[0-9]+$/;
+    var reas = /^[a-zA-Z]+$/;
+    var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-
-//Form
-const Form = document.getElementById('form-id');
-//validate colours
-const green = '#4CAF0'
-const red = '#F44336'
-
-function validateEmpid(){
-    //check if is empty
-    if(checkIfEmpty(empID))return;
-    //is id it has only letters
-    if(!checkIfOnlyLetters(empID))return;
-    return true;
-}
-
-function checkIfEmpty(field){
-    if(isEmpty(field.value.trim())){
-        //set field invalid
-        setInterval(field, `${field.name} Must not be empty`);
-        return true;
-    } else{
-        //set field valid
-        setValid(field);
+    if ((ldate == null || ldate == "") && (eid == null || eid == "") && (reason == null || reason == "") && (e_mail == null || e_mail == "") && (ecnum == null || cnum == "")){
+        alert("Plase Fill the Form");
         return false;
     }
+   
+        if (ldate  == null || ldate  == ""){
+            alert("Leave Date must be filled");
+            return false;
+        }
+        
+    
+        if (reason == null || reason == ""){
+            alert("Reason must be filled");
+            return false;
+        }
+        else if(!(reason.match(reas))){
+            alert("Invalid Reason format")
+            return false;
+        }
+
+    
+        if (e_mail == null || e_mail == ""){
+            alert("Email must be filled");
+            return false;
+        }
+        else if(!(e_mail.match(mail))){
+            alert("Invalid Email format")
+            return false;
+        }
+
+       
+        if (cnum == null || cnum == ""){
+            alert("Contact must be filled out ");
+            return false;
+        }else if(!(cnum.match(num))){
+            alert("Contact must be numbers")
+            return false;
+        }
 }
 
-function isEmpty(value){
-    if(value === '') return true;
-    return false;
-}
-
-function setInvalid(field, message){
-    field.className = 'invalid';
-    field.nextElementSibling.innerHTML = message;
-    field.nextElementSibling.style.color = red;
-}
-
-function setvalid(field, message){
-    field.className = 'valid';
-    field.nextElementSibling.innerHTML = '';
-    //field.nextElementSibling.style.color = green;
-}
-
-function checkIfOnlyLetters(field){
-    if(/^[a-zA-Z]+$/.test(field.value)){
-        setValid(field);
-        return true;
-    } else{
-        setInvalid(field, `${field.name}Must contain only letters`);
-        return false;
-    }
-}

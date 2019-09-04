@@ -1,7 +1,7 @@
 
 <?php 
 session_start();
-    /* $servername  = "localhost";
+     /*$servername  = "localhost";
      $username = "root";
      $password = "";
      $dbname = "nimedco";
@@ -14,11 +14,11 @@ session_start();
         $id = $_POST['id'];
 
     
-         $sql = "UPDATE webbabyproducts SET title='$newName',price = '$newPrice' WHERE ID ='$id'";
+         $sql = "UPDATE webpersonalcare SET title='$newName',price = '$newPrice' WHERE ID ='$id'";
         
          $conn->query($sql);
 
-         header('location:babyproducts.php');
+         header('location:webpersonalcare.php');
          
     $conn->close();
 ?>

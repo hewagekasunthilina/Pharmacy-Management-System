@@ -8,12 +8,14 @@ $message ="*Use jpg type and  upload image below 500kb";
 
 
 
-  $servername  = "localhost";
+  /*$servername  = "localhost";
   $username = "root";
   $password = "";
   $dbname = "nimedco";
 
-  $con = new mysqli($servername,$username,$password,$dbname);
+  $con = new mysqli($servername,$username,$password,$dbname);*/
+
+  include "connection.php";
 
 
 if(isset($_POST['submit'])){
@@ -61,7 +63,7 @@ if(isset($_POST['submit'])){
      
 
     $sql = "INSERT INTO webpersonalcare(title,price,image) values('$title','$price','$imagecontent')";
-    $con->query($sql);
+    $conn->query($sql);
 
 
 
@@ -118,9 +120,12 @@ if(isset($_POST['submit'])){
                 </div>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="../../index.php"><i class="fa fa-home fa-fw"></i> Website</a></li>
+                    <li><a href="../../delivery.php"><i class="fa fa-home fa-fw"></i> Website</a></li>
                 </ul>
 
+                <ul class="nav navbar-nav navbar-left navbar-top-links">
+                    <li><a href="../../Dashboard.php"><i class="fa fa-home fa-fw"></i> Dashboard</a></li>
+                </ul>
 
                 <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
@@ -216,9 +221,21 @@ if(isset($_POST['submit'])){
 
 
     $sql = "select ID,title,price,image from webpersonalcare";
-    $result = $con->query($sql);
+    $result = $conn->query($sql);
 
-    echo '<br/>'.'<h1>Item Delete</h1>'.'<hr>';
+    
+
+    echo '<br/>'.'<h1>Edit Item</h1>'.'<hr>'.'<br>';
+
+    echo    '<div class="form-group">'.'<form action="editpersonalcare.php" method="POST">'.
+             '<lable> ID :  </lable>'.'<input type="text" name="id"  class="form-control" placeholder="Enter product ID">'.' <br>'.
+            '<lable> Name : </lable>'. '<input type="text" name ="newName"  class="form-control" placeholder="Enter New product Name">'.' <br>'.
+            '<lable> Price : </lable>'.  '<input type="text" name ="newPrice"  class="form-control" placeholder="Enter New product Price">'.'<br>'.
+            '<input type="submit" value="update">'. '<br>'. '<br>'.'<br>'.'<br>'.
+        '</form>'.'<div>'.'<hr>';
+
+    echo '<br/>'.'<h1>Delete Item</h1>'.'<hr>'.'<br>';
+
 
 
     while( $row = mysqli_fetch_array($result)){
@@ -227,11 +244,11 @@ if(isset($_POST['submit'])){
 
 
     echo '<div style="text-align: center;margin-top:5px;margin-left:15px;display: inline-block;word-wrap: break-word;  border-radius: 25px;
-  border: 2px solid #DCDCDC;width: 200px;height: 150px; border-colorrgb(220,220,220);">'.'<br/>'.'<div style= "padding: 10px; ">'.$row['title'].'</br>'.$row['price'].'</br>'.'</br>'.'<button  style = "background-color: #555555;border: none;width:90px;height:30px">'.'<a href = "delpersonalcare.php?id10='.$row['ID'].'" style="color:white">delete </a>'.'</button>'.'</br>'.'</br>'.'</div>'.'</div>';
+  border: 2px solid #DCDCDC;width: 200px;height: 150px; border-colorrgb(220,220,220);">'.'<br/>'.'<div style= "padding: 10px; ">'.'ID : '.$row['ID'].'<br>'.$row['title'].'</br>'.$row['price'].'</br>'.'</br>'.'<button  style = "background-color: #555555;border: none;width:90px;height:30px">'.'<a href = "delpersonalcare.php?id10='.$row['ID'].'" style="color:white">delete </a>'.'</button>'.'</br>'.'</br>'.'</div>'.'</div>';
 
     }
 
-    $con->close();
+    $conn->close();
 
      ?>
 

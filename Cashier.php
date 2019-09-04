@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Edit Item | Nimedco Pharmacy</title>
+  <title>Cashier | Nimedco Pharmacy</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -14,6 +14,8 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+
+  <link href="css/stock_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
   <!--Navbar-->
@@ -34,24 +36,18 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home
+              <a class="nav-link" href="index.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-      
+    
             <!-- Dropdown -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">Reports</a>
               <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Summary</a>
-                <a class="dropdown-item" href="#">Reports Store</a>
+                
+                <a class="dropdown-item" href="">Reports Store</a>
                 
               </div>
             </li>
@@ -68,69 +64,46 @@
       
       </nav>
   <!--/.Navbar-->
-  <br><br>
+ 
 
-
-
-
-  <div class="container">
-      <div class="row">
-        <div class="col-md-5"><h2>Edit ITEM</h2>  
-          <br>    
-          <!-- Extended default form grid -->
-          <form>
-              <!-- Grid row -->
-              <div class="form-row">
-                <!-- Default input -->
-                <div class="form-group col-md-6">
-                    <label for="ItemID">ItemID</label>
-                    <input type="text" class="form-control" id="ItemID" placeholder="ItemID">
-                  </div>
-                  <!-- Default input -->
-                  <div class="form-group col-md-6">
-                    <label for="ItemName">ItemName</label>
-                    <input type="text" class="form-control" id="ItemName" placeholder="ItemName">
-                  </div>
-                </div>
-                <!-- Grid row -->
-              
-                <!-- Default input -->
-                <div class="form-group">
-                  <label for="Description">Description</label>
-                  <input type="text" class="form-control" id="Description" placeholder="Description">
-                </div>
-                <!-- Default input -->
-                <div class="form-row">
-                    <!-- Default input -->
-                    <div class="form-group col-md-6">
-                  <label for="Category">Category</label>
-                  <input type="text" class="form-control" id="Category" placeholder="Category">
-                </div>
-                <!-- Grid row -->
-                <div class="form-group col-md-6">
-                    <label for="Price">Price (each)</label>
-                    <input type="text" class="form-control" id="Price" placeholder="Rs:">
-                  </div></div>
-              
-                <!-- Grid row -->
-                
-              <button type="submit" class="btn btn-primary btn-md">UPDATE</button>
-              <button type="submit" class="btn btn-primary btn-md">DELETE</button>
-            </form>
-            <br><br><br>
-
-
-
-        </div>
-      <div class="col">
-        
-
-
-
-      </div>
-    </div>
+  <div>
+    <img src="img/stock/gif2.gif" width="100%">
+  </div>
+  <div style="background-color: rgba(33, 89, 194, 0.753)">
+    <form align = "center" name = "CashierCheckAvailabilityForm" method="POST" action="CashierAvailability.php">
+      <input type="text2" id="fname" name="ItemID" placeholder="Enter Item Number" required>
+      
+      <button class="buttoncheackcash" name="check" data-toggle="modal" onclick="action='CashierAvailability.php';" data-target="#modalLoginForm">Check Availability</button>
+    
+      </form>
   </div>
 
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+      <p align="center"> <a href="CashierInvoice.php">
+			<button class="button buttoncheack"><i class="fa fa-file-medical fa-3x"></i>
+          </i><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp New Invoice &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+			</p></a>
+      </div>
+      
+      <div class="col">
+      <p align="center"> <a href="StockSalesReports.php">
+			<button class="button buttoncheack"><i class="fa fa-chart-line fa-3x"></i>
+          </i><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Sales Report &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+			</p></a>
+      </div>
+      </div>
+</div>
+     
+<br>
+
+
+
+ 
+
+ 
 
 
 

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Stock Reports | Nimedco Pharmacy</title>
+  <title>Invoice | Nimedco Pharmacy</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -14,6 +14,8 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+
+  <link href="css/stock_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
   <!--Navbar-->
@@ -68,97 +70,156 @@
       
       </nav>
   <!--/.Navbar-->
-  <br><br>
-
-  <?php
-         $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
-         $ItemID = $_POST['ItemID'];
-        	$result = $mysqli->query("SELECT * FROM stockitem WHERE ItemID='$ItemID'") or die($mysqli->error);
-        
-          
-          $row = $result->fetch_assoc();
-        ?>
-
-
-
-  <div class="container w-50">
-<div class="row justify-content-md-center text-white">
-    <div class="col col-lg-3 text-white bg-info ">
-      <h1>ITEM</h1>
-    </div>
-    <div class="col col-lg-5 bg-info ">
-    <p class="text-right">
-					            <a href="Stock.php"
-                          class ="btn btn-danger btn-sm" align="center">
-                          &nbsp &nbsp   <i class="fa fa-times fa-2x"></i>   &nbsp &nbsp
-                        </a> </p>
-    </div>
-  </div>
-  <div class="row justify-content-md-center text-white">
-    <div class="col col-lg-3 text-white bg-info ">
-      <br><b>ItemID :</b>
-    </div>
-    <div class="col col-lg-5 bg-primary ">
-      <br><b><font size="5"><?php echo $row['ItemID']; ?> </font></b>
-    </div>
-  </div>
-  <div class="row justify-content-md-center text-white">
-    <div class="col col-lg-3 text-white bg-info">
-    <b>Item Name :</b>
-    </div>
-    <div class="col col-lg-5 bg-primary ">
-    <b><?php echo $row['ItemName']; ?></b>
-    </div>
-  </div>
-  <div class="row justify-content-md-center text-white">
-    <div class="col col-lg-3 text-white bg-info">
-    <b>Description :</b>
-    </div>
-    <div class="col col-lg-5 bg-primary ">
-    <b><?php echo $row['Description']; ?></b>
-    </div>
-  </div>
-  <div class="row justify-content-md-center text-white">
-    <div class="col col-lg-3 text-white bg-info">
-    <b>Category :</b>
-    </div>
-    <div class="col col-lg-5 bg-primary ">
-    <b><?php echo $row['Category']; ?></b>
-    </div>
-  </div>
-  <div class="row justify-content-md-center text-white">
-    <div class="col col-lg-3 text-white bg-info">
-    <b>Price : <br><br></b>
-    </div>
-    <div class="col col-lg-5 bg-primary ">
-    Rs: <b><?php echo $row['Price']; ?> <br><br></b>
-    </div>
-  </div>
-
-
-  <div class="row justify-content-md-center text-white">
-    <div class="col col-lg-3 text-white bg-info">
-    <b><br>Availability : </b>
-    </div>
+ 
 
   
-    <?php
-		              if ($row['ItemQuantity'] == 0):
-		            ?>
-                  <div class="col col-lg-5 bg-danger   ">
-                  <b><font size="6">Out of stock</font></b></br></br>
-    </div>  
-		            <?php else: ?>
-                <div class="col col-lg-5 bg-success   ">
-    <b><font size="20"><?php echo $row['ItemQuantity']; ?></font></b>
-    </div> 
-                  <?php endif; ?>
-
+  <div style="background-color: rgba(33, 89, 194, 0.753)">
+    <form align = "center" name = "CashierCheckAvailabilityForm" method="POST" action="CashierInvoiceAvailability.php">
+      <input type="text2" id="fname" name="ItemID" placeholder="Enter Item Number" required>
+      
+      <button class="buttoncheackcash" name="check" data-toggle="modal" onclick="action='CashierInvoiceAvailability.php';" data-target="#modalLoginForm">Check Availability</button>
     
+      </form>
   </div>
-</div>
 
-<br><br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+      <?php require_once 'Cashier_process.php'; ?>
+      <?php
+      	if(isset($_SESSION['message'])): ?>
+	        <div class = "alert alert-<?=$_SESSION['msg_type']?>">
+	    	<?php
+		    	echo $_SESSION['message'];
+		    	unset($_SESSION['message']);
+	    	?>
+	    </div>
+  	<?php endif ?>
+
+        &nbsp <!--
+        <table align="center">
+          <form action="Cashier_process.php" method="POST">
+        <tr align="">
+              <th>&nbsp&nbsp&nbspItemNo</th> <th>&nbspQuantity</th>
+          </tr>
+
+        <tr align="">
+          <td>&nbsp&nbsp&nbsp<input type="text" width="100%" name ="ItemID" placeholder="" required></td><td>&nbsp<input type="text" width="100%" name="ItemQuantity" required></td><td>
+
+                  <button type="submit" class="btn btn-primary btn-sm" name="save"><i class="fa fa-plus"></i></button>
+          </td></tr></table>
+        </tr>
+        </form>
+        </table>  -->
+      
+        <form action="Cashier_process.php" method="POST">
+  <!-- Default input -->
+  <div class="form-group">
+    <label for="formGroupExampleInput">ItemID</label>
+    <input type="text" class="form-control" name ="ItemID" id ="ItemID" placeholder="ItemID" required>
+  </div>
+  <!-- Default input -->
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Quantity</label>
+    <input type="text" class="form-control" name="ItemQuantity" id="ItemQuantity" placeholder="Quantity" required>
+  </div>
+  <button type="submit" class="btn btn-primary btn-md" name="save" >&nbsp&nbsp&nbsp&nbsp<i class="fa fa-plus fa-lg"></i>&nbsp&nbsp Add to invoice&nbsp&nbsp&nbsp&nbsp</button>
+</form>
+
+    </div>
+
+    <?php
+	      $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
+        	$result = $mysqli->query("SELECT * FROM stocksales order by id desc limit 0, 4") or die($mysqli->error);
+	        //pre_r($result);
+        ?>
+  
+    
+      <div class="col">
+      <h2 align ="left">INVOICE</h2> 
+      <table border="" width="100%" class="table table-sm table-striped table-bordered" cellspacing="0">
+        <tr style="color: white;" class="bg-info" align="center">
+          <td><b>#</b></td>
+          <td><b>ItemID</b></td>
+          <td><b>ItemName</b></td>
+          <td><b>Qty</b></td>
+          <td><b>Price</b></td>
+          <td><b>Action</b></td>
+          <td><b>Total</b></td>
+        </tr>
+        
+        <?php
+		          	while($row = $result->fetch_assoc()): ?>
+			          	<tr>
+                    <td>X</td>
+                    <td><b><?php echo $row['ItemID']; ?></b></td>
+                    <td>XXXX</td>
+                    <td><b><?php echo $row['ItemQuantity']; ?></b></td>
+                    <td>XXXX</td>
+                    
+				          	<td align="center">
+					            	<a href="CashierInvoice.php?edit=<?php echo $row['id']; ?>"
+                          class ="btn btn-info btn-sm" >
+                          <i class="fa fa-edit"></i>
+                        </a>
+					            	<a href="Cashier_process.php?delete=<?php echo $row['id']; ?>"
+                          class ="btn btn-danger btn-sm">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                    </td>
+                    <td>XXXX</td>
+			          	</tr>
+			        <?php endwhile; ?>
+              
+
+        <tr>
+          <td colspan="6" align="right">Sub Total : &nbsp</td>
+          <td>XXXX</td>
+        </tr>
+        <tr><form>
+          <td colspan="6" align="right">Discount : &nbsp</td>
+          <td>&nbsp<input type="text" width="" name ="Discount" placeholder="" pattern="[0-9]" oninvalid="setCustomValidity('Please enter on numbers only. ' required)"> %
+          <a href=".php?edit1=<?php echo $row['id']; ?>"
+                          class ="btn btn-primary btn-sm"  >
+                          <i class="fa fa-star fa-spin"></i>
+                        </a>
+        </td></form>
+        </tr>
+        <tr style="color: black;" class="bg-warning">
+          <td colspan="6" align="right"><font size="5">Net Total : &nbsp</font></td>
+          <td><font size="5"><b>XXXX</b></font></td>
+        </tr>
+        <tr>
+          <td colspan="6" align="right">Cash : &nbsp</td>
+          <td>&nbsp<input type="text" width="" name ="Cash" placeholder="">&nbsp&nbsp&nbsp
+          <a href=".php?edit2=<?php echo $row['id']; ?>"
+                          class ="btn btn-primary btn-sm" >
+                          <i class="fa fa-hand-holding-usd fa-lg"></i>
+                        </a>
+        </td>
+        </tr>
+        <tr>
+          <td colspan="6" align="right">Change : &nbsp</td>
+          <td>XXXX</td>
+        </tr>
+      </table><p align="right" >
+      <a href="Cashier.php?edit2=<?php echo $row['id']; ?>"
+                          class ="btn btn-primary btn-lg">
+                          <i class="fa fa-print fa-lg"><font style="font-family: OCR A Std;"> &nbsp&nbspGenarate Bill</font></i>
+                        </a></p>
+
+      <br>
+      </div>
+      </div>
+</div>
+     
+
+
+
+
+ 
+
  
 
 

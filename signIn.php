@@ -34,17 +34,17 @@
   <div class="card-body px-lg-5 pt-0">
 
     <!-- Form -->
-    <form class="text-center" style="color: #757575;" action="#!">
+    <form class="text-center" method = "POST" style="color: #757575;" action="signin-process.php">
 
       <!-- Email -->
       <div class="md-form">
-        <input type="email" id="materialLoginFormEmail" class="form-control">
-        <label for="materialLoginFormEmail">E-mail</label>
+        <input type="text" id="materialLoginFormEmail" class="form-control" name = "UserName">
+        <label for="materialLoginFormEmail">User Name</label>
       </div>
 
       <!-- Password -->
       <div class="md-form">
-        <input type="password" id="materialLoginFormPassword" class="form-control">
+        <input type="password" id="materialLoginFormPassword" class="form-control" name = "Password">
         <label for="materialLoginFormPassword">Password</label>
       </div>
 
@@ -63,7 +63,8 @@
       </div>
 
       <!-- Sign in button -->
-      <a href="Dashboard.php" class="btn btn-primary">SignIn</a>      
+      <!--<input type = "submit" class="btn btn-primary" value = "LOGIN" />--> 
+      <a href = "Dashboard.php" class= "btn btn-primary">signIn</a>    
 
     </form>
     <!-- Form -->

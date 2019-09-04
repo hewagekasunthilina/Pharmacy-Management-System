@@ -20,7 +20,7 @@
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
   <!--Form validation-->
-  <script src = "expenditure.js"> </script>  
+  <script src = "js/expenditure.js"> </script>  
   <!--Datepicker validate-->
   <script src = "expendituredate.js"></script>
 

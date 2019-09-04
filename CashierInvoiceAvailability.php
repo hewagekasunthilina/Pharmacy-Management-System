@@ -88,7 +88,7 @@
     </div>
     <div class="col col-lg-5 bg-info ">
     <p class="text-right">
-					            <a href="Stock.php"
+					            <a href="CashierInvoice.php"
                           class ="btn btn-danger btn-sm" align="center">
                           &nbsp &nbsp   <i class="fa fa-times fa-2x"></i>   &nbsp &nbsp
                         </a> </p>
@@ -96,18 +96,18 @@
   </div>
   <div class="row justify-content-md-center text-white">
     <div class="col col-lg-3 text-white bg-info ">
-      <br><b>ItemID :</b>
+    <b><br>ItemID :</b>
     </div>
     <div class="col col-lg-5 bg-primary ">
-      <br><b><font size="5"><?php echo $row['ItemID']; ?> </font></b>
+    <b><br><font size="5"><?php echo $row['ItemID']; ?></font></b>
     </div>
   </div>
   <div class="row justify-content-md-center text-white">
     <div class="col col-lg-3 text-white bg-info">
-    <b>Item Name :</b>
+    <b>Item Name : </b>
     </div>
     <div class="col col-lg-5 bg-primary ">
-    <b><?php echo $row['ItemName']; ?></b>
+    <b> <?php echo $row['ItemName']; ?></b>
     </div>
   </div>
   <div class="row justify-content-md-center text-white">
@@ -120,7 +120,7 @@
   </div>
   <div class="row justify-content-md-center text-white">
     <div class="col col-lg-3 text-white bg-info">
-    <b>Category :</b>
+    <b>Category : </b>
     </div>
     <div class="col col-lg-5 bg-primary ">
     <b><?php echo $row['Category']; ?></b>
@@ -134,14 +134,10 @@
     Rs: <b><?php echo $row['Price']; ?> <br><br></b>
     </div>
   </div>
-
-
   <div class="row justify-content-md-center text-white">
     <div class="col col-lg-3 text-white bg-info">
     <b><br>Availability : </b>
     </div>
-
-  
     <?php
 		              if ($row['ItemQuantity'] == 0):
 		            ?>
@@ -153,8 +149,6 @@
     <b><font size="20"><?php echo $row['ItemQuantity']; ?></font></b>
     </div> 
                   <?php endif; ?>
-
-    
   </div>
 </div>
 

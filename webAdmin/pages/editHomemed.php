@@ -7,6 +7,7 @@ session_start();
      $dbname = "nimedco";
    
      $con = new mysqli($servername,$username,$password,$dbname);*/
+
      include "connection.php";
  
         $newName = $_POST['newName'];
@@ -14,11 +15,11 @@ session_start();
         $id = $_POST['id'];
 
     
-         $sql = "UPDATE webbabyproducts SET title='$newName',price = '$newPrice' WHERE ID ='$id'";
+         $sql = "UPDATE webhomemed SET title='$newName',price = '$newPrice' WHERE ID ='$id'";
         
          $conn->query($sql);
 
-         header('location:babyproducts.php');
+         header('location:Homemedicine.php');
          
     $conn->close();
 ?>

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Edit Supply Order | Nimedco Pharmacy</title>
+  <title>Stock Reports | Nimedco Pharmacy</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -70,98 +70,89 @@
   <!--/.Navbar-->
   <br><br>
 
-
-
-  <div class="container">
-      <div class="row">
-        <div class="col-md-5"><h2>EDIT SUPPLY ORDER</h2>  
-          <br>    
-          <!-- Extended default form grid -->
-          <form>
-              <!-- Grid row -->
-              <div class="form-row">
-                <!-- Default input -->
-                <div class="form-group col-md-6">
-                    <label for="ItemID">ItemID</label>
-                    <input type="text" class="form-control" id="ItemID" placeholder="ItemID">
-                  </div>
-                  <!-- Default input -->
-                  <div class="form-group col-md-6">
-                    <label for="ItemQuantity">Quantity</label>
-                    <input type="text" class="form-control" id="ItemQuantity" placeholder="Quantity">
-                  </div>
-                </div>
-                <!-- Grid row -->
-                <div class="form-row">
-                    <!-- Default input -->
-                    <div class="form-group col-md-6">
-                        <label for="SupplerID">SupplerID</label>
-                        <input type="text" class="form-control" id="SupplerID" placeholder="SupplerID">
-                      </div>
-                      <!-- Default input -->
-                      <div class="form-group col-md-6">
-                        <label for="OrderID">OrderID</label>
-                        <input type="text" class="form-control" id="OrderID" placeholder="OrderID">
-                      </div>
-                    </div>
-                <!-- Default input -->
-                <div class="form-row">
-                    <!-- Default input -->
-                    <div class="form-group col-md-6">
-                        <label for="mfg_date">Manufacture Date</label>
-                        <input type="text" class="form-control" id="mfg_date" placeholder="DD/MM/YYYY">
-                      </div>
-                      <!-- Default input -->
-                      <div class="form-group col-md-6">
-                        <label for="Exp_date">Expiry Date</label>
-                        <input type="text" class="form-control" id="Exp_date" placeholder="DD/MM/YYYY">
-                      </div>
-                    </div>
-                <!-- Default input -->
-                <div class="form-row">
-                    <!-- Default input -->
-                    <div class="form-group col-md-6">
-                        <label for="pu_date">Purchase Date</label>
-                        <input type="text" class="form-control" id="pu_date" placeholder="DD/MM/YYYY">
-                      </div>
-                      <!-- Default input -->
-                      <div class="form-group col-md-6">
-                        <label for="Pu_date">Purchase Price (each)</label>
-                        <input type="text" class="form-control" id="Pu_date" placeholder="Rs:">
-                      </div>
-                    </div>
-                <!-- Grid row -->
-                
-              
-                <!-- Grid row -->
-                
-              <button type="submit" class="btn btn-primary btn-md">UPDATE</button>
-              <button type="submit" class="btn btn-primary btn-md">DELETE</button>
-            </form>
-            <br><br><br>
-
-
-
-        </div>
-      <div class="col">
+  <?php
+         $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
+         $ItemID = $_POST['ItemID'];
+        	$result = $mysqli->query("SELECT * FROM stockitem WHERE ItemID='$ItemID'") or die($mysqli->error);
         
+          
+          $row = $result->fetch_assoc();
+        ?>
 
 
 
-      </div>
+  <div class="container w-50">
+<div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info ">
+      <h1>ITEM</h1>
+    </div>
+    <div class="col col-lg-5 bg-info ">
+    <p class="text-right">
+					            <a href="Cashier.php"
+                          class ="btn btn-danger btn-sm" align="center">
+                          &nbsp &nbsp   <i class="fa fa-times fa-2x"></i>   &nbsp &nbsp
+                        </a> </p>
     </div>
   </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info ">
+    <b><br>ItemID :</b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    <b><br><font size="5"><?php echo $row['ItemID']; ?></font></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b>Item Name : </b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    <b> <?php echo $row['ItemName']; ?></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b>Description :</b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    <b><?php echo $row['Description']; ?></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b>Category : </b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    <b><?php echo $row['Category']; ?></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b>Price : <br><br></b>
+    </div>
+    <div class="col col-lg-5 bg-primary ">
+    Rs: <b><?php echo $row['Price']; ?> <br><br></b>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-white">
+    <div class="col col-lg-3 text-white bg-info">
+    <b><br>Availability : </b>
+    </div>
+    <?php
+		              if ($row['ItemQuantity'] == 0):
+		            ?>
+                  <div class="col col-lg-5 bg-danger   ">
+                  <b><font size="6">Out of stock</font></b></br></br>
+    </div>  
+		            <?php else: ?>
+                <div class="col col-lg-5 bg-success   ">
+    <b><font size="20"><?php echo $row['ItemQuantity']; ?></font></b>
+    </div> 
+                  <?php endif; ?>
+  </div>
+</div>
 
-
-
-
-
-
-
-
-
-
-
+<br><br>
  
 
 
