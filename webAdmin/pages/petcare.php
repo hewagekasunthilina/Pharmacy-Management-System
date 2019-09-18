@@ -8,12 +8,14 @@ $message ="*Use jpg type and  upload image below 500kb";
 
 
 
-  $servername  = "localhost";
+  /*$servername  = "localhost";
   $username = "root";
   $password = "";
   $dbname = "nimedco";
 
-  $con = new mysqli($servername,$username,$password,$dbname);
+  $con = new mysqli($servername,$username,$password,$dbname);*/
+
+  include "connection.php";
 
 
 if(isset($_POST['submit'])){
@@ -61,7 +63,7 @@ if(isset($_POST['submit'])){
      
 
     $sql = "INSERT INTO webpetcare(title,price,image) values('$title','$price','$imagecontent')";
-    $con->query($sql);
+    $conn->query($sql);
 
 
 
@@ -118,7 +120,11 @@ if(isset($_POST['submit'])){
                 </div>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="../../index.php"><i class="fa fa-home fa-fw"></i> Website</a></li>
+                    <li><a href="../../delivery.php"><i class="fa fa-home fa-fw"></i> Website</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-left navbar-top-links">
+                    <li><a href="../../Dashboard.php"><i class="fa fa-home fa-fw"></i> Dashboard</a></li>
                 </ul>
 
 
@@ -216,7 +222,7 @@ if(isset($_POST['submit'])){
 
 
     $sql = "select ID,title,price,image from webpetcare";
-    $result = $con->query($sql);
+    $result = $conn->query($sql);
 
     echo '<br/>'.'<h1>Edit Item</h1>'.'<hr>'.'<br>';
 
@@ -240,7 +246,7 @@ if(isset($_POST['submit'])){
 
     }
 
-    $con->close();
+    $conn->close();
 
      ?>
 

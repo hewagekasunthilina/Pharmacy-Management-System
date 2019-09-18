@@ -76,22 +76,38 @@
 
 
   <div class="container">
-    <div class="row">
+    <div class="row" style="margin-left:350px;">
       <div class="col-md-5"><h2>ADD REPORTS</h2>  
         <br>    
-        <!-- Extended default form grid -->
-        <form id="myform4" method="POST">
+        
+        <?php require_once 'validatereport.php';?>
+
+        
+
+<?php
+if (isset($_SESSION['message'])):?>
+
+<div class = "alert alert-<?=$_SESSION['msg_type']?>">
+
+  <?php 
+      echo $_SESSION['message'];
+      unset($_SESSION['message']);
+  ?>
+ </div>
+ <?php endif ?>
+        <form id="myform4" method="POST" action="validatereport.php">
+        <input type = "hidden" name = "id" value = "<?php echo $id; ?>">
           <!-- Grid row -->
           <div class="form-row">
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="reportid">ReportID</label>
-              <input type="text" class="form-control" id="reportid" placeholder="ReportID" name="reportid">
+              <input type="text" class="form-control" id="reportid" value="<?php echo $reportid; ?>" placeholder="ReportID" name="reportid">
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="supplireid">SupplireID</label>
-              <input type="text" class="form-control" id="supplireid" placeholder="SupplireID" name="supplireid">
+              <input type="text" class="form-control" id="supplireid" value="<?php echo $supplireid; ?>" placeholder="SupplireID" name="supplireid">
             </div>
           </div>
           <!-- Grid row -->
@@ -99,138 +115,97 @@
           <!-- Default input -->
           <div class="form-group">
             <label for="medName">Medicine Name</label>
-            <input type="text" class="form-control" id="medName" placeholder="SPC,MPC,ACC" name="medName">
+            <input type="text" class="form-control" id="medName" value="<?php echo $medName; ?>" placeholder="SPC,MPC,ACC" name="medName">
           </div>
           <!-- Default input -->
           <div class="form-group">
             <label for="date">Date</label>
-            <input type="text" class="form-control" id="date" placeholder="DD/MM/YYYY" name="date">
+            <input type="text" class="form-control" id="date" value="<?php echo $date; ?>" placeholder="DD/MM/YYYY" name="date">
           </div>
           <!-- Grid row -->
           <div class="form-row">
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="qty">QTY</label>
-              <input type="text" class="form-control" id="qty" placeholder="QTY" name="qty">
+              <input type="text" class="form-control" id="qty" value="<?php echo $qty; ?>" placeholder="QTY" name="qty">
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="price">Price </label>
-              <input type="text" class="form-control" id="price" placeholder="Price" name="price">
+              <input type="text" class="form-control" id="price" value="<?php echo $price; ?>" placeholder="Price" name="price">
             </div>
           </div>
-          <!-- Grid row -->
-          <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateReportForm();">ADD REPORTS</button>
+          <?php
+          if ($update == true):
+          ?>
+          
+          <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateReportForm();" name="UPDATE">UPDATE</button>
+          <?php else: ?>
+          <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateReportForm();" name="REPORTS">ADD REPORTS</button>
+          <?php endif; ?>
         </form>
         <!-- Extended default form grid --></div>
-      <div class="col-md-1"></div>
-      <div class="col-md-6"><h2>REPORTS</h2>  
-        <br>    
+      
+      <div class="col-md-6" style="margin-left:-520px;margin-top:500px"><h2>REPORTS</h2>  
+        <br> 
+
+        <?php
+          $mysqli = new mysqli('localhost', 'root', '', 'supplier') or die (mysqli_error($mysqli));
+          $result = $mysqli->query("SELECT * FROM report") or die($mysqli->error);
+          //pre_r($result);
+          ?>
+
         <!-- Extended default form grid -->
         <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
               <tr>
-                <th class="th-sm">SupplireID
+                <th class="th-sm">Rport ID
                 </th>
-                <th class="th-sm">Name
+                <th class="th-sm">Supplier ID
                 </th>
-                <th class="th-sm">Address
+                <th class="th-sm">MED Name
                 </th>
-                <th class="th-sm">Medicine Brand
+                <th class="th-sm">Date
                 </th>
-                <th class="th-sm">Email
+                <th class="th-sm">QTY
                 </th>
-                <th class="th-sm">Contact
+                <th class="th-sm">Price
+                </th>
+                <th class="th-sm">Edit
+                </th>
+                <th class="th-sm">Delete
                 </th>
               </tr>
             </thead>
             <tbody>
+            <?php
+              while ($row = $result->fetch_assoc()):?>
+              
               <tr>
-                <td>S1</td>
-                <td>MAdhawa Amarasinghe</td>
-                <td>Kuliyapitiya</td>
-                <td>Panadol</td>
-                <td>madhawa@gmail.com</td>
-                <td>0715864875</td>
+                  <td><?php echo $row['reportid']; ?></td>
+                  <td><?php echo $row['supplireid']; ?></td>
+                  <td><?php echo $row['medName']; ?></td>
+                  <td><?php echo $row['date']; ?></td>
+                  <td><?php echo $row['qty']; ?></td>
+                  <td><?php echo $row['price']; ?></td>
+                  <td><a href="Reports.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">Edit</a></td>
+                  <td><a href="validatereport.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
               </tr>
-              <tr>
-                <td>S2</td>
-                <td>Kasun Thilina</td>
-                <td>Horana</td>
-                <td>coraxD</td>
-                <td>kasun@gmail.com</td>
-                <td>07758469257</td>
-              </tr>
-              <tr>
-                <td>Ashton Cox</td>
-                <td>Junior Technical Author</td>
-                <td>San Francisco</td>
-                <td>66</td>
-                <td>2009/01/12</td>
-                <td>$86,000</td>
-              </tr>
-              <tr>
-                <td>Cedric Kelly</td>
-                <td>Senior Javascript Developer</td>
-                <td>Edinburgh</td>
-                <td>22</td>
-                <td>2012/03/29</td>
-                <td>$433,060</td>
-              </tr>
-              <tr>
-                <td>Airi Satou</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>33</td>
-                <td>2008/11/28</td>
-                <td>$162,700</td>
-              </tr>
-              <tr>
-                <td>Brielle Williamson</td>
-                <td>Integration Specialist</td>
-                <td>New York</td>
-                <td>61</td>
-                <td>2012/12/02</td>
-                <td>$372,000</td>
-              </tr>
-              <tr>
-                <td>Herrod Chandler</td>
-                <td>Sales Assistant</td>
-                <td>San Francisco</td>
-                <td>59</td>
-                <td>2012/08/06</td>
-                <td>$137,500</td>
-              </tr>
-              <tr>
-                <td>Rhona Davidson</td>
-                <td>Integration Specialist</td>
-                <td>Tokyo</td>
-                <td>55</td>
-                <td>2010/10/14</td>
-                <td>$327,900</td>
-              </tr>
-
+                  <?php endwhile; ?>
             </tbody>
-            <tfoot>
-              <tr>
-                <th>Name
-                </th>
-                <th>Position
-                </th>
-                <th>Office
-                </th>
-                <th>Age
-                </th>
-                <th>Start date
-                </th>
-                <th>Salary
-                </th>
-              </tr>
-            </tfoot>
+
           </table>
         <!-- Extended default form grid --></div>
     </div>
   </div>
+
+   <?php
+          function pre_r( $array ) {
+            echo '<pre>';
+            print_r($array);
+            echo '</pre>';
+          }
+      ?>
 
 <br>
 <br>
