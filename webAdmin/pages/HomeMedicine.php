@@ -123,6 +123,9 @@ if(isset($_POST['submit'])){
                     <li><a href="../../delivery.php"><i class="fa fa-home fa-fw"></i> Website</a></li>
                 </ul>
 
+                <ul class="nav navbar-nav navbar-left navbar-top-links">
+                    <li><a href="../../Dashboard.php"><i class="fa fa-home fa-fw"></i> Dashboard</a></li>
+                </ul>
 
                 <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
