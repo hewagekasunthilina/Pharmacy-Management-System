@@ -17,7 +17,7 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="css/signIn.css" rel="stylesheet">
 </head>
-<body background="back1.jpg">
+<body background="bg3.jpg">
   <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
@@ -36,7 +36,7 @@
   
   </nav>
   <!--/.Navbar-->
-  <br><br>
+
 
     <div class="login-background"></div>
 
@@ -49,20 +49,23 @@
     <strong>Sign in</strong>
   </h5>
 
-          <?php
-        if (isset($_SESSION['message'])):?>
+<?php require_once 'signin-process.php';?>
 
-        <div class = "alert alert-<?=$_SESSION['msg_type']?>">
+<?php
+if (isset($_SESSION['message'])):?>
 
-          <?php 
-              echo $_SESSION['message'];
-              unset($_SESSION['message']);
-          ?>
-         </div>
-         <?php endif ?> 
+<div class = "alert alert-<?=$_SESSION['msg_type']?>">
 
+  <?php 
+      echo $_SESSION['message'];
+      unset($_SESSION['message']);
+  ?>
+ </div>
+ <?php endif ?> 
   <!--Card content-->
   <div class="card-body px-lg-5 pt-0">
+
+
 
     <!-- Form -->
     <form class="text-center" method = "POST" action="signin-process.php" style="color: #757575;" action="signin-process.php">
