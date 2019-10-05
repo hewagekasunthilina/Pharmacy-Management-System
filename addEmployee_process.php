@@ -2,13 +2,14 @@
 
 session_start();
 
-$mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
+$mysqli = new mysqli('localhost', 'root', '', 'supplier') or die(mysqli_error($mysqli));
 
 
 $update = false;
 
 
-$EmpId = 0;
+$id = 0;
+$EmpId = '';
 $FirstName = '';
 $LastName = '';
 $UserName = '';
@@ -18,7 +19,9 @@ $Address = '';
 $PhoneNumber = '';
 $Password = '';
 
-if(isset($_POST['save'])){
+if(isset($_POST['REGISTER'])){
+
+    $EmpId = $_POST['EmpId'];
     $FirstName = $_POST['FirstName'];
     $LastName = $_POST['LastName'];
     $UserName = $_POST['UserName'];
@@ -29,7 +32,7 @@ if(isset($_POST['save'])){
     $Password = $_POST['Password'];
     
 
-	$mysqli->query("INSERT INTO employee(FirstName, LastName, UserName, Email, NICNumber, Address, PhoneNumber, Password) VALUES('$FirstName', '$LastName', '$UserName', '$Email', '$NICNumber', '$Address', '$PhoneNumber', '$Password')") or die($mysqli->error);
+	$mysqli->query("INSERT INTO employee (EmpId, FirstName, LastName, UserName, Email, NICNumber, Address, PhoneNumber, Password) VALUES('$EmpId', '$FirstName', '$LastName', '$UserName', '$Email', '$NICNumber', '$Address', '$PhoneNumber', '$Password')") or die($mysqli->error);
 
 	$_SESSION['message'] = "Record has been saved!";
 	$_SESSION['msg_type'] = "success";
@@ -38,8 +41,8 @@ if(isset($_POST['save'])){
 }
 
 if (isset($_GET['delete'])){
-	$EmpId = $_GET['delete'];
-	$mysqli->query("DELETE FROM employee WHERE EmpId='$EmpId'") or die($mysql->error());
+	$id = $_GET['delete'];
+	$mysqli->query("DELETE from employee WHERE id=$id") or die($mysqli->error());
 
 	$_SESSION['message'] = "Record has been deleted!";
 	$_SESSION['msg_type'] = "danger";
@@ -48,11 +51,12 @@ if (isset($_GET['delete'])){
 }
 
 if (isset($_GET['edit'])){
-	$EmpId = $_GET['edit'];
+	$id = $_GET['edit'];
 	$update = true;
-	$result = $mysqli->query("SELECT * FROM employee WHERE EmpId='$EmpId'") or die($mysqli->error());
-	
-		$row = $result->fetch_array();
+	$result = $mysqli->query("SELECT * FROM employee WHERE id='$id'") or die($mysqli->error());
+	if (count($result)==1){
+        $row = $result->fetch_array();
+        $EmpId = $row['EmpId'];
 	    $FirstName = $row['FirstName'];
         $LastName = $row['LastName'];
         $UserName = $row['UserName'];
@@ -61,10 +65,12 @@ if (isset($_GET['edit'])){
         $Address = $row['Address'];
         $PhoneNumber = $row['PhoneNumber'];
         $Password = $row['Password'];
+    }
 	
 }
 
-if(isset($_POST['update'])){
+if(isset($_POST['UPDATE'])){
+    $id = $_POST['id'];
 	$EmpId = $_POST['EmpId'];
 	$FirstName = $_POST['FirstName'];
     $LastName = $_POST['LastName'];
@@ -75,7 +81,7 @@ if(isset($_POST['update'])){
     $PhoneNumber = $_POST['PhoneNumber'];
     $Password = $_POST['Password'];
 	
-	$mysqli->query("UPDATE employee SET FirstName='$FirstName', LastName='$LastName', UserName='$UserName', Email='$Email', NICNumber='$NICNumber', Address='$Address', PhoneNumber='$PhoneNumber', Password='$Password' WHERE EmpId='$EmpId'") or die($mysqli->error);
+	$mysqli->query("UPDATE employee SET EmpId='$EmpId', FirstName='$FirstName', LastName='$LastName', UserName='$UserName', Email='$Email', NICNumber='$NICNumber', Address='$Address', PhoneNumber='$PhoneNumber', Password='$Password' WHERE id='$id'") or die($mysqli->error);
 	$_SESSION['message'] = "Record has been updateed!";
 	$_SESSION['msg_type'] = "warning";
 	

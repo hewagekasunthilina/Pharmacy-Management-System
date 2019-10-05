@@ -10,6 +10,7 @@ function validateRegisterForm()
     var number = /^[0-9]+$/;
     var letter = /^[a-zA-Z]+$/;
     var Email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
 
     if ((supplierid == null || supplierid == "") && (name == null || name == "") && (address == null || address == "") && (brand == null || brand == "") && (email == null || email == "") && (contact == null || contact == "")){
         alert("Plase Fill the REGISTER form");
@@ -51,8 +52,8 @@ function validateRegisterForm()
     if (contact == null || contact == ""){
         alert("Contact must be filled out ");
         return false;
-    }else if(!(contact.match(number))){
-        alert("Contact must be numbers")
+    }else if(!(contact.match(phoneno))){
+        alert("Invalid Contact Number")
         return false;
     }
     
@@ -72,6 +73,7 @@ function validateDetailsForm()
     var number = /^[0-9]+$/;
     var letter = /^[a-zA-Z]+$/;
     var Email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
 
     if ((supplierid == null || supplierid == "") && (name == null || name == "") && (address == null || address == "") && (brand == null || brand == "") && (email == null || email == "") && (contact == null || contact == "")){
         alert("Plase Fill the UPDATE DETAILS form");
@@ -113,7 +115,7 @@ function validateDetailsForm()
     if (contact == null || contact == ""){
         alert("Contact must be filled out ");
         return false;
-    }else if(!(contact.match(number))){
+    }else if(!(contact.match(phoneno))){
         alert("Contact must be numbers")
         return false;
     }
@@ -235,3 +237,62 @@ function validateReportForm()
     }
     
 }
+
+
+
+
+/*
+
+function validateOrder()
+{
+    var orderid = document.forms["myform5"]["orderid"].value;
+    var supplierid = document.forms["myform5"]["supplierid"].value;
+    var medName = document.forms["myform5"]["medName"].value;
+    var qty = document.forms["myform5"]["qty"].value;
+    var date = document.forms["myform5"]["date"].value;
+    
+
+    var number = /^[0-9]+$/;
+    var letter = /^[a-zA-Z]+$/;
+
+    if ((orderid == null || orderid == "") && (supplierid == null || supplierid == "") && (medName == null || medName == "") && (qty == null || qty == "") && (date == null || date == "")){
+        alert("Plase Fill the REPORT form");
+        return false;
+    }
+
+    if (orderid == null || orderid == ""){
+        alert("Report ID must be filled out ");
+        return false;
+    }
+
+    if (supplierid == null || supplierid == ""){
+        alert("Supplier ID must be filled out ");
+        return false;
+    }
+    
+
+    if (medName == null || medName == ""){
+        alert("Medicine Name must be filled out ");
+        return false;
+    }else if(!(medName.match(letter))){
+        alert("Medicine Name must be letters")
+        return false;
+    }
+
+    if (qty == null || qty == ""){
+        alert("date must be filled out ");
+        return false;
+    }
+
+    if (date == null || date == ""){
+        alert("QTY must be filled out ");
+        return false;
+    }else if(!(date.match(number))){
+        alert("QTY must be numbers")
+        return false;
+    }
+
+    
+    
+}
+*/

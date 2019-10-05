@@ -15,12 +15,12 @@
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
+<body background="back3.jpg">
   <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="index.html">NimedcoPharmacy</a>
+    <a class="navbar-brand" href="index.php">NimedcoPharmacy</a>
   
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -34,15 +34,18 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home
+          <a class="nav-link" href="Dashboard.php">Dashboard
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="Supplier.php">SupplierHome</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="registerSupplier.php">Suppliers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Orders.php">Orders</a>
         </li>
   
         <!-- Dropdown -->
@@ -50,8 +53,8 @@
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">Reports</a>
           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Summary</a>
-            <a class="dropdown-item" href="#">Reports Store</a>
+            <a class="dropdown-item" href="Summary.php">Summary</a>
+            <a class="dropdown-item" href="Reports.php">Add Reports</a>
             
           </div>
         </li>
@@ -76,23 +79,35 @@
 
 
   <div class="container">
-    <div class="row">
-      <div class="col-md-5"><h2>ADD ORDERS</h2>  
+  <div class="row">
+      <div class="col-md-5" style="margin-left:350px;"><h2>ADD ORDERS</h2>  
         <br>    
         
         <?php require_once 'validateorder.php';?>
+<?php
+if (isset($_SESSION['message'])):?>
+
+<div class = "alert alert-<?=$_SESSION['msg_type']?>">
+
+  <?php 
+      echo $_SESSION['message'];
+      unset($_SESSION['message']);
+?>
+ </div>
+ <?php endif ?>
         <form id="myform3" method="POST" action="validateorder.php">
+        <input type = "hidden" name = "id" value = "<?php echo $id; ?>">
           <!-- Grid row -->
           <div class="form-row">
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="orderid">OrderID</label>
-              <input type="text" class="form-control" id="orderid" placeholder="OrderID" name="orderid">
+              <input type="text" class="form-control" id="orderid" value="<?php echo $orderid; ?>" placeholder="OrderID" name="orderid">
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="supplierid">SupplireID</label>
-              <input type="text" class="form-control" id="supplierid" placeholder="SupplireID" name="supplierid">
+              <input type="text" class="form-control" id="supplierid" value="<?php echo $supplierid; ?>" placeholder="SupplireID" name="supplierid">
             </div>
           </div>
           <!-- Grid row -->
@@ -100,7 +115,7 @@
           <!-- Default input -->
           <div class="form-group">
             <label for="medname">MedName</label>
-            <input type="text" class="form-control" id="medname" placeholder="Name of the Medicine" name="medname">
+            <input type="text" class="form-control" id="medname" value="<?php echo $medname; ?>" placeholder="Name of the Medicine" name="medname">
           </div>
 
           <!-- Grid row -->
@@ -108,124 +123,81 @@
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="qty">QTY</label>
-              <input type="text" class="form-control" id="qty" placeholder="Quantity" name="qty">
+              <input type="text" class="form-control" id="qty" value="<?php echo $qty; ?>" placeholder="Quantity" name="qty">
             </div>
             <!-- Default input -->
             <div class="form-group col-md-6">
               <label for="date">Date</label>
-              <input type="text" class="form-control" id="date" placeholder="DD/MM/YYYY" name="date">
+              <input type="text" class="form-control" id="date" value="<?php echo $date; ?>" placeholder="DD/MM/YYYY" name="date">
             </div>
           </div>
-          <!-- Grid row -->
+		  <?php
+          if ($update == true):
+          ?>
+          <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateOrderForm();" name="UPDATE">UPDATE</button>
+		  <?php else: ?>
           <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateOrderForm();" name="ORDER">ADD ORDERS</button>
+		  <?php endif; ?>
         </form>
         <!-- Extended default form grid --></div>
-      <div class="col-md-1"></div>
-      <div class="col-md-6"><h2>ORDERS</h2>  
-        <br>    
+      
+      <div class="col-md-6" style="margin-left:-660px;margin-top:460px"><h2>ORDERS</h2>  
+        
+		<?php
+          $mysqli = new mysqli('localhost', 'root', '', 'supplier') or die (mysqli_error($mysqli));
+          $result = $mysqli->query("SELECT * FROM orders") or die($mysqli->error);
+          //pre_r($result);
+          ?>
+
+		
         <!-- Extended default form grid -->
         <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
               <tr>
-                <th class="th-sm">OrderID
+                <th class="th-sm">Order ID
                 </th>
-                <th class="th-sm">SupplireID
+                <th class="th-sm">Supplier ID
                 </th>
-                <th class="th-sm">MedName
+                <th class="th-sm">MED Name
                 </th>
                 <th class="th-sm">QTY
                 </th>
-                <th class="th-sm">Date
+                <th class="th-sm">DATE
                 </th>
-
+                <th class="th-sm">Edit
+                </th>
+                <th class="th-sm">Delete
+                </th>
               </tr>
             </thead>
             <tbody>
+            <?php
+              while ($row = $result->fetch_assoc()):?>
+              
               <tr>
-                <td>S1</td>
-                <td>MAdhawa Amarasinghe</td>
-                <td>Kuliyapitiya</td>
-                <td>Panadol</td>
-                <td>madhawa@gmail.com</td>
-                
+                  <td><?php echo $row['orderid']; ?></td>
+                  <td><?php echo $row['supplierid']; ?></td>
+                  <td><?php echo $row['medName']; ?></td>
+                  <td><?php echo $row['qty']; ?></td>
+                  <td><?php echo $row['date']; ?></td>
+                  <td><a href="Orders.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">Edit</a></td>
+                  <td><a href="validateorder.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
               </tr>
-              <tr>
-                <td>S2</td>
-                <td>Kasun Thilina</td>
-                <td>Horana</td>
-                <td>coraxD</td>
-                <td>kasun@gmail.com</td>
-                
-              </tr>
-              <tr>
-                <td>Ashton Cox</td>
-                <td>Junior Technical Author</td>
-                <td>San Francisco</td>
-                <td>66</td>
-                <td>2009/01/12</td>
-                
-              </tr>
-              <tr>
-                <td>Cedric Kelly</td>
-                <td>Senior Javascript Developer</td>
-                <td>Edinburgh</td>
-                <td>22</td>
-                <td>2012/03/29</td>
-                
-              </tr>
-              <tr>
-                <td>Airi Satou</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>33</td>
-                <td>2008/11/28</td>
-                
-              </tr>
-              <tr>
-                <td>Brielle Williamson</td>
-                <td>Integration Specialist</td>
-                <td>New York</td>
-                <td>61</td>
-                <td>2012/12/02</td>
-                
-              </tr>
-              <tr>
-                <td>Herrod Chandler</td>
-                <td>Sales Assistant</td>
-                <td>San Francisco</td>
-                <td>59</td>
-                <td>2012/08/06</td>
-                
-              </tr>
-              <tr>
-                <td>Rhona Davidson</td>
-                <td>Integration Specialist</td>
-                <td>Tokyo</td>
-                <td>55</td>
-                <td>2010/10/14</td>
-                
-              </tr>
-
+                  <?php endwhile; ?>
             </tbody>
-            <tfoot>
-              <tr>
-                <th>OrderID
-                </th>
-                <th>SupplireID
-                </th>
-                <th>MedName
-                </th>
-                <th>QTY
-                </th>
-                <th>Date
-                </th>
 
-              </tr>
-            </tfoot>
           </table>
         <!-- Extended default form grid --></div>
     </div>
   </div>
+  
+   <?php
+          function pre_r( $array ) {
+            echo '<pre>';
+            print_r($array);
+            echo '</pre>';
+          }
+      ?>  
 
 <br>
 <br>

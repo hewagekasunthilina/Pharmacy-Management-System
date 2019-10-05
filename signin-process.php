@@ -1,23 +1,27 @@
 <?php
 
-include 'connection.php'
+$UserName = $_POST['UserName'];
+$Password = $_POST['Password'];
 
-$conn = mysqli_connect('localhost', 'root', 'root');
-mysqli_select_db($con, 'nimedco-pharmacy');
+$UserName = stripcslashes($UserName);
+$Password = stripcslashes($Password);
+$UserName = mysql_real_escape_string($UserName);
+$Password = mysql_real_escape_string($Password);
 
-$username = $_POST['UserName'];
-$password = $_POST['Password'];
+mysql_connect("localhost", "root", "");
+mysql_select_db("supplier");
 
-$s = "select * from admin where UserName = '$username' && Password = '$password'";
+$result = mysql_query("select * from employee where UserName = '$UserName' and Password = '$Password'") or die("Failed to query database".mysql_error());
 
-$result = mysql_query($conn, $s);
-
-$num = mysqli_num_rows($result);
-
-if($num == 1){
-    header('location:Dashboard.php');
+$row = mysql_fetch_array($result);
+if ($row['UserName'] == $UserName && $row['Password'] == $Password){
+    header("location: Dashboard.php");
 } else{
-    header('location:signIn.php');
+    
+    $_SESSION['message'] = "Record has been UPDATED!";
+    $_SESSION['msg_type'] = "warning";
+
+    header("location: signIn.php");
 }
 
     
