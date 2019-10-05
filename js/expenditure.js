@@ -25,6 +25,11 @@ function  ValidateForm(billyear,totalamount,Date)
        {
         return true;
        }
+      else if(billyear.value == "")
+       {
+        alert("Field Can't be empty"); 
+        return false;
+       }
       else    
        {
            alert("Invalid bill year format");   
@@ -32,8 +37,6 @@ function  ValidateForm(billyear,totalamount,Date)
            document.getElementById("expenditureform").reset();
            return false;
         
-
-
        }
    }
 
@@ -43,7 +46,13 @@ function  ValidateForm(billyear,totalamount,Date)
         {
             return true;
         }
-       else
+        else if(totalamount.value == "")
+        {
+            alert("Field Can't be empty"); 
+            return false;
+
+        }
+        else
         {    
             alert("Invalid  amount format"); 
             confirm("Do you want to Re enter values??");
