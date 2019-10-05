@@ -22,7 +22,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="index.html">Admin Panel</a>
+        <a class="navbar-brand" href="Dashboard.php">Admin Panel</a>
       
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -65,7 +65,7 @@
       </nav>
   <!--/.Navbar-->
  
-
+  
   <div>
     <img src="img/stock/gif2.gif" width="100%">
   </div>
@@ -82,18 +82,31 @@
   <div class="container">
     <div class="row">
       <div class="col">
-      <p align="center"> <a href="CashierInvoice.php">
-			<button class="button buttoncheack"><i class="fa fa-file-medical fa-3x"></i>
-          </i><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp New Invoice &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-			</p></a>
+      
+      <p align="center">
+
+      <form action="Cashier_process.php" method="POST">
+			<button type="submit" class="button buttoncheack" name="new"><i class="fa fa-file-medical fa-3x"></i>
+          </i><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp New Invoice &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+			</p></form>
       </div>
       
       <div class="col">
-      <p align="center"> <a href="StockSalesReports.php">
-			<button class="button buttoncheack"><i class="fa fa-chart-line fa-3x"></i>
-          </i><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Sales Report &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-			</p></a>
+      <p align="center"> <a href="CashierViewInvoice.php">
+      <form action="CashierViewInvoice.php">
+			<button class="button buttoncheack"><i class="fa fa-file-invoice-dollar fa-3x"></i>
+          </i><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp View Invoice &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+			</p></a></form>
       </div>
+
+      <div class="col">
+      <p align="center"> <a href="StockSalesReports.php">
+      <form action="StockReports.php">
+			<button class="button buttoncheack"><i class="fa fa-capsules fa-3x"></i>
+          </i><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Stock Items &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+			</p></a></form>
+      </div>
+
       </div>
 </div>
      

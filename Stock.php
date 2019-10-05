@@ -12,15 +12,10 @@
   <link href="css/stock_materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/stock_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
-  
-  
-
- 
-
 </head>
 <body>
   <nav class="blue" role="navigation"><font size="4"> &nbsp<a href = "Dashboard.php"> Admin Panel</font></a>
-  &nbsp&nbsp&nbsp Home
+  &nbsp&nbsp&nbsp <a href = "index.php">Home</a>
   &nbsp&nbsp&nbsp Features
   &nbsp&nbsp&nbsp Pricing
   &nbsp&nbsp&nbsp Reports
@@ -42,7 +37,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2"><font color = "#000000">Stock Management</font></h1><hr color = "#000000" >
+        <h1 class="header center teal-text text-lighten-2"><font color = "#000000">Nimedco Stock Management</font></h1><hr color = "#000000" >
         <div class="row center">
           <font color = "black"><h5 class="header col s12 light">Check availability of item In the stock</h5></font>
         </div>
@@ -106,12 +101,12 @@
       <div class="container">
         <div class="row center">
           <h5 class="header col s12 light"><font color="black">Get reports and details about stock and sales taransactions</h5></font>
-          <a href="StockReports.php">
+          <a href="StockReportPDF.php">
       <button class="buttoncheack"style="font-size:20px"><i class="material-icons" style="font-size:40px">insert_chart</i><br>Stock Reports</button>
           </a>
       &nbsp&nbsp&nbsp&nbsp&nbsp
-      <a href="StockSalesReports.php">
-      <button class="buttoncheack"style="font-size:20px"><i class="material-icons" style="font-size:40px">local_grocery_store</i><br>Sales Reports</button>
+      <a href="StockReports.php">
+      <button class="buttoncheack"style="font-size:20px"><i class="material-icons" style="font-size:40px">local_pharmacy</i><br>&nbsp;Stock Details&nbsp;</button>
       </a>
         </div>
       </div>
