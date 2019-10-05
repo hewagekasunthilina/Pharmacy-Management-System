@@ -24,6 +24,7 @@
   <!--Datepicker validate-->
   <script src = "expendituredate.js"></script>
 
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
 
 </head>
 <body  onload=enable_text(false);>
@@ -210,8 +211,8 @@
                 <hr style = " border: 1px solid black; width: 240px;">  
                 <br><br>
                 <!--Bill Table-->
-                             
-                <table id="billtable" class="table table-striped table-bordered" cellspacing="0" width="80%" style="margin-left:10px;">
+                <div class="container">            
+                <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="80%" style="margin-left:10px;">
               <thead>
                 <tr>
                 <th class="th-sm">Bill Id
@@ -236,20 +237,19 @@
                     </th>
                 </tr>
               </thead>
-              
+              <tbody>
               <?php
-                 if(isset($_POST['Viewbilltable']))
-                 {
+                
                       $reterive_query = "SELECT * FROM  expenditure ";
                       $result = $conn->query($reterive_query) or die($conn -> error);
                          
 
-                  while($rows = mysqli_fetch_assoc($result))
-                  {
+                  while($rows = $result->fetch_assoc()): ?>
+                
 
                   
-              ?>
-              <tbody>
+            
+              
               <tr>
               <td> <?php echo $rows['BillId']; ?> </td>
               <td> <?php echo $rows['BillYear']; ?> </td>
@@ -264,13 +264,36 @@
                 <td><a href="expendituredetails.php?Delete=<?php echo $rows['BillId'];?>"
                   class="btn btn-danger btn-rounded">Delete</button></td>  
                </tr>
+               <?php endwhile; ?>
               </tbody>
-               <?php
-                  }
-                }
-                 ?>
+             
+                 <tfoot>
+              <tr>
+               <th class="th-sm">Bill Id
+              </th>
+              <th class="th-sm">Bill Year
+              </th>
+              <th class="th-sm">Bill Month
+              </th>
+              <th class="th-sm">Bill Type
+              </th>
+              <th class="th-sm">Total No of Units 
+              </th>
+              <th class="th-sm">Total Amount
+             </th>
+              <th class="th-sm">Paid
+              </th>
+              <th class="th-sm">Paid Date
+              </th>
+              <th class="th-sm">Update
+             </th>
+             <th class="th-sm">Delete
+             </th>
+            </tr>
+          </tfoot>
              </table>
-                  
+             </div>
+           
 
 
 <!-- Footer -->
@@ -421,8 +444,17 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
-
-
+  
+  
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+  <script src = "js/expenditure.js"> </script>  
+    <script type="text/javascript">
+             $(document).ready(function () {
+             $('#dtBasicExample').DataTable();
+            $('.dataTables_length').addClass('bs-select');
+            });
+          </script> 
+                  
 </body>
 
 </html>
