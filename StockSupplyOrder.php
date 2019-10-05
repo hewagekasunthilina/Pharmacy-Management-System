@@ -8,6 +8,7 @@
   <title>Supply Order | Nimedco Pharmacy</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
@@ -103,7 +104,7 @@
          
           <br>    
           <!-- Extended default form grid -->
-          <form name="SupplyOrderForm" method="POST" action="">
+          <form name="SupplyOrderForm" method="POST" action="StockSupplyOrder_process.php">
           <input type="hidden" name="id" value="<?php echo $id; ?>">
               <!-- Grid row -->
               <div class="form-row">
@@ -204,19 +205,19 @@
                   <button type="reset" class="btn btn-danger btn-md">RESET</button>
                   <?php endif; ?>
             </form> 
-            <br><br><br>
+            <br>
 
 
 
         </div>
         <?php
-	       $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
-        	$result = $mysqli->query("SELECT * FROM StockSupplyOrder order by id desc limit 0, 7") or die($mysqli->error);
+	       $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
+        	$result = $mysqli->query("SELECT * FROM StockSupplyOrder order by id desc") or die($mysqli->error);
 	        //pre_r($result);
         ?>
-
-      <div class="col">
-        <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+</div></div>
+      <div class="" style="margin: 15px;">
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
               <thead style="color: white;" class="bg-primary" align="center">
                 <tr>
                 <th class="th-sm">ID
@@ -244,7 +245,7 @@
               <tbody>
               <?php
 		          	while($row = $result->fetch_assoc()): ?>
-			          	<tr>
+			          	<tr align="center">
                     <td><b><?php echo $row['id']; ?></b></td>
 					          <td><b><?php echo $row['ItemID']; ?></b></td>
                     <td><b><?php echo $row['ItemQuantity']; ?></b></td>
@@ -294,7 +295,7 @@
                   </th>
                 </tr>
               </tfoot> -->
-            </table>
+            </table> <br>
             <?php
 	            function pre_r( $array ){
 		            echo '<pre>';
@@ -482,7 +483,13 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script src="js/stockvalidation.js"></script>
-  
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function () {
+$('#dtBasicExample').DataTable();
+$('.dataTables_length').addClass('bs-select');
+});
+    </script>
 
   </body>
   </html>
