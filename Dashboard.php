@@ -19,35 +19,41 @@
 
 </head>
 
-<body>
-
- <!--Start of the header-->
- <!--Navbar-->
+<body background="back1.jpg">
+  <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
-  <!-- Navbar brand -->
-  <a class="navbar-brand" href="index.php">Admin Panel</a>
-
-  <!-- Collapse button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <!-- Collapsible content -->
-  <div class="collapse navbar-collapse" id="basicExampleNav">
-
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-    
-      
-      <!-- Dropdown -->
-      <li class="nav-item dropdown">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="index.php">NimedcoPharmacy</a>
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="Dashboard.php">Dashboard
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Supplier.php">SupplierHome</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="registerSupplier.php">Suppliers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Orders.php">Orders</a>
+        </li>
+  
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">Reports</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
@@ -58,18 +64,20 @@
           
         </div>
       </li>
-
-    </ul>
-    <!-- Links -->
-
-    <form class="form-inline my-2 my-lg-0 align-self-stretch">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-  </div>
-  <!-- Collapsible content -->
-
-</nav>
+  
+      </ul>
+      <!-- Links -->
+  
+      <form class="form-inline my-2 my-lg-0 align-self-stretch">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+    <!-- Collapsible content -->
+  
+  </nav>
+  <!--/.Navbar-->
+  
 <!--/.Navbar-->
 
 <!--End of the header-->

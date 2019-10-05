@@ -35,15 +35,18 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home
+          <a class="nav-link" href="Dashboard.php">Dashboard
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="Supplier.php">SupplierHome</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="registerSupplier.php">Suppliers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Orders.php">Orders</a>
         </li>
   
         <!-- Dropdown -->
@@ -51,8 +54,8 @@
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">Reports</a>
           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Summary</a>
-            <a class="dropdown-item" href="#">Reports Store</a>
+            <a class="dropdown-item" href="Summary.php">Summary</a>
+            <a class="dropdown-item" href="Reports.php">Add Reports</a>
             
           </div>
         </li>
