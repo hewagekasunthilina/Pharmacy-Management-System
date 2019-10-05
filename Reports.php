@@ -15,12 +15,12 @@
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
+<body  background="back3.jpg">
   <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="index.html">NimedcoPharmacy</a>
+    <a class="navbar-brand" href="index.php">NimedcoPharmacy</a>
   
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -34,15 +34,18 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home
+          <a class="nav-link" href="Dashboard.php">Dashboard
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="Supplier.php">SupplierHome</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="registerSupplier.php.php">Suppliers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Orders.php">Orders</a>
         </li>
   
         <!-- Dropdown -->
@@ -50,8 +53,8 @@
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">Reports</a>
           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Summary</a>
-            <a class="dropdown-item" href="#">Reports Store</a>
+            <a class="dropdown-item" href="Summary.php">Summary</a>
+            <a class="dropdown-item" href="Reports.php">Add Reports</a>
             
           </div>
         </li>
@@ -76,8 +79,8 @@
 
 
   <div class="container">
-    <div class="row" style="margin-left:350px;">
-      <div class="col-md-5"><h2>ADD REPORTS</h2>  
+    <div class="row" >
+      <div class="col-md-5" style="margin-left:350px;"><h2>ADD REPORTS</h2>  
         <br>    
         
         <?php require_once 'validatereport.php';?>
@@ -146,7 +149,7 @@ if (isset($_SESSION['message'])):?>
         </form>
         <!-- Extended default form grid --></div>
       
-      <div class="col-md-6" style="margin-left:-520px;margin-top:500px"><h2>REPORTS</h2>  
+      <div class="col-md-6" style="margin-left:-660px;margin-top:600px"><h2>REPORTS</h2>  
         <br> 
 
         <?php

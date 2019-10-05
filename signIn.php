@@ -17,11 +17,30 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="css/signIn.css" rel="stylesheet">
 </head>
-<body>
+<body background="back1.jpg">
+  <!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="index.php">NimedcoPharmacy</a>
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+   
+    <!-- Collapsible content -->
+  
+  </nav>
+  <!--/.Navbar-->
+  <br><br>
 
     <div class="login-background"></div>
 
-<!-----------------------------------Sign In Form ------------------------------------>
+<!--############################-Sign In Form -###############################-->
 
 <!-- Material form login -->
 <div class="card2">
@@ -30,22 +49,34 @@
     <strong>Sign in</strong>
   </h5>
 
+          <?php
+        if (isset($_SESSION['message'])):?>
+
+        <div class = "alert alert-<?=$_SESSION['msg_type']?>">
+
+          <?php 
+              echo $_SESSION['message'];
+              unset($_SESSION['message']);
+          ?>
+         </div>
+         <?php endif ?> 
+
   <!--Card content-->
   <div class="card-body px-lg-5 pt-0">
 
     <!-- Form -->
-    <form class="text-center" method = "POST" style="color: #757575;" action="signin-process.php">
+    <form class="text-center" method = "POST" action="signin-process.php" style="color: #757575;" action="signin-process.php">
 
       <!-- Email -->
       <div class="md-form">
-        <input type="text" id="materialLoginFormEmail" class="form-control" name = "UserName">
-        <label for="materialLoginFormEmail">User Name</label>
+        <input type="text" id="UserName" class="form-control" name = "UserName">
+        <label for="UserName">User Name</label>
       </div>
 
       <!-- Password -->
       <div class="md-form">
-        <input type="password" id="materialLoginFormPassword" class="form-control" name = "Password">
-        <label for="materialLoginFormPassword">Password</label>
+        <input type="password" id="Password" class="form-control" name = "Password">
+        <label for="Password">Password</label>
       </div>
 
       <div class="d-flex justify-content-around">
@@ -64,7 +95,7 @@
 
       <!-- Sign in button -->
       <!--<input type = "submit" class="btn btn-primary" value = "LOGIN" />--> 
-      <a href = "Dashboard.php" class= "btn btn-primary">signIn</a>    
+      <button type="submit" class="btn btn-primary btn-md" name="SIGN">SIGN IN</button>    
 
     </form>
     <!-- Form -->

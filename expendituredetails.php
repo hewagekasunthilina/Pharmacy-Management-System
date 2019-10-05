@@ -41,26 +41,62 @@ $paid_date = '';
                while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) //fetch the database values into row as an associative array
               {
                    $id = $row['BillId'];
+                   
               }
                     $billid =  ++$id;       //increment bill id
               
-             
-                $sql = "INSERT INTO expenditure(BillId,BillYear,BillMonth, BillType ,TotalUnits ,TotalAmount ,Paid ,PaidDate) VALUES('$billid','$bill_year','$bill_month','$bill_type','$total_units','$total_amount','$paid','$paid_date')";
+                    $query_all = "SELECT * FROM expenditure ";
+                
+                    $results = $conn->query($query_all) or die($conn -> error);
+
+                    while($rows = mysqli_fetch_assoc($results)) //fetch the database values into row as an associative array
+                    {
+                        
+                     
+                         $validatebillmonth = $rows['BillMonth'];
+                         $validatetype = $rows['BillType'];
+
+                         $month  = strcmp($validatebillmonth,$bill_month);
+                          $type  =   strcmp($validatetype,$bill_type);
+
+                         if( $month==0  && $type==0 )
+                       {
+                         
+                          echo '<script language = "javascript">';
+                          echo 'alert("Do Not Enter Same Bill type Details")';      //display the  alert box
+                          echo '</script>';
+        
+                        header('Refresh: 1 ; URL=http://localhost/Pharmacy-Management-System/Expenditure.php');   //redirect to expenditure page after certain time   
+
+
+                       }
+                     
+                       elseif(($month==0 || $type!==0) || ($month!=0 || $type!=0) )
+                        {
+                            
+                             $sql = "INSERT INTO expenditure(BillId,BillYear,BillMonth, BillType ,TotalUnits ,TotalAmount ,Paid ,PaidDate) VALUES('$billid','$bill_year','$bill_month','$bill_type','$total_units','$total_amount','$paid','$paid_date')";
           
-                
+                                 if($conn->query($sql)=== TRUE)
+                            { 
 
-               if($conn->query($sql)=== TRUE)
-              {
+         
 
-                
+                                  echo '<script language = "javascript">';
+                                  echo 'alert("New Record Inserted Successfully")';      //display the  alert box
+                                   echo '</script>';
 
-                echo '<script language = "javascript">';
-                echo 'alert("New Record Inserted Successfully")';      //display the  alert box
-                echo '</script>';
+                                  header('Refresh: 1 ; URL=http://localhost/Pharmacy-Management-System/Expenditure.php');   //redirect to expenditure page after certain time  
 
-                header('Refresh: 1 ; URL=http://localhost/Pharmacy-Management-System/Expenditure.php');   //redirect to expenditure page after certain time  
+                            }
+                          
+                       }
 
-              }
+                      // header('Refresh: 1 ; URL=http://localhost/Pharmacy-Management-System/Expenditure.php'); 
+                    
+                    }
+
+
+
             
 
              
