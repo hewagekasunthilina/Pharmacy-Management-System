@@ -15,12 +15,12 @@
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
+<body background="back1.jpg">
   <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="index.html">NimedcoPharmacy</a>
+    <a class="navbar-brand" href="index.php">NimedcoPharmacy</a>
   
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -34,15 +34,18 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home
+          <a class="nav-link" href="Dashboard.php">Dashboard
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="Supplier.php">SupplierHome</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="registerSupplier.php">Suppliers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Orders.php">Orders</a>
         </li>
   
         <!-- Dropdown -->
@@ -50,8 +53,8 @@
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">Reports</a>
           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Summary</a>
-            <a class="dropdown-item" href="#">Reports Store</a>
+            <a class="dropdown-item" href="Summary.php">Summary</a>
+            <a class="dropdown-item" href="Reports.php">Add Reports</a>
             
           </div>
         </li>
@@ -94,7 +97,7 @@
             <p class="card-text">Update / Remove Registerd Supplier details.</p>
 
             <a href="registerSupplier.php" class="btn btn-primary">UPDATE</a>
-            <a href="registerSupplier.php" class="btn btn-primary">REMOVE</a>
+            <a href="registerSupplier.php" class="btn btn-danger">REMOVE</a>
           </div>
         </div>    
       </th>
@@ -107,8 +110,8 @@
             <p class="card-text">Add / Update / Delete Spplies reports.</p>
             
             <a href="Reports.php" class="btn btn-primary">ADD</a>
-            <a href="updateReports.php" class="btn btn-primary">UPDATE</a>
-            <a href="updateReports.php" class="btn btn-primary">REMOVE</a>
+            <a href="Reports.php" class="btn btn-primary">UPDATE</a>
+            <a href="Reports.php" class="btn btn-danger">REMOVE</a>
             
           </div>
         </div>    
@@ -134,8 +137,8 @@
             <h5 class="card-title">Orders Stock need.</h5>
             <p class="card-text">Add orders and Send Orders to Suppliers.</p>
             <a href="Orders.php" class="btn btn-primary">ADD</a>
-            <a href="updateOrders.php" class="btn btn-primary">UPDATE</a>
-            <a href="updateOrders.php" class="btn btn-primary">REMOVE</a>
+            <a href="Orders.php" class="btn btn-primary">UPDATE</a>
+            <a href="Orders.php" class="btn btn-danger">REMOVE</a>
 
           </div>
         </div>      
