@@ -8,6 +8,9 @@
   <title>Out of Stock | Nimedco Pharmacy</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
@@ -72,22 +75,21 @@
       
       </nav>
   <!--/.Navbar-->
-  <br><br>
+  <br>
 
 
   <?php
-	        $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
+	        $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
         	$result = $mysqli->query("SELECT * FROM stockitem WHERE ItemQuantity = 0 order by id") or die($mysqli->error);
 	        //pre_r($result);
         ?>
 
   <div class="container">
-      <div class="row">
-        <div class="col">
+      
           <h2>OUT OF STOCK</h2>
-          <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-              <thead class="bg-info" style="color: white;">
-                <tr>
+          <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+              <thead class="bg-danger" style="color: white;">
+                <tr align="center">
                   <th class="th-sm">ItemID
                   </th>
                   <th class="th-sm">ItemName
@@ -105,8 +107,8 @@
                 
               <?php
 		          	while($row = $result->fetch_assoc()): ?>
-			          	<tr>
-					          <td><?php echo $row['ItemID']; ?></td>
+			          	<tr align="center">
+					          <td><b><?php echo $row['ItemID']; ?></b></td>
                     <td><?php echo $row['ItemName']; ?></td>
                     <td><?php echo $row['Description']; ?></td>
                     <td><?php echo $row['Category']; ?></td>
@@ -136,18 +138,18 @@
             </table>
 
         </div>
-        <div class="col">
+        <div class="container"> <hr>
             <h2>RUNNING OUT OF STOCK</h2>
 
             <?php
-	       $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
+	        $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
         	$result2 = $mysqli->query("SELECT * FROM stockitem WHERE (ItemQuantity <= 10) and (ItemQuantity != 0) order by ItemQuantity") or die($mysqli->error);
 	        //pre_r($result);
         ?>
 
-            <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-              <thead class="bg-info" style="color: white;">
-                <tr>
+            <table id="dtBasicExample1" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+              <thead class="bg-success" style="color: white;">
+                <tr align="center">
                   <th class="th-sm">ItemID
                   </th>
                   <th class="th-sm">ItemName
@@ -167,13 +169,13 @@
                 
               <?php
 		          	while($row = $result2->fetch_assoc()): ?>
-			          	<tr>
-					          <td><?php echo $row['ItemID']; ?></td>
+			          	<tr align="center">
+					          <td><b><?php echo $row['ItemID']; ?></b></td>
                     <td><?php echo $row['ItemName']; ?></td>
                     <td><?php echo $row['Description']; ?></td>
                     <td><?php echo $row['Category']; ?></td>
                     <td><?php echo $row['Price']; ?></td>
-                    <td><?php echo $row['ItemQuantity']; ?></td>
+                    <td class="bg-warning" style="color: white;"><b><?php echo $row['ItemQuantity']; ?><b></td>
 				          	
 			          	</tr>
 			        <?php endwhile; ?>
@@ -198,8 +200,7 @@
               </tfoot> -->
             </table>
 
-        </div>
-      </div>
+        
     </div>
 
 
@@ -363,7 +364,25 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-  
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+    
+    
+    <script type="text/javascript"> 
+        $(document).ready(function () {
+$('#dtBasicExample1').DataTable();
+$('.dataTables_length').addClass('bs-select');
+});
+    </script>
+
+<script type="text/javascript"> 
+        $(document).ready(function () {
+$('#dtBasicExample').DataTable();
+$('.dataTables_length').addClass('bs-select');
+});
+    </script>
+
+    
 
   </body>
   </html>
