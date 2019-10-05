@@ -8,6 +8,10 @@
   <title>Add Item | Nimedco Pharmacy</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+
+
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
@@ -73,12 +77,12 @@
       
       </nav>
   <!--/.Navbar-->
-  <br><br>
+  <br>
 
 
 
   
-  <div class="container">
+  <div class="" style="margin: 22px;">
       <div class="row">
 
 
@@ -162,15 +166,16 @@
         </div>
 
         <?php
-	       $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
-        	$result = $mysqli->query("SELECT * FROM stockitem order by id desc limit 0, 7") or die($mysqli->error);
+	      $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
+        	$result = $mysqli->query("SELECT * FROM stockitem order by id desc") or die($mysqli->error);
 	        //pre_r($result);
         ?>
   
       <div class="col">
         
 
-          <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+          <!--<table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">-->
+          <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
               <thead style="color: white;" class="bg-primary" align="center">
                 <tr>
                   <th class="th-sm">ItemID
@@ -191,7 +196,7 @@
                 
               <?php
 		          	while($row = $result->fetch_assoc()): ?>
-			          	<tr>
+			          	<tr align="center">
 					          <td><b><?php echo $row['ItemID']; ?></b></td>
                     <td><b><?php echo $row['ItemName']; ?></b></td>
                     <td><b><?php echo $row['Description']; ?></b></td>
@@ -403,9 +408,16 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
     
     <script src="js/stockvalidation.js"></script>
-  
+    <script type="text/javascript"> 
+        $(document).ready(function () {
+$('#dtBasicExample').DataTable();
+$('.dataTables_length').addClass('bs-select');
+});
+    </script>
 
   </body>
   </html>

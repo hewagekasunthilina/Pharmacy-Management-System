@@ -71,7 +71,7 @@
   <br><br>
 
   <?php
-         $mysqli = new mysqli('localhost', 'root', 'root', 'nimedco-pharmacy') or die(mysqli_error($mysqli));
+         $mysqli = new mysqli('localhost', 'root', '', 'nimedco') or die(mysqli_error($mysqli));
          $ItemID = $_POST['ItemID'];
         	$result = $mysqli->query("SELECT * FROM stockitem WHERE ItemID='$ItemID'") or die($mysqli->error);
         
@@ -99,7 +99,7 @@
       <br><b>ItemID :</b>
     </div>
     <div class="col col-lg-5 bg-primary ">
-      <br><b><font size="5"><?php echo $row['ItemID']; ?> </font></b>
+      <br><b><font size="6"><?php echo $row['ItemID']; ?> </font></b>
     </div>
   </div>
   <div class="row justify-content-md-center text-white">
@@ -146,8 +146,14 @@
 		              if ($row['ItemQuantity'] == 0):
 		            ?>
                   <div class="col col-lg-5 bg-danger   ">
-                  <b><font size="6">Out of stock</font></b></br></br>
-    </div>  
+                  <i class="fas fa-exclamation-triangle fa-2x"></i>&nbsp;<b><font size="6">Out of stock</font></b></br></br>
+    </div> 
+    <?php
+		              elseif ($row['ItemQuantity'] <= 10):
+		            ?>
+                 <div class="col col-lg-5 bg-warning   ">
+                  <b><font size="20"><?php echo $row['ItemQuantity']; ?></font></b> &nbsp;&nbsp;<font size="3"> (Running out of stock) </font>
+    </div> 
 		            <?php else: ?>
                 <div class="col col-lg-5 bg-success   ">
     <b><font size="20"><?php echo $row['ItemQuantity']; ?></font></b>

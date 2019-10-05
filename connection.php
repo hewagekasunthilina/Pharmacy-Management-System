@@ -1,8 +1,8 @@
 <?php 
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = 'root';
-$db = 'nimedco-pharmacy';
+$dbpass = '';
+$db = 'expenditure';
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $db);
 if($conn -> connect_error){
