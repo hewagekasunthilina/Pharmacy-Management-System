@@ -15,22 +15,7 @@
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<body background="bg3.jpg">
 <!--Start of the header-->
  <!--Navbar-->
  <nav class="navbar navbar-expand-lg navbar-dark primary-color">
@@ -92,94 +77,50 @@
 
 
   <div></div>
-  <div><h2>SUMMARY</h2>  
-    <br>    
-    <!-- Extended default form grid -->
-    <div class="card mx-xl-5">
+  <div><h2>SUMMARY</h2></div>
+  <br> 
+    <table class="panel-table-1" align="center">
 
-<!-- Card body -->
-<div class="card-body">
-  
-<form  method="POST" action="employeereport.php" name="expenditurereportform" >
+<tr>
+  <th>
+    <div class="card1">
+      <h5 class="card-header h5">Supplier Details</h5>
+      <div class="card-body">
+        <h5 class="card-title">New Suppliers are Welcome</h5>
+        <p class="card-text">Add new Suppliers to the NimedcoPharmacy System.</p>
+        <a href="SupplierReportsPDF.php" class="btn btn-warning">REPORT</a>
+
+      </div>
+    </div>      
+  </th>
+
+  <th>
+    <div class="card1">
+      <h5 class="card-header h5">Suppliers Order Details</h5>
+      <div class="card-body">
+        <h5 class="card-title">Registerd Suppliers are Welcome.</h5>
+        <p class="card-text">Update / Remove Registerd Supplier details.</p>
+
+        <a href="SupplierOrderPDF.php" class="btn btn-warning">REPORT</a>
+      </div>
+    </div>    
+  </th>
+
+  <th>
+    <div class="card1">
+      <h5 class="card-header h5">Supplies reports</h5>
+      <div class="card-body">
+        <h5 class="card-title">Onboard Supplies reports.</h5>
+        <p class="card-text">Add / Update / Delete Spplies reports.</p>
+
+        <a href="SupplierReportSumPDF.php" class="btn btn-warning">REPORT</a>
         
-      <br><br>
+      </div>
+    </div>    
+  </th>
 
-            <!-- Default input -->
-            <div class="form-group col-md-6" style="margin-left: 15px;">
-              <input type="text" class="form-control" id="inputemployeename" placeholder="Enter employee name" name="employeename" />
-            </div>
-             
-            
-                <!--input month-->
-                <!--Dropdown primary-->
-        
-                <input type="submit" name="Addemployeereport" class="btn btn-primary btn-rounded"  onclick="" value="Report"/>
-</form>    
-
-<form class="text-center" style="color: #757575;" action="employeereport.php" name="addEmployee" method="POST">
-            
-                <div class="form-row">
-                    <div class="col">
-                        <!-- First name -->
-                        <div class="md-form">
-                            <input type="text" value="<?php echo $_GET['firstname'];?>" id="FirstName" name="FirstName" class="form-control">
-                            <label for="FirstName">First name</label>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <!-- Last name -->
-                        <div class="md-form">
-                            <input type="text" id="LastName" value="<?php echo $_GET['lastname'];?>" name="LastName" class="form-control">
-                            <label for="LastName">Last name</label>
-                        </div>
-                    </div>
-                </div>
-
-                 <!-- Username -->
-                 <div class="md-form">
-                    <input type="text" id="UserName" value="<?php echo $_GET['username'];?>" name="UserName" class="form-control">
-                    <label for="UserName">Username</label> 
-                </div>
-    
-                <!-- E-mail -->
-                <div class="md-form mt-0">
-                    <input type="email" id="Email" value="<?php echo $_GET['email'];?>" name="Email" class="form-control">
-                    <label for="Email">E-mail</label>
-                </div>
-
-                 <!-- NIC Number -->
-                 <div class="md-form mt-0">
-                    <input type="text" id="NICNumber" value="<?php echo $_GET['username'];?>" name="NICNumber" class="form-control">
-                    <label for="NICNumber">NIC Number</label>
-                </div>
-
-                 <!-- Address -->
-                 <div class="md-form mt-0">
-                    <input type="text" id="Address" value="<?php echo $_GET['address'];?>" name="Address" class="form-control">
-                    <label for="Address">Address</label>
-                </div>
-    
-                <!-- Phone number -->
-                <div class="md-form">
-                    <input type="text" id="PhoneNumber" value="<?php echo $_GET['phoneno'];?>" name="PhoneNumber" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
-                    <label for="PhoneNumber">Phone number</label>
-                    <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-                        Optional - for two step authentication
-                    </small>
-                </div>
-                <input type="submit" name="Addpdf" class="btn btn-primary btn-rounded" style="margin-left:10px" onclick="" value="PDF"/>
-    <!-- Extended default form grid --></div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
+</tr>
+</table>
 
 <!--Footer start-->
 <!-- Footer -->

@@ -105,7 +105,7 @@
           <h5 class="card-title">All the Details of the Employees !</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <a href="addEmployee.php" class="btn btn-primary">ADD</a>
-          <a href="employeeonereport.php" class="btn btn-primary">Report</a>
+          <a href="EmployeeReportPDF.php" class="btn btn-primary">Report</a>
           </form>
           
         </div>

@@ -14,9 +14,12 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   
 </head>
-<body>
+<body background="bg3.jpg">
   <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
@@ -372,6 +375,15 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   
   <script src="js/supvalidation.js"></script>
+
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+
+<script  type="text/javascript" >
+$(document).ready(function () {
+       $('dtBasicExample').DataTable();
+       $('.dataTables_length').addClass('bs-select');
+      });
+</script>
 
 </body>
 

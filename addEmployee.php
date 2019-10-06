@@ -14,6 +14,9 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   
 </head>
 <body background="bg3.jpg">
@@ -183,7 +186,7 @@
         <!-- Extended default form grid --></div>
      
       <br><br>
-      <div style="margin-left:-325px;margin-top:100px"><h2>Employees</h2>  
+      <div style="margin-left:-350px;margin-top:100px"><h2>Employees</h2>  
         <br>
 
         <?php
@@ -199,8 +202,7 @@
                 </th>
                 <th class="th-sm">FirstName
                 </th>
-                <th class="th-sm">LastName
-                </th>
+                
                 <th class="th-sm">UserName
                 </th>
                 <th class="th-sm">Email
@@ -211,8 +213,7 @@
                 </th>
                 <th class="th-sm">PhoneNumber
                 </th>
-                <th class="th-sm">Password
-                </th>
+                
                 <th class="th-sm">Edit
                 </th>
                 <th class="th-sm">Delete
@@ -227,13 +228,13 @@
               <tr>
                   <td><?php echo $row['EmpId']; ?></td>
                   <td><?php echo $row['FirstName']; ?></td>
-                  <td><?php echo $row['LastName']; ?></td>
+                  
                   <td><?php echo $row['UserName']; ?></td>
                   <td><?php echo $row['Email']; ?></td>
                   <td><?php echo $row['NICNumber']; ?></td>
                   <td><?php echo $row['Address']; ?></td>
                   <td><?php echo $row['PhoneNumber']; ?></td>
-                  <td><?php echo $row['Password']; ?></td>
+                  
                   <td><a href="addEmployee.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">Edit</a></td>
                   <td><a href="addEmployee_process.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
               </tr>
@@ -407,6 +408,15 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   
   <script src="js/addEmployee.js"></script>
+
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+
+<script  type="text/javascript" >
+$(document).ready(function () {
+       $('dtBasicExample').DataTable();
+       $('.dataTables_length').addClass('bs-select');
+      });
+</script>
 
 </body>
 

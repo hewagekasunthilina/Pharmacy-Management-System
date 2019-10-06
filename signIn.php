@@ -68,7 +68,7 @@ if (isset($_SESSION['message'])):?>
 
 
     <!-- Form -->
-    <form class="text-center" method = "POST" action="signin-process.php" style="color: #757575;" action="signin-process.php">
+    <form id="signIn" class="text-center" method = "POST" action="signin-process.php" style="color: #757575;" action="signin-process.php">
 
       <!-- Email -->
       <div class="md-form">
@@ -98,7 +98,7 @@ if (isset($_SESSION['message'])):?>
 
       <!-- Sign in button -->
       <!--<input type = "submit" class="btn btn-primary" value = "LOGIN" />--> 
-      <button type="submit" class="btn btn-primary btn-md" name="SIGN">SIGN IN</button>    
+      <button type="submit" class="btn btn-primary btn-md" onclick="javascript: return validateSignin();" name="SIGN">SIGN IN</button>    
 
     </form>
     <!-- Form -->
@@ -121,6 +121,8 @@ if (isset($_SESSION['message'])):?>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
+
+  <script src="js/addEmployee.js"></script>
 
 </body>
 
