@@ -15,22 +15,7 @@
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<body background="bg3.jpg">
 <!--Start of the header-->
  <!--Navbar-->
  <nav class="navbar navbar-expand-lg navbar-dark primary-color">
@@ -92,122 +77,50 @@
 
 
   <div></div>
-  <div><h2>SUMMARY</h2>  
-    <br>    
-    <!-- Extended default form grid -->
-    <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%" align="center">
-        <thead>
-          <tr>
-            <th class="th-sm">SupplireID
-            </th>
-            <th class="th-sm">Name
-            </th>
-            <th class="th-sm">Address
-            </th>
-            <th class="th-sm">Medicine Brand
-            </th>
-            <th class="th-sm">Email
-            </th>
-            <th class="th-sm">Contact
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>S1</td>
-            <td>MAdhawa Amarasinghe</td>
-            <td>Kuliyapitiya</td>
-            <td>Panadol</td>
-            <td>madhawa@gmail.com</td>
-            <td>0715864875</td>
-          </tr>
-          <tr>
-            <td>S2</td>
-            <td>Kasun Thilina</td>
-            <td>Horana</td>
-            <td>coraxD</td>
-            <td>kasun@gmail.com</td>
-            <td>07758469257</td>
-          </tr>
-          <tr>
-            <td>Ashton Cox</td>
-            <td>Junior Technical Author</td>
-            <td>San Francisco</td>
-            <td>66</td>
-            <td>2009/01/12</td>
-            <td>$86,000</td>
-          </tr>
-          <tr>
-            <td>Cedric Kelly</td>
-            <td>Senior Javascript Developer</td>
-            <td>Edinburgh</td>
-            <td>22</td>
-            <td>2012/03/29</td>
-            <td>$433,060</td>
-          </tr>
-          <tr>
-            <td>Airi Satou</td>
-            <td>Accountant</td>
-            <td>Tokyo</td>
-            <td>33</td>
-            <td>2008/11/28</td>
-            <td>$162,700</td>
-          </tr>
-          <tr>
-            <td>Brielle Williamson</td>
-            <td>Integration Specialist</td>
-            <td>New York</td>
-            <td>61</td>
-            <td>2012/12/02</td>
-            <td>$372,000</td>
-          </tr>
-          <tr>
-            <td>Herrod Chandler</td>
-            <td>Sales Assistant</td>
-            <td>San Francisco</td>
-            <td>59</td>
-            <td>2012/08/06</td>
-            <td>$137,500</td>
-          </tr>
-          <tr>
-            <td>Rhona Davidson</td>
-            <td>Integration Specialist</td>
-            <td>Tokyo</td>
-            <td>55</td>
-            <td>2010/10/14</td>
-            <td>$327,900</td>
-          </tr>
+  <div><h2>SUMMARY</h2></div>
+  <br> 
+    <table class="panel-table-1" align="center">
 
-        </tbody>
-        <tfoot>
-          <tr>
-            <th>Name
-            </th>
-            <th>Position
-            </th>
-            <th>Office
-            </th>
-            <th>Age
-            </th>
-            <th>Start date
-            </th>
-            <th>Salary
-            </th>
-          </tr>
-        </tfoot>
-      </table>
-    <!-- Extended default form grid --></div>
-</div>
-</div>
+<tr>
+  <th>
+    <div class="card1">
+      <h5 class="card-header h5">Supplier Details</h5>
+      <div class="card-body">
+        <h5 class="card-title">New Suppliers are Welcome</h5>
+        <p class="card-text">Add new Suppliers to the NimedcoPharmacy System.</p>
+        <a href="SupplierReportsPDF.php" class="btn btn-warning">REPORT</a>
 
+      </div>
+    </div>      
+  </th>
 
+  <th>
+    <div class="card1">
+      <h5 class="card-header h5">Suppliers Order Details</h5>
+      <div class="card-body">
+        <h5 class="card-title">Registerd Suppliers are Welcome.</h5>
+        <p class="card-text">Update / Remove Registerd Supplier details.</p>
 
+        <a href="SupplierOrderPDF.php" class="btn btn-warning">REPORT</a>
+      </div>
+    </div>    
+  </th>
 
+  <th>
+    <div class="card1">
+      <h5 class="card-header h5">Supplies reports</h5>
+      <div class="card-body">
+        <h5 class="card-title">Onboard Supplies reports.</h5>
+        <p class="card-text">Add / Update / Delete Spplies reports.</p>
 
+        <a href="SupplierReportSumPDF.php" class="btn btn-warning">REPORT</a>
+        
+      </div>
+    </div>    
+  </th>
 
-
-
-
+</tr>
+</table>
 
 <!--Footer start-->
 <!-- Footer -->

@@ -14,8 +14,11 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
-<body  background="back3.jpg">
+<body background="bg3.jpg">
   <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
@@ -149,7 +152,7 @@ if (isset($_SESSION['message'])):?>
         </form>
         <!-- Extended default form grid --></div>
       
-      <div class="col-md-6" style="margin-left:-660px;margin-top:600px"><h2>REPORTS</h2>  
+      <div class="col-md-6" style="margin-left:-860px;margin-top:600px"><h2>REPORTS</h2>  
         <br> 
 
         <?php
@@ -366,6 +369,15 @@ if (isset($_SESSION['message'])):?>
   <script type="text/javascript" src="js/mdb.min.js"></script>
 
   <script src="js/supvalidation.js"></script>
+
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+
+<script  type="text/javascript" >
+$(document).ready(function () {
+       $('dtBasicExample').DataTable();
+       $('.dataTables_length').addClass('bs-select');
+      });
+</script>
 
 </body>
 
