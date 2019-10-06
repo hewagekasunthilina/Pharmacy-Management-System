@@ -21,7 +21,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="index.html">Admin Panel</a>
+        <a class="navbar-brand" href="Dashboard.php">Admin Panel</a>
       
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -35,17 +35,11 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home
+              <a class="nav-link" href="index.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-      
+            
             <!-- Dropdown -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -198,7 +192,7 @@
                 <?php
 		              if ($update == true):
 		            ?>
-              <button type="submit" class="btn btn-warning btn-md" name="update" onclick="javascript: return validateSupplyOrderForm();">Update</button>
+              <button type="submit" class="btn btn-warning btn-md" name="update" onclick="javascript: return validateSupplyOrderFormUpdate();">Update</button>
                   <button type="submit" class="btn btn-danger btn-md" name="cancle" onclick="action='StockSupplyOrder.php';">Cancle</button>
               <?php else: ?>
 		            	<button type="submit" class="btn btn-primary btn-md" name="save" onclick="javascript: return validateSupplyOrderForm();">SUBMIT</button>
