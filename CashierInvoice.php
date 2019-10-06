@@ -23,7 +23,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="index.html">Admin Panel</a>
+        <a class="navbar-brand" href="Dashboard.php">Admin Panel</a>
       
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -37,16 +37,11 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home
+              <a class="nav-link" href="index.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
+            
       
             <!-- Dropdown -->
             <li class="nav-item dropdown">
@@ -82,11 +77,17 @@
     
       </form>
   </div>
-
   <br>
+
   <div class="container">
+  
     <div class="row">
       <div class="col-lg-4">
+
+      <div float-right>
+      <a align="right" href="StockReports.php" class ="btn btn-info btn-md" >
+                          <i class="fa fa-search"> </i> Cheack Stock</a>
+            </div>
       <?php require_once 'Cashier_process.php'; ?>
      
 
@@ -168,9 +169,12 @@
     ?>
     
       <div class="col">
+      
       <div class="row">
       
       <font size="5">INVOICE ID:&nbsp; </font><font size="5" color="blue"><b><?php echo $rowinID['id']; ?></b></font>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <span id='ct' ></span>
+      
+
       <table border="" width="100%" class="table table-sm table-striped table-bordered" cellspacing="0">
         <tr style="color: white;" class="bg-info" align="center">
           <td><b>#</b></td>

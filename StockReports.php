@@ -21,7 +21,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="index.html">Admin Panel</a>
+        <a class="navbar-brand" href="Dashboard.php">Admin Panel</a>
       
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -35,16 +35,11 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home
+              <a class="nav-link" href="index.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
+            
       
             <!-- Dropdown -->
             <li class="nav-item dropdown">
@@ -129,7 +124,7 @@
                     <td><b><?php echo $row['Description']; ?></b></td>
                     <td><b><?php echo $row['Category']; ?></b></td>
                     <td><b><?php echo $row['Price']; ?></b></td>
-                    <td><b><?php echo $row['ItemQuantity']; ?></b></td>
+                    <td><b><i class="fas fa-exclamation-triangle fa-md"> </i>&nbsp;&nbsp;<?php echo $row['ItemQuantity']; ?></b></td>
 				          	
 			          	</tr>
 		            <?php else: ?>
