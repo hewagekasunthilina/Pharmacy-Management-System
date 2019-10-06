@@ -90,3 +90,16 @@ function validateaddEmployee()
 	}
 	
 }
+
+function validateSignin(){
+
+    var UserName = document.forms["signIn"]["UserName"].value;
+    var Password = document.forms["signIn"]["Password"].value;
+
+
+    if ((UserName == null || UserName == "") && (Password == null || Password == "")){
+        alert("Plase Fill the Sign form");
+        return false;
+    }
+
+}

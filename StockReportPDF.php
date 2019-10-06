@@ -72,7 +72,7 @@ while($rowOut = $resultOut->fetch_assoc())
 $pdf->SetFont('Arial', '', 12);
 $pdf->cell(31,5, $rowOut['ItemID'], 1,0,'C');
 $pdf->cell(31,5, $rowOut['ItemName'], 1, 0,'C');
-$pdf->cell(31,5,$rowOut['Description'], 1, 0,'C');
+$pdf->cell(31,5, $rowOut['Description'], 1, 0,'C');
 $pdf->cell(31,5, $rowOut['Category'], 1, 0,'C');
 $pdf->cell(31,5, $rowOut['Price'], 1, 1,'C');
 
@@ -99,7 +99,7 @@ while($rowRun = $resultRun->fetch_assoc())
 $pdf->SetFont('Arial', '', 12);
 $pdf->cell(31,5, $rowRun['ItemID'], 1,0,'C');
 $pdf->cell(31,5, $rowRun['ItemName'], 1, 0,'C');
-$pdf->cell(31,5,$rowRun['Description'], 1, 0,'C');
+$pdf->cell(31,5, $rowRun['Description'], 1, 0,'C');
 $pdf->cell(31,5, $rowRun['Category'], 1, 0,'C');
 $pdf->cell(31,5, $rowRun['Price'], 1, 0,'C');
 $pdf->cell(31,5, $rowRun['ItemQuantity'], 1, 1,'C');
